@@ -16,11 +16,12 @@
 		4C776D19230EB9F800025B08 /* ListLaunchesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D18230EB9F800025B08 /* ListLaunchesProtocol.swift */; };
 		4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D1C230EC1F500025B08 /* NetworkService.swift */; };
 		4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */; };
-		4C776D23230EC60600025B08 /* LaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D22230EC60600025B08 /* LaunchAPI.swift */; };
-		4C776D25230EC8CA00025B08 /* LaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D24230EC8CA00025B08 /* LaunchList.swift */; };
-		4C776D28230EC9F800025B08 /* LaunchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D27230EC9F800025B08 /* LaunchElement.swift */; };
-		4C776D2A230ECA2800025B08 /* ListLaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* ListLaunchService.swift */; };
+		4C776D23230EC60600025B08 /* FutureLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D22230EC60600025B08 /* FutureLaunchAPI.swift */; };
+		4C776D25230EC8CA00025B08 /* FutureLaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */; };
+		4C776D28230EC9F800025B08 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D27230EC9F800025B08 /* Launch.swift */; };
+		4C776D2A230ECA2800025B08 /* ListLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* ListLaunchesService.swift */; };
 		4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */; };
+		4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2E230F061500025B08 /* DateFormatterAPI.swift */; };
 		FC793DC7753A8AB12D4A5DAF /* Pods_UpSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB42B730D2E2A91828699B41 /* Pods_UpSpace.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,11 +48,12 @@
 		4C776D18230EB9F800025B08 /* ListLaunchesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesProtocol.swift; sourceTree = "<group>"; };
 		4C776D1C230EC1F500025B08 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibraryAPI.swift; sourceTree = "<group>"; };
-		4C776D22230EC60600025B08 /* LaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPI.swift; sourceTree = "<group>"; };
-		4C776D24230EC8CA00025B08 /* LaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchList.swift; sourceTree = "<group>"; };
-		4C776D27230EC9F800025B08 /* LaunchElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchElement.swift; sourceTree = "<group>"; };
-		4C776D29230ECA2800025B08 /* ListLaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchService.swift; sourceTree = "<group>"; };
+		4C776D22230EC60600025B08 /* FutureLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureLaunchAPI.swift; sourceTree = "<group>"; };
+		4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureLaunchList.swift; sourceTree = "<group>"; };
+		4C776D27230EC9F800025B08 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		4C776D29230ECA2800025B08 /* ListLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesService.swift; sourceTree = "<group>"; };
 		4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+GenerateFromComponents.swift"; sourceTree = "<group>"; };
+		4C776D2E230F061500025B08 /* DateFormatterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterAPI.swift; sourceTree = "<group>"; };
 		A077CEB040C1A26F70DB5155 /* Pods-UpSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpSpace.release.xcconfig"; path = "Target Support Files/Pods-UpSpace/Pods-UpSpace.release.xcconfig"; sourceTree = "<group>"; };
 		AB42B730D2E2A91828699B41 /* Pods_UpSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UpSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B08CB1F5F1AE5DCB46E8CD /* Pods-UpSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpSpace.debug.xcconfig"; path = "Target Support Files/Pods-UpSpace/Pods-UpSpace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4C776D1C230EC1F500025B08 /* NetworkService.swift */,
-				4C776D29230ECA2800025B08 /* ListLaunchService.swift */,
+				4C776D29230ECA2800025B08 /* ListLaunchesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -143,7 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */,
-				4C776D22230EC60600025B08 /* LaunchAPI.swift */,
+				4C776D22230EC60600025B08 /* FutureLaunchAPI.swift */,
+				4C776D2E230F061500025B08 /* DateFormatterAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -151,8 +154,8 @@
 		4C776D26230EC8CD00025B08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4C776D24230EC8CA00025B08 /* LaunchList.swift */,
-				4C776D27230EC9F800025B08 /* LaunchElement.swift */,
+				4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */,
+				4C776D27230EC9F800025B08 /* Launch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,13 +350,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */,
-				4C776D23230EC60600025B08 /* LaunchAPI.swift in Sources */,
+				4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */,
+				4C776D23230EC60600025B08 /* FutureLaunchAPI.swift in Sources */,
 				4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */,
-				4C776D25230EC8CA00025B08 /* LaunchList.swift in Sources */,
+				4C776D25230EC8CA00025B08 /* FutureLaunchList.swift in Sources */,
 				4C776CF8230EB96C00025B08 /* ListLaunchesViewController.swift in Sources */,
 				4C776D17230EB9ED00025B08 /* ListLaunchesViewModel.swift in Sources */,
-				4C776D28230EC9F800025B08 /* LaunchElement.swift in Sources */,
-				4C776D2A230ECA2800025B08 /* ListLaunchService.swift in Sources */,
+				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
+				4C776D2A230ECA2800025B08 /* ListLaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
 				4C776D19230EB9F800025B08 /* ListLaunchesProtocol.swift in Sources */,
 				4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */,

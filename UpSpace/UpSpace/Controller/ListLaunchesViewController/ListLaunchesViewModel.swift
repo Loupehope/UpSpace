@@ -9,8 +9,8 @@
 import Foundation
 
 final class ListLaunchesViewModel: ListLaunchesProtocol {
-    private let service = ListLaunchService()
-    var onLaunchesChanged: ((LaunchList) -> Void)?
+    private let service = ListLaunchesService()
+    var onLaunchesChanged: ((FutureLaunchList) -> Void)?
     
     func loadMore() {
         service.load { [weak self] list in

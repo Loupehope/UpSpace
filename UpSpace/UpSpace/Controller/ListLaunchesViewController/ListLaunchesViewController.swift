@@ -15,7 +15,7 @@ final class ListLaunchesViewController: UIViewController {
         static let cellId = "LaunchCell"
     }
     private let viewModel = ListLaunchesViewModel()
-    private var launches: LaunchList? {
+    private var launches = [Launch]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -28,7 +28,7 @@ final class ListLaunchesViewController: UIViewController {
         super.viewDidLoad()
         viewModel.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
-            self.launches = list
+            self.launches += list.launches
         }
         viewModel.loadMore()
     }
@@ -38,16 +38,25 @@ final class ListLaunchesViewController: UIViewController {
 
 extension ListLaunchesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launches?.count ?? 0
+        return launches.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellId, for: indexPath)
-        guard let launches = launches else { return cell }
-        let launch = launches.launches[indexPath.row]
+        let launch = launches[indexPath.row]
         cell.textLabel?.text = launch.name
-        cell.detailTextLabel?.text = "\(launch.id)"
+        cell.detailTextLabel?.text = launch.windowstart
         return cell
+    }
+}
+
+// MARK: UITableViewDelegate
+
+extension ListLaunchesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (launches.count - 1) {
+            viewModel.loadMore()
+        }
     }
 }
 

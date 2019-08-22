@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ListLaunchesProtocol {
-    var onLaunchesChanged: ((LaunchList) -> Void)? { get set }
+    var onLaunchesChanged: ((FutureLaunchList) -> Void)? { get set }
     
     func loadMore()
 }

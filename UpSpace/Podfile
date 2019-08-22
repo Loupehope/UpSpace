@@ -4,5 +4,6 @@ target 'UpSpace' do
    pod 'SwiftLint'
    pod 'Reusable'
    pod 'Alamofire'
+   pod 'SwiftDate'
 
 end
