@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF5230EB96C00025B08 /* AppDelegate.swift */; };
 		4C776CF8230EB96C00025B08 /* ListLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF7230EB96C00025B08 /* ListLaunchesViewController.swift */; };
-		4C776CFB230EB96C00025B08 /* ListLaunches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CF9230EB96C00025B08 /* ListLaunches.storyboard */; };
+		4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CF9230EB96C00025B08 /* Main.storyboard */; };
 		4C776CFD230EB96D00025B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CFC230EB96D00025B08 /* Assets.xcassets */; };
 		4C776D00230EB96D00025B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CFE230EB96D00025B08 /* LaunchScreen.storyboard */; };
 		4C776D17230EB9ED00025B08 /* ListLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D16230EB9ED00025B08 /* ListLaunchesViewModel.swift */; };
@@ -39,7 +39,7 @@
 		4C776CF2230EB96C00025B08 /* UpSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C776CF5230EB96C00025B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C776CF7230EB96C00025B08 /* ListLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesViewController.swift; sourceTree = "<group>"; };
-		4C776CFA230EB96C00025B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ListLaunches.storyboard; sourceTree = "<group>"; };
+		4C776CFA230EB96C00025B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C776CFC230EB96D00025B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C776CFF230EB96D00025B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C776D01230EB96D00025B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +107,7 @@
 				4C776D1E230EC1FC00025B08 /* Service */,
 				4C776D15230EB98D00025B08 /* Controller */,
 				4C776CFC230EB96D00025B08 /* Assets.xcassets */,
+				4C776CF9230EB96C00025B08 /* Main.storyboard */,
 				4C776CFE230EB96D00025B08 /* LaunchScreen.storyboard */,
 				4C776D01230EB96D00025B08 /* Info.plist */,
 			);
@@ -127,7 +128,6 @@
 				4C776CF7230EB96C00025B08 /* ListLaunchesViewController.swift */,
 				4C776D16230EB9ED00025B08 /* ListLaunchesViewModel.swift */,
 				4C776D18230EB9F800025B08 /* ListLaunchesProtocol.swift */,
-				4C776CF9230EB96C00025B08 /* ListLaunches.storyboard */,
 			);
 			path = ListLaunchesViewController;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 			files = (
 				4C776D00230EB96D00025B08 /* LaunchScreen.storyboard in Resources */,
 				4C776CFD230EB96D00025B08 /* Assets.xcassets in Resources */,
-				4C776CFB230EB96C00025B08 /* ListLaunches.storyboard in Resources */,
+				4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,12 +382,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C776CF9230EB96C00025B08 /* ListLaunches.storyboard */ = {
+		4C776CF9230EB96C00025B08 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4C776CFA230EB96C00025B08 /* Base */,
 			);
-			name = ListLaunches.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		4C776CFE230EB96D00025B08 /* LaunchScreen.storyboard */ = {

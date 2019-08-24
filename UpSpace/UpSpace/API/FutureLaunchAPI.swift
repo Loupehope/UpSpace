@@ -23,12 +23,12 @@ final class FutureLaunchAPI: LaunchLibraryAPI {
     init(startDate: Date = Date()) {
         super.init()
         self.previousDate = dateFormatter.convert(date: startDate)
-        self.nextDate = dateFormatter.convert(date: Date() + 2.months)
+        self.nextDate = dateFormatter.convert(date: Date() + 4.months)
     }
     
     func set(nextDate: String) {
         guard let date = dateFormatter.transformComing(dateString: nextDate) else { return }
         self.previousDate = dateFormatter.convert(date: date + 1.days)
-        self.nextDate = dateFormatter.convert(date: date + 2.months)
+        self.nextDate = dateFormatter.convert(date: date + 4.months)
     }
 }

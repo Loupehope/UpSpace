@@ -12,6 +12,4 @@ struct Launch: Decodable {
     let id: Int
     let name: String
     let windowstart: String
-    let windowend: String
-    let net: String
 }
