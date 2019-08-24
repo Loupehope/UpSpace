@@ -17,12 +17,12 @@ final class ListLaunchesViewController: UIViewController {
     private var isLaunchesLoaded = false
     private var isWillDisplayed = false // Check is method "tableView willDisplay cell" called
     private var isInitialLoading = true
+    private var isAllLaunches = false // Check is all launches download from the server
     private var newIndexPaths: [IndexPath]?
     private var timerUpdating: Timer?
     private let viewModel = ListLaunchesViewModel()
     private var launches = [Launch]() {
         didSet {
-            print("\(oldValue.count) and \(launches.count)")
             newIndexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
             isLaunchesLoaded = true
             guard isInitialLoading else { return }
@@ -34,9 +34,16 @@ final class ListLaunchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
         viewModel.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
+            guard let list = list else {
+                self.isAllLaunches = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.tableView.reloadData()
+                }
+                return
+            }
             self.launches += list.launches
         }
         viewModel.loadMore()
@@ -79,7 +86,7 @@ extension ListLaunchesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellId, for: indexPath)
         if indexPath.row >= launches.count {
-            cell.textLabel?.text = "Launches loading..."
+            cell.textLabel?.text = isAllLaunches ? "These are all available launches for today." : "Launches loading..."
             cell.detailTextLabel?.text = ""
             return cell
         }
