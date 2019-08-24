@@ -1,2 +1,3 @@
 # UpSpace
-Application for space launch detection
+Приложение, которое позволяет отслеживать будущие запуски космических ракет
+
