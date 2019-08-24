@@ -12,12 +12,16 @@ import SwiftDate
 final class FutureLaunchAPI: LaunchLibraryAPI {
     private var nextDate = ""
     private var previousDate = ""
+    private var loadAll = false
     private let dateFormatter = DateFormatterAPI()
     override var path: String {
         return "/1.4/launch/"
     }
     override var headers: [String: String] {
-        return ["startdate": previousDate, "enddate": nextDate, "limit": "100"]
+        guard loadAll else {
+            return ["startdate": previousDate, "enddate": nextDate, "limit": "100"]
+        }
+        return ["startdate": previousDate, "limit": "100"]
     }
     
     init(startDate: Date = Date()) {
@@ -28,7 +32,20 @@ final class FutureLaunchAPI: LaunchLibraryAPI {
     
     func set(nextDate: String) {
         guard let date = dateFormatter.transformComing(dateString: nextDate) else { return }
-        self.previousDate = dateFormatter.convert(date: date + 1.days)
-        self.nextDate = dateFormatter.convert(date: date + 4.months)
+        loadAll = check(date: date)
+        guard loadAll else {
+            self.previousDate = dateFormatter.convert(date: date + 1.days)
+            self.nextDate = dateFormatter.convert(date: date + 4.months)
+            return
+        }
+        self.previousDate = dateFormatter.convert(date: date + 4.months)
+    }
+}
+
+private extension FutureLaunchAPI {
+    // Check is date bigger or equel "2023-01-01" or note
+    func check(date: Date) -> Bool {
+        let calendar = Calendar.current.component(.year, from: date)
+        return calendar >= 23
     }
 }

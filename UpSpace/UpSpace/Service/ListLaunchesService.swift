@@ -11,6 +11,7 @@ import Foundation
 
 final class ListLaunchesService: NetworkService {
     private let launchAPI = FutureLaunchAPI(startDate: Date())
+    private var startLaunch: Launch?
     private var launchURL: URL? {
         return URL.generateURL(scheme: launchAPI.scheme,
                                host: launchAPI.host,
@@ -23,7 +24,10 @@ final class ListLaunchesService: NetworkService {
         Alamofire.request(launchURL).responseData {
             switch $0.result {
             case let .success(data):
-                let result = try? JSONDecoder().decode(FutureLaunchList.self, from: data)
+                guard let temp = try? JSONDecoder().decode(FutureLaunchList.self, from: data) else {
+                    fatalError("Couldn't decode JSON response")
+                }
+                let result = self.sort(launches: temp)
                 self.updateLastLaunchDate(result)
                 DispatchQueue.main.async {
                     completionHandler(result)
@@ -33,10 +37,21 @@ final class ListLaunchesService: NetworkService {
             }
         }
     }
-    
-    private func updateLastLaunchDate(_ list: FutureLaunchList?) {
-        guard let list = list else { return }
+}
+
+private extension ListLaunchesService {
+    private func updateLastLaunchDate(_ list: FutureLaunchList) {
         guard let lastLaunch = list.launches.last else { return }
-        launchAPI.set(nextDate: lastLaunch.windowstart)
+        startLaunch = lastLaunch
+        launchAPI.set(nextDate: startLaunch?.windowstart ?? "")
+    }
+    
+    private func sort(launches: FutureLaunchList) -> FutureLaunchList {
+        guard let launch = startLaunch else { return launches }
+        let nextLaunches = launches.launches.filter { $0.start >= launch.start }
+        let sorted = nextLaunches.sorted { first, second in
+            first.start < second.start
+        }
+        return FutureLaunchList(launches: sorted)
     }
 }
