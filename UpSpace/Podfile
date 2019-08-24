@@ -1,0 +1,10 @@
+target 'UpSpace' do
+   use_frameworks!
+
+   pod 'SwiftLint'
+   pod 'Reusable'
+   pod 'Alamofire'
+   pod 'SwiftDate'
+   pod 'Dwifft'
+
+end
