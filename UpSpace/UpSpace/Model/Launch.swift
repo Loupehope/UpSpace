@@ -12,4 +12,12 @@ struct Launch: Decodable, Equatable {
     let id: Int
     let name: String
     let windowstart: String
+    var start: String {
+        let formatter = DateFormatterAPI()
+        let date = formatter.transformComing(dateString: windowstart)
+        guard let finalDate = date else {
+            fatalError("Couldn't convert start's date")
+        }
+        return formatter.convert(date: finalDate)
+    }
 }

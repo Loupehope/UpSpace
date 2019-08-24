@@ -15,7 +15,7 @@ final class ListLaunchesViewController: UIViewController {
         static let cellId = "LaunchCell"
     }
     private var isLaunchesLoaded = false
-    private var isWillDisplayed = false // Check is method "tableView willDisplay cell" called
+    private var isScrolled = false // Check is method "scrollViewDidScroll" called
     private var isInitialLoading = true
     private var isAllLaunches = false // Check is all launches download from the server
     private var newIndexPaths: [IndexPath]?
@@ -39,7 +39,7 @@ final class ListLaunchesViewController: UIViewController {
             guard let self = self else { return }
             guard let list = list else {
                 self.isAllLaunches = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.tableView.reloadData()
                 }
                 return
@@ -61,7 +61,7 @@ private extension ListLaunchesViewController {
         self.tableView.endUpdates()
         self.tableView.setContentOffset(CGPoint(x: 0, y: position), animated: false)
         isLaunchesLoaded = false
-        isWillDisplayed = false
+        isScrolled = false
     }
     
     private func startTimerForUpdate() {
@@ -86,7 +86,7 @@ extension ListLaunchesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellId, for: indexPath)
         if indexPath.row >= launches.count {
-            cell.textLabel?.text = isAllLaunches ? "These are all available launches for today." : "Launches loading..."
+            cell.textLabel?.text = isAllLaunches ? "These are all available launches." : "Launches loading..."
             cell.detailTextLabel?.text = ""
             return cell
         }
@@ -100,13 +100,16 @@ extension ListLaunchesViewController: UITableViewDataSource {
 // MARK: UITableViewDataSource
 
 extension ListLaunchesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == launches.count - 1 && !isWillDisplayed {
-            isWillDisplayed = true
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.size.height && !isScrolled && !isInitialLoading {
+            isScrolled = true
             viewModel.loadMore()
         }
     }
-    
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard self.timerUpdating == nil else { return }
         startTimerForUpdate()
