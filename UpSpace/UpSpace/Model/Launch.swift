@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Launch: Decodable {
+struct Launch: Decodable, Equatable {
     let id: Int
     let name: String
     let windowstart: String

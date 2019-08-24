@@ -15,17 +15,19 @@ final class ListLaunchesViewController: UIViewController {
         static let cellId = "LaunchCell"
     }
     private var isLaunchesLoaded = false
+    private var isWillDisplayed = false // Check is method "tableView willDisplay cell" called
     private var isInitialLoading = true
     private var newIndexPaths: [IndexPath]?
-    private let viewModel = ListLaunchesViewModel()
     private var timerUpdating: Timer?
+    private let viewModel = ListLaunchesViewModel()
     private var launches = [Launch]() {
         didSet {
+            print("\(oldValue.count) and \(launches.count)")
             newIndexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
             isLaunchesLoaded = true
             guard isInitialLoading else { return }
             isInitialLoading = false
-            reload(indexPaths: newIndexPaths)
+            reloadTableView(for: newIndexPaths)
         }
     }
     @IBOutlet private var tableView: UITableView!
@@ -39,19 +41,31 @@ final class ListLaunchesViewController: UIViewController {
         }
         viewModel.loadMore()
     }
-    
-    private func reload(indexPaths: [IndexPath]?) {
+}
+
+// MARK: Private
+
+private extension ListLaunchesViewController {
+    private func reloadTableView(for indexPaths: [IndexPath]?) {
         guard let indexPaths = newIndexPaths else { return }
-        var position: CGFloat = 0
+        let position = self.tableView.contentOffset.y
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: indexPaths, with: .fade)
+        self.tableView.endUpdates()
+        self.tableView.setContentOffset(CGPoint(x: 0, y: position), animated: false)
         isLaunchesLoaded = false
-        position = self.tableView.contentOffset.y
-        UIView.animate(withDuration: 0.4) {
-            self.view.layoutIfNeeded()
-            self.tableView.beginUpdates()
-            self.tableView.insertRows(at: indexPaths, with: .fade)
-            self.tableView.setContentOffset(CGPoint(x: 0, y: position), animated: false)
-            self.tableView.endUpdates()
+        isWillDisplayed = false
+    }
+    
+    private func startTimerForUpdate() {
+        self.timerUpdating = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            guard self.isLaunchesLoaded else { return }
+            self.reloadTableView(for: self.newIndexPaths)
+            self.timerUpdating?.invalidate()
+            self.timerUpdating = nil
         }
+        self.timerUpdating?.fire()
     }
 }
 
@@ -80,29 +94,15 @@ extension ListLaunchesViewController: UITableViewDataSource {
 
 extension ListLaunchesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == launches.count - 1 {
+        if indexPath.row == launches.count - 1 && !isWillDisplayed {
+            isWillDisplayed = true
             viewModel.loadMore()
         }
     }
     
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-       print(#function)
-    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard self.timerUpdating == nil else { return }
-        startTimer()
-    }
-    func startTimer() {
-        self.timerUpdating = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-            print("Waiting")
-            guard self.isLaunchesLoaded else { return }
-            self.reload(indexPaths: self.newIndexPaths)
-            self.timerUpdating?.invalidate()
-            self.timerUpdating = nil
-        }
-        self.timerUpdating?.fire()
+        startTimerForUpdate()
     }
 }
 
