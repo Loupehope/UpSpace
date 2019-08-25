@@ -9,13 +9,13 @@
 import Foundation
 
 extension URL {
-    static func generateURL(scheme: String, host: String, path: String, headers: [String: String]?) -> URL? {
+    static func generateURL(scheme: String, host: String, path: String, params: [String: String]?) -> URL? {
         var components = URLComponents()
         components.scheme = scheme
         components.host = host
         components.path = path
-        if let headers = headers {
-            components.queryItems = headers.map { URLQueryItem(name: $0, value: $1) }
+        if let params = params {
+            components.queryItems = params.map { URLQueryItem(name: $0, value: $1) }
         }
         return components.url
     }

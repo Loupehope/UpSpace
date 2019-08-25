@@ -1,5 +1,5 @@
 //
-//  ListLaunchesViewController.swift
+//  NextLaunchesViewController.swift
 //  UpSpace
 //
 //  Created by Vlad Suhomlinov on 22/08/2019.
@@ -9,9 +9,8 @@
 import Reusable
 import UIKit
 
-final class ListLaunchesViewController: UIViewController {
+final class NextLaunchesViewController: UIViewController {
     private enum Const {
-        static let storyboardName = "ListLaunches"
         static let cellId = "LaunchCell"
     }
     private var isLaunchesLoaded = false
@@ -20,7 +19,7 @@ final class ListLaunchesViewController: UIViewController {
     private var isAllLaunches = false // Check is all launches download from the server
     private var newIndexPaths: [IndexPath]?
     private var timerUpdating: Timer?
-    private let viewModel = ListLaunchesViewModel()
+    private var viewModel: LaunchesViewModelProtocol = NextLaunchesViewModel()
     private var launches = [Launch]() {
         didSet {
             newIndexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
@@ -52,7 +51,7 @@ final class ListLaunchesViewController: UIViewController {
 
 // MARK: Private
 
-private extension ListLaunchesViewController {
+private extension NextLaunchesViewController {
     private func reloadTableView(for indexPaths: [IndexPath]?) {
         guard let indexPaths = newIndexPaths else { return }
         let position = self.tableView.contentOffset.y
@@ -78,7 +77,7 @@ private extension ListLaunchesViewController {
 
 // MARK: UITableViewDataSource
 
-extension ListLaunchesViewController: UITableViewDataSource {
+extension NextLaunchesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return launches.count + 1
     }
@@ -92,14 +91,14 @@ extension ListLaunchesViewController: UITableViewDataSource {
         }
         let launch = launches[indexPath.row]
         cell.textLabel?.text = launch.name
-        cell.detailTextLabel?.text = launch.windowstart
+        cell.detailTextLabel?.text = DateFormatterAPI.formatForCell(date: launch.start)
         return cell
     }
 }
 
 // MARK: UITableViewDataSource
 
-extension ListLaunchesViewController: UITableViewDelegate {
+extension NextLaunchesViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -113,13 +112,5 @@ extension ListLaunchesViewController: UITableViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard self.timerUpdating == nil else { return }
         startTimerForUpdate()
-    }
-}
-
-// MARK: StoryboardSceneBased
-
-extension ListLaunchesViewController: StoryboardSceneBased {
-    static var sceneStoryboard: UIStoryboard {
-        return UIStoryboard(name: Const.storyboardName, bundle: nil)
     }
 }

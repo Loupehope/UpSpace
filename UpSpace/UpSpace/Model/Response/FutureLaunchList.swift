@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct FutureLaunchList: Decodable, Equatable {
+struct FutureLaunchList: LaunchListProtocol, Decodable, Equatable {
+    var launches: [Launch]
+    
     static func == (lhs: FutureLaunchList, rhs: FutureLaunchList) -> Bool {
         guard lhs.launches.count == rhs.launches.count else { return true }
         for index in 0..<lhs.launches.count {
@@ -17,6 +19,4 @@ struct FutureLaunchList: Decodable, Equatable {
         }
         return true
     }
-    
-    let launches: [Launch]
 }

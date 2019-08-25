@@ -8,52 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF5230EB96C00025B08 /* AppDelegate.swift */; };
-		4C776CF8230EB96C00025B08 /* ListLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF7230EB96C00025B08 /* ListLaunchesViewController.swift */; };
+		4C776CF8230EB96C00025B08 /* NextLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF7230EB96C00025B08 /* NextLaunchesViewController.swift */; };
 		4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CF9230EB96C00025B08 /* Main.storyboard */; };
 		4C776CFD230EB96D00025B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CFC230EB96D00025B08 /* Assets.xcassets */; };
 		4C776D00230EB96D00025B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CFE230EB96D00025B08 /* LaunchScreen.storyboard */; };
-		4C776D17230EB9ED00025B08 /* ListLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D16230EB9ED00025B08 /* ListLaunchesViewModel.swift */; };
-		4C776D19230EB9F800025B08 /* ListLaunchesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D18230EB9F800025B08 /* ListLaunchesProtocol.swift */; };
+		4C776D17230EB9ED00025B08 /* NextLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D16230EB9ED00025B08 /* NextLaunchesViewModel.swift */; };
+		4C776D19230EB9F800025B08 /* LaunchesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D18230EB9F800025B08 /* LaunchesViewModelProtocol.swift */; };
 		4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D1C230EC1F500025B08 /* NetworkService.swift */; };
 		4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */; };
-		4C776D23230EC60600025B08 /* FutureLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D22230EC60600025B08 /* FutureLaunchAPI.swift */; };
+		4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D22230EC60600025B08 /* NextLaunchAPI.swift */; };
 		4C776D25230EC8CA00025B08 /* FutureLaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */; };
 		4C776D28230EC9F800025B08 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D27230EC9F800025B08 /* Launch.swift */; };
-		4C776D2A230ECA2800025B08 /* ListLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* ListLaunchesService.swift */; };
+		4C776D2A230ECA2800025B08 /* NextLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* NextLaunchesService.swift */; };
 		4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */; };
 		4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2E230F061500025B08 /* DateFormatterAPI.swift */; };
+		4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */; };
+		4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */; };
+		4C7FAE462312652800BD136C /* TodayLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */; };
+		4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37067231280F100187903 /* TodayLaunchesService.swift */; };
+		4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370692312815E00187903 /* LaunchListProtocol.swift */; };
 		FC793DC7753A8AB12D4A5DAF /* Pods_UpSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB42B730D2E2A91828699B41 /* Pods_UpSpace.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4C776D07230EB96D00025B08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C776CEA230EB96C00025B08 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C776CF1230EB96C00025B08;
-			remoteInfo = UpSpace;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4C776CF2230EB96C00025B08 /* UpSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C776CF5230EB96C00025B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C776CF7230EB96C00025B08 /* ListLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesViewController.swift; sourceTree = "<group>"; };
+		4C776CF7230EB96C00025B08 /* NextLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesViewController.swift; sourceTree = "<group>"; };
 		4C776CFA230EB96C00025B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C776CFC230EB96D00025B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C776CFF230EB96D00025B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C776D01230EB96D00025B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C776D06230EB96D00025B08 /* UpSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C776D16230EB9ED00025B08 /* ListLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesViewModel.swift; sourceTree = "<group>"; };
-		4C776D18230EB9F800025B08 /* ListLaunchesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesProtocol.swift; sourceTree = "<group>"; };
+		4C776D16230EB9ED00025B08 /* NextLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesViewModel.swift; sourceTree = "<group>"; };
+		4C776D18230EB9F800025B08 /* LaunchesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModelProtocol.swift; sourceTree = "<group>"; };
 		4C776D1C230EC1F500025B08 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibraryAPI.swift; sourceTree = "<group>"; };
-		4C776D22230EC60600025B08 /* FutureLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureLaunchAPI.swift; sourceTree = "<group>"; };
+		4C776D22230EC60600025B08 /* NextLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchAPI.swift; sourceTree = "<group>"; };
 		4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureLaunchList.swift; sourceTree = "<group>"; };
 		4C776D27230EC9F800025B08 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		4C776D29230ECA2800025B08 /* ListLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLaunchesService.swift; sourceTree = "<group>"; };
+		4C776D29230ECA2800025B08 /* NextLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesService.swift; sourceTree = "<group>"; };
 		4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+GenerateFromComponents.swift"; sourceTree = "<group>"; };
 		4C776D2E230F061500025B08 /* DateFormatterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterAPI.swift; sourceTree = "<group>"; };
+		4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewController.swift; sourceTree = "<group>"; };
+		4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchAPI.swift; sourceTree = "<group>"; };
+		4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewModel.swift; sourceTree = "<group>"; };
+		4CD37067231280F100187903 /* TodayLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesService.swift; sourceTree = "<group>"; };
+		4CD370692312815E00187903 /* LaunchListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListProtocol.swift; sourceTree = "<group>"; };
 		A077CEB040C1A26F70DB5155 /* Pods-UpSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpSpace.release.xcconfig"; path = "Target Support Files/Pods-UpSpace/Pods-UpSpace.release.xcconfig"; sourceTree = "<group>"; };
 		AB42B730D2E2A91828699B41 /* Pods_UpSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UpSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B08CB1F5F1AE5DCB46E8CD /* Pods-UpSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpSpace.debug.xcconfig"; path = "Target Support Files/Pods-UpSpace/Pods-UpSpace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,13 +64,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC793DC7753A8AB12D4A5DAF /* Pods_UpSpace.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C776D03230EB96D00025B08 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				4C776CF2230EB96C00025B08 /* UpSpace.app */,
-				4C776D06230EB96D00025B08 /* UpSpaceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +108,8 @@
 		4C776D15230EB98D00025B08 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4CD3706B231283BD00187903 /* Protocol */,
+				4CD370662312655F00187903 /* TodayLaunchesViewController */,
 				4C776D1A230EBA0700025B08 /* ListLaunchesViewController */,
 			);
 			path = Controller;
@@ -125,9 +118,8 @@
 		4C776D1A230EBA0700025B08 /* ListLaunchesViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4C776CF7230EB96C00025B08 /* ListLaunchesViewController.swift */,
-				4C776D16230EB9ED00025B08 /* ListLaunchesViewModel.swift */,
-				4C776D18230EB9F800025B08 /* ListLaunchesProtocol.swift */,
+				4C776CF7230EB96C00025B08 /* NextLaunchesViewController.swift */,
+				4C776D16230EB9ED00025B08 /* NextLaunchesViewModel.swift */,
 			);
 			path = ListLaunchesViewController;
 			sourceTree = "<group>";
@@ -136,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				4C776D1C230EC1F500025B08 /* NetworkService.swift */,
-				4C776D29230ECA2800025B08 /* ListLaunchesService.swift */,
+				4CD37067231280F100187903 /* TodayLaunchesService.swift */,
+				4C776D29230ECA2800025B08 /* NextLaunchesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -144,8 +137,7 @@
 		4C776D21230EC4AE00025B08 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */,
-				4C776D22230EC60600025B08 /* FutureLaunchAPI.swift */,
+				4CD3706D2312854A00187903 /* Launch */,
 				4C776D2E230F061500025B08 /* DateFormatterAPI.swift */,
 			);
 			path = API;
@@ -154,8 +146,8 @@
 		4C776D26230EC8CD00025B08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */,
-				4C776D27230EC9F800025B08 /* Launch.swift */,
+				4CD3706E2312858200187903 /* Protocol */,
+				4CD3706F2312858F00187903 /* Response */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +158,58 @@
 				4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		4CD370662312655F00187903 /* TodayLaunchesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */,
+				4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */,
+			);
+			path = TodayLaunchesViewController;
+			sourceTree = "<group>";
+		};
+		4CD3706B231283BD00187903 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4C776D18230EB9F800025B08 /* LaunchesViewModelProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4CD3706C2312854300187903 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4CD3706D2312854A00187903 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				4CD3706C2312854300187903 /* Protocol */,
+				4C776D22230EC60600025B08 /* NextLaunchAPI.swift */,
+				4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		4CD3706E2312858200187903 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4CD370692312815E00187903 /* LaunchListProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4CD3706F2312858F00187903 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */,
+				4C776D27230EC9F800025B08 /* Launch.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		6B35D3C21A705BFDCD084860 /* Pods */ = {
@@ -208,24 +252,6 @@
 			productReference = 4C776CF2230EB96C00025B08 /* UpSpace.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4C776D05230EB96D00025B08 /* UpSpaceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C776D12230EB96D00025B08 /* Build configuration list for PBXNativeTarget "UpSpaceTests" */;
-			buildPhases = (
-				4C776D02230EB96D00025B08 /* Sources */,
-				4C776D03230EB96D00025B08 /* Frameworks */,
-				4C776D04230EB96D00025B08 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C776D08230EB96D00025B08 /* PBXTargetDependency */,
-			);
-			name = UpSpaceTests;
-			productName = UpSpaceTests;
-			productReference = 4C776D06230EB96D00025B08 /* UpSpaceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,10 +264,6 @@
 				TargetAttributes = {
 					4C776CF1230EB96C00025B08 = {
 						CreatedOnToolsVersion = 10.3;
-					};
-					4C776D05230EB96D00025B08 = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 4C776CF1230EB96C00025B08;
 					};
 				};
 			};
@@ -259,7 +281,6 @@
 			projectRoot = "";
 			targets = (
 				4C776CF1230EB96C00025B08 /* UpSpace */,
-				4C776D05230EB96D00025B08 /* UpSpaceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,13 +293,6 @@
 				4C776D00230EB96D00025B08 /* LaunchScreen.storyboard in Resources */,
 				4C776CFD230EB96D00025B08 /* Assets.xcassets in Resources */,
 				4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C776D04230EB96D00025B08 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,35 +365,25 @@
 			files = (
 				4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */,
 				4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */,
-				4C776D23230EC60600025B08 /* FutureLaunchAPI.swift in Sources */,
+				4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */,
+				4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */,
 				4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */,
+				4C7FAE462312652800BD136C /* TodayLaunchesViewModel.swift in Sources */,
+				4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */,
+				4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */,
 				4C776D25230EC8CA00025B08 /* FutureLaunchList.swift in Sources */,
-				4C776CF8230EB96C00025B08 /* ListLaunchesViewController.swift in Sources */,
-				4C776D17230EB9ED00025B08 /* ListLaunchesViewModel.swift in Sources */,
+				4C776CF8230EB96C00025B08 /* NextLaunchesViewController.swift in Sources */,
+				4C776D17230EB9ED00025B08 /* NextLaunchesViewModel.swift in Sources */,
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
-				4C776D2A230ECA2800025B08 /* ListLaunchesService.swift in Sources */,
+				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
+				4C776D2A230ECA2800025B08 /* NextLaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
-				4C776D19230EB9F800025B08 /* ListLaunchesProtocol.swift in Sources */,
+				4C776D19230EB9F800025B08 /* LaunchesViewModelProtocol.swift in Sources */,
 				4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C776D02230EB96D00025B08 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4C776D08230EB96D00025B08 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4C776CF1230EB96C00025B08 /* UpSpace */;
-			targetProxy = 4C776D07230EB96D00025B08 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4C776CF9230EB96C00025B08 /* Main.storyboard */ = {
@@ -555,46 +559,6 @@
 			};
 			name = Release;
 		};
-		4C776D13230EB96D00025B08 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UpSpaceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = vladsuhomloinov.UpSpaceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UpSpace.app/UpSpace";
-			};
-			name = Debug;
-		};
-		4C776D14230EB96D00025B08 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UpSpaceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = vladsuhomloinov.UpSpaceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UpSpace.app/UpSpace";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -612,15 +576,6 @@
 			buildConfigurations = (
 				4C776D10230EB96D00025B08 /* Debug */,
 				4C776D11230EB96D00025B08 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4C776D12230EB96D00025B08 /* Build configuration list for PBXNativeTarget "UpSpaceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C776D13230EB96D00025B08 /* Debug */,
-				4C776D14230EB96D00025B08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

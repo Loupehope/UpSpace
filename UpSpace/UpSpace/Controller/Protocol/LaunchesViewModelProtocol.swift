@@ -1,5 +1,5 @@
 //
-//  ListLaunchesProtocol.swift
+//  LaunchesViewModelProtocol.swift
 //  UpSpace
 //
 //  Created by Vlad Suhomlinov on 22/08/2019.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol ListLaunchesProtocol {
-    var onLaunchesChanged: ((FutureLaunchList?) -> Void)? { get set }
+protocol LaunchesViewModelProtocol {
+    var onLaunchesChanged: ((LaunchListProtocol?) -> Void)? { get set }
     
     func loadMore()
 }

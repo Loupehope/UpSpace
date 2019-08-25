@@ -18,7 +18,9 @@ class LaunchLibraryAPI {
     var path: String {
         fatalError("This property must be overriden in subclass")
     }
-    var headers: [String: String] {
+    var params: [String: String] {
         fatalError("This property must be overriden in subclass")
     }
+    
+    func set(dateString: String) {}
 }
