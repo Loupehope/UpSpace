@@ -10,9 +10,6 @@ import Reusable
 import UIKit
 
 final class NextLaunchesViewController: UIViewController {
-    private enum Const {
-        static let cellId = "LaunchCell"
-    }
     private var isLaunchesLoaded = false
     private var isScrolled = false // Check is method "scrollViewDidScroll" called
     private var isInitialLoading = true
@@ -33,12 +30,14 @@ final class NextLaunchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
+        tableView.register(cellType: NextLaunchCell.self)
+        tableView.register(cellType: LoadingLaunchCell.self)
+        tableView.tableFooterView = UIView()
         viewModel.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
             guard let list = list else {
                 self.isAllLaunches = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     self.tableView.reloadData()
                 }
                 return
@@ -83,32 +82,39 @@ extension NextLaunchesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellId, for: indexPath)
         if indexPath.row >= launches.count {
-            cell.textLabel?.text = isAllLaunches ? "These are all available launches." : "Launches loading..."
-            cell.detailTextLabel?.text = ""
+            let cell = tableView.dequeueReusableCell(for: indexPath) as LoadingLaunchCell
+            cell.update(for: isAllLaunches ? .stop : .load)
             return cell
         }
+        let cell = tableView.dequeueReusableCell(for: indexPath) as NextLaunchCell
         let launch = launches[indexPath.row]
-        cell.textLabel?.text = launch.name
-        cell.detailTextLabel?.text = DateFormatterAPI.formatForCell(date: launch.start)
+        cell.set(launch: launch)
         return cell
     }
 }
 
-// MARK: UITableViewDataSource
+// MARK: UITableViewDelegate
 
 extension NextLaunchesViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if offsetY > contentHeight - scrollView.frame.size.height && !isScrolled && !isInitialLoading {
+        if offsetY > contentHeight - scrollView.frame.size.height - 78 && !isScrolled && !isInitialLoading {
             isScrolled = true
             viewModel.loadMore()
         }
     }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row >= launches.count ? 50 : 78
+    }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row >= launches.count ? 50 : UITableView.automaticDimension
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard self.timerUpdating == nil else { return }
         startTimerForUpdate()

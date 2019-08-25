@@ -29,8 +29,8 @@ final class DateFormatterAPI: DateFormatter {
 extension DateFormatterAPI {
     static func formatForCell(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
         formatter.locale = .current
         return formatter.string(from: date)
     }

@@ -26,6 +26,7 @@ final class TodayLaunchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
         viewModel.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
             guard let list = list else { return }

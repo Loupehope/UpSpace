@@ -25,8 +25,13 @@
 		4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */; };
 		4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */; };
 		4C7FAE462312652800BD136C /* TodayLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */; };
+		4CBECD022312CC5D0051BFBF /* NextLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */; };
+		4CBECD04231305960051BFBF /* LoadingLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */; };
+		4CBECD062313066B0051BFBF /* LoadingLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */; };
 		4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37067231280F100187903 /* TodayLaunchesService.swift */; };
 		4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370692312815E00187903 /* LaunchListProtocol.swift */; };
+		4CD370732312BD4A00187903 /* NextLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD370722312BD4A00187903 /* NextLaunchCell.xib */; };
+		4CD370752312C06B00187903 /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370742312C06B00187903 /* CountryCodes.swift */; };
 		FC793DC7753A8AB12D4A5DAF /* Pods_UpSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB42B730D2E2A91828699B41 /* Pods_UpSpace.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +56,13 @@
 		4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewController.swift; sourceTree = "<group>"; };
 		4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchAPI.swift; sourceTree = "<group>"; };
 		4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewModel.swift; sourceTree = "<group>"; };
+		4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchCell.swift; sourceTree = "<group>"; };
+		4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingLaunchCell.xib; sourceTree = "<group>"; };
+		4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLaunchCell.swift; sourceTree = "<group>"; };
 		4CD37067231280F100187903 /* TodayLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesService.swift; sourceTree = "<group>"; };
 		4CD370692312815E00187903 /* LaunchListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListProtocol.swift; sourceTree = "<group>"; };
+		4CD370722312BD4A00187903 /* NextLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextLaunchCell.xib; sourceTree = "<group>"; };
+		4CD370742312C06B00187903 /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
 		A077CEB040C1A26F70DB5155 /* Pods-UpSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpSpace.release.xcconfig"; path = "Target Support Files/Pods-UpSpace/Pods-UpSpace.release.xcconfig"; sourceTree = "<group>"; };
 		AB42B730D2E2A91828699B41 /* Pods_UpSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UpSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B08CB1F5F1AE5DCB46E8CD /* Pods-UpSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpSpace.debug.xcconfig"; path = "Target Support Files/Pods-UpSpace/Pods-UpSpace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,18 +120,19 @@
 			children = (
 				4CD3706B231283BD00187903 /* Protocol */,
 				4CD370662312655F00187903 /* TodayLaunchesViewController */,
-				4C776D1A230EBA0700025B08 /* ListLaunchesViewController */,
+				4C776D1A230EBA0700025B08 /* NextLaunchesViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4C776D1A230EBA0700025B08 /* ListLaunchesViewController */ = {
+		4C776D1A230EBA0700025B08 /* NextLaunchesViewController */ = {
 			isa = PBXGroup;
 			children = (
 				4C776CF7230EB96C00025B08 /* NextLaunchesViewController.swift */,
 				4C776D16230EB9ED00025B08 /* NextLaunchesViewModel.swift */,
+				4CD370762312CAE400187903 /* Cell */,
 			);
-			path = ListLaunchesViewController;
+			path = NextLaunchesViewController;
 			sourceTree = "<group>";
 		};
 		4C776D1E230EC1FC00025B08 /* Service */ = {
@@ -160,6 +171,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4CBECD07231306770051BFBF /* NextLaunchCell */ = {
+			isa = PBXGroup;
+			children = (
+				4CD370722312BD4A00187903 /* NextLaunchCell.xib */,
+				4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */,
+			);
+			path = NextLaunchCell;
+			sourceTree = "<group>";
+		};
+		4CBECD08231306880051BFBF /* LoadingLaunchCell */ = {
+			isa = PBXGroup;
+			children = (
+				4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */,
+				4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */,
+			);
+			path = LoadingLaunchCell;
+			sourceTree = "<group>";
+		};
 		4CD370662312655F00187903 /* TodayLaunchesViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +220,7 @@
 				4CD3706C2312854300187903 /* Protocol */,
 				4C776D22230EC60600025B08 /* NextLaunchAPI.swift */,
 				4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */,
+				4CD370742312C06B00187903 /* CountryCodes.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -210,6 +240,15 @@
 				4C776D27230EC9F800025B08 /* Launch.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		4CD370762312CAE400187903 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4CBECD07231306770051BFBF /* NextLaunchCell */,
+				4CBECD08231306880051BFBF /* LoadingLaunchCell */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6B35D3C21A705BFDCD084860 /* Pods */ = {
@@ -291,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C776D00230EB96D00025B08 /* LaunchScreen.storyboard in Resources */,
+				4CD370732312BD4A00187903 /* NextLaunchCell.xib in Resources */,
 				4C776CFD230EB96D00025B08 /* Assets.xcassets in Resources */,
+				4CBECD04231305960051BFBF /* LoadingLaunchCell.xib in Resources */,
 				4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +408,9 @@
 				4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */,
 				4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */,
 				4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */,
+				4CBECD022312CC5D0051BFBF /* NextLaunchCell.swift in Sources */,
 				4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */,
+				4CD370752312C06B00187903 /* CountryCodes.swift in Sources */,
 				4C7FAE462312652800BD136C /* TodayLaunchesViewModel.swift in Sources */,
 				4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */,
 				4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */,
@@ -376,6 +419,7 @@
 				4C776D17230EB9ED00025B08 /* NextLaunchesViewModel.swift in Sources */,
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
 				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
+				4CBECD062313066B0051BFBF /* LoadingLaunchCell.swift in Sources */,
 				4C776D2A230ECA2800025B08 /* NextLaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
 				4C776D19230EB9F800025B08 /* LaunchesViewModelProtocol.swift in Sources */,
