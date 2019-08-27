@@ -25,7 +25,10 @@ struct Launch: Decodable, Equatable {
     }
 }
 
-struct Location: Decodable {
-    let id: Int
-    let countryCode: String
+extension Launch {
+    static func makeEmptyLaunch(with date: Date) -> Launch {
+        let location = Location(id: 0, countryCode: String())
+        let dateString = DateFormatterAPI.makeiSOString(for: date)
+        return Launch(id: 0, name: String(), isostart: dateString, location: location)
+    }
 }

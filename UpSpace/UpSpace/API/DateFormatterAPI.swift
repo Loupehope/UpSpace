@@ -9,7 +9,7 @@
 import Foundation
 
 final class DateFormatterAPI: DateFormatter {
-    private var iSO8601DateWithMillisec: DateFormatter {
+    private static var iSO8601DateWithMillisec: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -17,7 +17,7 @@ final class DateFormatterAPI: DateFormatter {
     }
     
     func getDate(from string: String) -> Date? {
-        return iSO8601DateWithMillisec.date(from: string)
+        return DateFormatterAPI.iSO8601DateWithMillisec.date(from: string)
     }
     
     func convertToRequest(date: Date) -> String {
@@ -33,5 +33,9 @@ extension DateFormatterAPI {
         formatter.timeStyle = .short
         formatter.locale = .current
         return formatter.string(from: date)
+    }
+    
+    static func makeiSOString(for date: Date) -> String {
+        return DateFormatterAPI.iSO8601DateWithMillisec.string(from: date)
     }
 }

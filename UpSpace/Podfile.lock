@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
-  - Dwifft (0.9)
+  - Hero (1.4.0)
   - Reusable (4.1.0):
     - Reusable/Storyboard (= 4.1.0)
     - Reusable/View (= 4.1.0)
@@ -11,7 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Dwifft
+  - Hero
   - Reusable
   - SwiftDate
   - SwiftLint
@@ -19,18 +19,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Dwifft
+    - Hero
     - Reusable
     - SwiftDate
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Dwifft: 42912068ed2a8146077d1a1404df18625bd086e1
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
   SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
 
-PODFILE CHECKSUM: cdf0dafe0490b80160cfecf95a2fa10750969713
+PODFILE CHECKSUM: 4a6aa703a049f85b4780311a8e2a95648967458e
 
 COCOAPODS: 1.7.5

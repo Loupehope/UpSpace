@@ -19,9 +19,9 @@ final class NextLaunchAPI: LaunchLibraryAPI {
     }
     override var params: [String: String] {
         guard loadAll else {
-            return ["startdate": previousDate, "enddate": nextDate, "limit": "100"]
+            return ["startdate": previousDate, "enddate": nextDate, "limit": "200"]
         }
-        return ["startdate": previousDate, "limit": "100"]
+        return ["startdate": previousDate, "limit": "200"]
     }
     
     init(startDate: Date = Date() + 1.days) {

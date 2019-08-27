@@ -9,14 +9,14 @@
 import Reusable
 import UIKit
 
-final class NextLaunchesViewController: UIViewController {
+final class LaunchesViewController: UIViewController {
     private var isLaunchesLoaded = false
     private var isScrolled = false // Check is method "scrollViewDidScroll" called
     private var isInitialLoading = true
     private var isAllLaunches = false // Check is all launches download from the server
     private var newIndexPaths: [IndexPath]?
     private var timerUpdating: Timer?
-    private var viewModel: LaunchesViewModelProtocol = NextLaunchesViewModel()
+    var viewModel: LaunchesViewModelProtocol?
     private var launches = [Launch]() {
         didSet {
             newIndexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
@@ -33,7 +33,7 @@ final class NextLaunchesViewController: UIViewController {
         tableView.register(cellType: NextLaunchCell.self)
         tableView.register(cellType: LoadingLaunchCell.self)
         tableView.tableFooterView = UIView()
-        viewModel.onLaunchesChanged = { [weak self] list in
+        viewModel?.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
             guard let list = list else {
                 self.isAllLaunches = true
@@ -44,13 +44,13 @@ final class NextLaunchesViewController: UIViewController {
             }
             self.launches += list.launches
         }
-        viewModel.loadMore()
+        viewModel?.loadMore()
     }
 }
 
 // MARK: Private
 
-private extension NextLaunchesViewController {
+private extension LaunchesViewController {
     private func reloadTableView(for indexPaths: [IndexPath]?) {
         guard let indexPaths = newIndexPaths else { return }
         let position = self.tableView.contentOffset.y
@@ -76,7 +76,7 @@ private extension NextLaunchesViewController {
 
 // MARK: UITableViewDataSource
 
-extension NextLaunchesViewController: UITableViewDataSource {
+extension LaunchesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return launches.count + 1
     }
@@ -96,14 +96,14 @@ extension NextLaunchesViewController: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 
-extension NextLaunchesViewController: UITableViewDelegate {
+extension LaunchesViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
         if offsetY > contentHeight - scrollView.frame.size.height - 78 && !isScrolled && !isInitialLoading {
             isScrolled = true
-            viewModel.loadMore()
+            viewModel?.loadMore()
         }
     }
     
@@ -116,7 +116,14 @@ extension NextLaunchesViewController: UITableViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard !isInitialLoading && isScrolled else { return }
         guard self.timerUpdating == nil else { return }
         startTimerForUpdate()
+    }
+}
+
+extension LaunchesViewController: StoryboardSceneBased {
+    static var sceneStoryboard: UIStoryboard {
+        return UIStoryboard(name: "LaunchesViewController", bundle: nil)
     }
 }
