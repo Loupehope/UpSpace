@@ -24,6 +24,7 @@ final class LaunchesViewController: UITableViewController {
             guard isInitialLoading else { return }
             tableView.isHidden = false
             reloadTableView(for: newIndexPaths)
+            tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         }
     }
     
@@ -102,7 +103,7 @@ extension LaunchesViewController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if offsetY > contentHeight - scrollView.frame.size.height - 78 && !isScrolled && !isInitialLoading {
+        if offsetY > contentHeight - scrollView.frame.size.height && !isScrolled && !isInitialLoading {
             isScrolled = true
             viewModel?.loadMore()
         }
