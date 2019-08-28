@@ -22,9 +22,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-SM-W66">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JS-9p-9gK">
+                                        <rect key="frame" x="139" y="8" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="6JS-9p-9gK" firstAttribute="leading" secondItem="4qd-SM-W66" secondAttribute="leading" constant="139" id="7BF-Xy-zhD"/>
                                     <constraint firstAttribute="height" constant="1000" id="TmX-gK-aK5"/>
+                                    <constraint firstAttribute="trailing" secondItem="6JS-9p-9gK" secondAttribute="trailing" constant="139" id="chH-lv-RkF"/>
+                                    <constraint firstItem="6JS-9p-9gK" firstAttribute="top" secondItem="4qd-SM-W66" secondAttribute="top" constant="8" id="jcJ-d9-CWT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -46,6 +57,11 @@
                     <constraint firstItem="4qd-SM-W66" firstAttribute="width" secondItem="JLv-Xj-Qoj" secondAttribute="width" id="wmT-1o-4cC"/>
                 </constraints>
                 <viewLayoutGuide key="safeArea" id="LMU-UE-1nT"/>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="Second"/>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </view>
             <size key="freeformSize" width="320" height="1000"/>
             <point key="canvasLocation" x="251.25" y="82.394366197183103"/>

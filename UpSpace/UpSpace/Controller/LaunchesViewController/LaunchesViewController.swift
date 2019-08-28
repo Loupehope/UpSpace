@@ -9,7 +9,7 @@
 import Reusable
 import UIKit
 
-final class LaunchesViewController: UIViewController {
+final class LaunchesViewController: UITableViewController {
     private var isLaunchesLoaded = false
     private var isScrolled = false // Check is method "scrollViewDidScroll" called
     private var isInitialLoading = true
@@ -22,14 +22,15 @@ final class LaunchesViewController: UIViewController {
             newIndexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
             isLaunchesLoaded = true
             guard isInitialLoading else { return }
-            isInitialLoading = false
+            tableView.isHidden = false
             reloadTableView(for: newIndexPaths)
         }
     }
-    @IBOutlet private var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.isHidden = true
+        tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         tableView.register(cellType: NextLaunchCell.self)
         tableView.register(cellType: LoadingLaunchCell.self)
         tableView.tableFooterView = UIView()
@@ -76,12 +77,12 @@ private extension LaunchesViewController {
 
 // MARK: UITableViewDataSource
 
-extension LaunchesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension LaunchesViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return launches.count + 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row >= launches.count {
             let cell = tableView.dequeueReusableCell(for: indexPath) as LoadingLaunchCell
             cell.update(for: isAllLaunches ? .stop : .load)
@@ -96,8 +97,8 @@ extension LaunchesViewController: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 
-extension LaunchesViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+extension LaunchesViewController {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
@@ -107,15 +108,15 @@ extension LaunchesViewController: UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row >= launches.count ? 50 : 78
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row >= launches.count ? 50 : UITableView.automaticDimension
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard !isInitialLoading && isScrolled else { return }
         guard self.timerUpdating == nil else { return }
         startTimerForUpdate()

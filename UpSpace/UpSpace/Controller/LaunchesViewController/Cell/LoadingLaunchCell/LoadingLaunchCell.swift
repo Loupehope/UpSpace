@@ -14,15 +14,15 @@ final class LoadingLaunchCell: UITableViewCell {
         case load, stop
     }
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var activityIndicator: CustomActivityIndicator!
     
     func update(for mode: Mode) {
         switch mode {
         case .load:
             activityIndicator.startAnimating()
-            titleLabel.text = "Loading launches"
         default:
             titleLabel.text = "There are all available launches"
+            titleLabel.isHidden = false
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
         }

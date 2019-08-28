@@ -19,13 +19,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GHw-uo-92a">
-                        <rect key="frame" x="126" y="15" width="162" height="20"/>
+                        <rect key="frame" x="197" y="15" width="20" height="20"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eo9-Q8-Nte">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                <color key="color" red="0.93473851679999997" green="0.50502282379999996" blue="0.28620833159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading launches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-B3-Wge">
-                                <rect key="frame" x="28" y="0.0" width="134" height="20"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-B3-Wge">
+                                <rect key="frame" x="20" y="0.0" width="0.0" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,11 +34,13 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="GHw-uo-92a" firstAttribute="centerX" secondItem="32V-6d-vPI" secondAttribute="centerX" id="Epx-xq-WFS"/>
                     <constraint firstItem="GHw-uo-92a" firstAttribute="centerY" secondItem="32V-6d-vPI" secondAttribute="centerY" id="ZSn-z9-9Ci"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="activityIndicator" destination="Eo9-Q8-Nte" id="CH1-uT-F96"/>

@@ -6,42 +6,21 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import Reusable
+import Tabman
 import UIKit
 
 final class LaunchesContainerViewController: UIViewController {
     @IBOutlet private var containerView: UIView!
-    private var isNextLaunchesToggle = true
-    private var nextLaunchesViewController: LaunchesViewController = {
-        let controller = LaunchesViewController.instantiate()
-        controller.viewModel = NextLaunchesViewModel()
-        return controller
-    }()
-    private lazy var previousLaunchesViewController: LaunchesViewController = {
-        let controller = LaunchesViewController.instantiate()
-        controller.viewModel = PreviousLaunchesViewModel()
-        return controller
-    }()
+    private let launchesViewCointroller = LaunchesTabmanViewController.instantiate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        add(controller: nextLaunchesViewController, to: containerView)
-    }
-    
-    @IBAction private func changeLaunchesControllers(_ sender: UIButton) {
-        defer {
-            isNextLaunchesToggle.toggle()
-        }
-        guard let button = navigationItem.rightBarButtonItem?.customView as? UIButton else { return }
-        guard isNextLaunchesToggle else {
-            navigationItem.title = "Next Launches"
-            button.setTitle("Previous", for: .normal)
-            add(controller: self.nextLaunchesViewController, to: self.containerView)
-            return
-        }
-        navigationItem.title = "Previous Launches"
-        button.setTitle("Next", for: .normal)
-        add(controller: previousLaunchesViewController, to: containerView)
+        let navigaiton = UINavigationController(rootViewController: launchesViewCointroller)
+        navigaiton.navigationBar.topItem?.title = "Launches"
+        navigaiton.navigationBar.prefersLargeTitles = true
+        navigaiton.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigaiton.navigationBar.shadowImage = UIImage()
+        add(controller: navigaiton, to: containerView)
     }
 }
 
