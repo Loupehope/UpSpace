@@ -22,6 +22,7 @@ final class LaunchesViewController: UITableViewController {
             newIndexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
             isLaunchesLoaded = true
             guard isInitialLoading else { return }
+            isInitialLoading.toggle()
             tableView.isHidden = false
             reloadTableView(for: newIndexPaths)
             tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
@@ -103,7 +104,7 @@ extension LaunchesViewController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if offsetY > contentHeight - scrollView.frame.size.height && !isScrolled && !isInitialLoading {
+        if offsetY > contentHeight - scrollView.frame.size.height - 100 && !isScrolled && !isInitialLoading {
             isScrolled = true
             viewModel?.loadMore()
         }
