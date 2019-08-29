@@ -23,7 +23,6 @@
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eo9-Q8-Nte">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                <color key="color" red="0.93473851679999997" green="0.50502282379999996" blue="0.28620833159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-B3-Wge">
                                 <rect key="frame" x="20" y="0.0" width="0.0" height="20"/>

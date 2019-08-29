@@ -16,6 +16,7 @@ final class LaunchesViewController: UITableViewController {
     private var isAllLaunches = false // Check is all launches download from the server
     private var newIndexPaths: [IndexPath]?
     private var timerUpdating: Timer?
+    private var activityIndicatorView = UIActivityIndicatorView(style: .gray)
     var viewModel: LaunchesViewModelProtocol?
     private var launches = [Launch]() {
         didSet {
@@ -23,7 +24,7 @@ final class LaunchesViewController: UITableViewController {
             isLaunchesLoaded = true
             guard isInitialLoading else { return }
             isInitialLoading.toggle()
-            tableView.isHidden = false
+            activityIndicatorView.stopAnimating()
             reloadTableView(for: newIndexPaths)
             tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         }
@@ -31,11 +32,11 @@ final class LaunchesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.isHidden = true
+        tableView.backgroundView = activityIndicatorView
         tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         tableView.register(cellType: NextLaunchCell.self)
         tableView.register(cellType: LoadingLaunchCell.self)
-        tableView.tableFooterView = UIView()
+        //tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 1))
         viewModel?.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
             guard let list = list else {
@@ -48,6 +49,11 @@ final class LaunchesViewController: UITableViewController {
             self.launches += list.launches
         }
         viewModel?.loadMore()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        activityIndicatorView.startAnimating()
     }
 }
 
@@ -87,6 +93,10 @@ extension LaunchesViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row >= launches.count {
             let cell = tableView.dequeueReusableCell(for: indexPath) as LoadingLaunchCell
+            guard !isInitialLoading else {
+                cell.update(for: .initial)
+                return cell
+            }
             cell.update(for: isAllLaunches ? .stop : .load)
             return cell
         }

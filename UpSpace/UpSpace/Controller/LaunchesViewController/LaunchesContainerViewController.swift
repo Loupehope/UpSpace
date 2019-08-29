@@ -20,8 +20,7 @@ final class LaunchesContainerViewController: UIViewController {
         navigaiton.navigationBar.prefersLargeTitles = true
         navigaiton.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigaiton.navigationBar.shadowImage = UIImage()
-        // swiftlint:disable discouraged_object_literal
-        navigaiton.navigationBar.backgroundColor = #colorLiteral(red: 0.9708986878, green: 0.9566940665, blue: 0.9392464161, alpha: 1)
+        navigaiton.navigationBar.backgroundColor = .white
         add(controller: navigaiton, to: containerView)
     }
 }

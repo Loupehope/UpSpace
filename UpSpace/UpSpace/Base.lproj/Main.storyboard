@@ -18,8 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99206763505935669" green="0.98442679643630981" blue="0.97647064924240112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.93473851680755615" green="0.50502282381057739" blue="0.28620833158493042" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" red="0.93473851679999997" green="0.50502282379999996" blue="0.28620833159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="BlU-2f-5HE" kind="relationship" relationship="viewControllers" id="IAq-4B-1OA"/>
@@ -52,7 +50,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wY-ZQ-hSu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="zFW-L9-Edc"/>
+                    <tabBarItem key="tabBarItem" title="Launches" id="zFW-L9-Edc"/>
                     <navigationItem key="navigationItem" title="Next Launches" largeTitleDisplayMode="never" id="tEj-NE-bta">
                         <barButtonItem key="rightBarButtonItem" id="Q60-lu-vmY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Op-Je-j6g">
@@ -68,9 +66,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BU0-cn-GUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="296"/>
+            <point key="canvasLocation" x="470" y="60"/>
         </scene>
-        <!--Today Launches-->
+        <!--Today-->
         <scene sceneID="hVD-Jl-894">
             <objects>
                 <viewController id="5si-Ob-8KC" customClass="TodayLaunchesViewController" customModule="UpSpace" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,7 +120,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RaF-5H-XIU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Today Launches" id="0Hf-mg-5Nm"/>
+                    <navigationItem key="navigationItem" title="Today" id="0Hf-mg-5Nm"/>
                     <connections>
                         <outlet property="tableView" destination="8jl-DY-Pv7" id="ITa-GW-wi3"/>
                     </connections>

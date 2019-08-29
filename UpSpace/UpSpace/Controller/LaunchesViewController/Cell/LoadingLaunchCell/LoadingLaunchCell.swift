@@ -11,13 +11,15 @@ import UIKit
 
 final class LoadingLaunchCell: UITableViewCell {
     enum Mode {
-        case load, stop
+        case load, stop, initial
     }
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var activityIndicator: CustomActivityIndicator!
     
     func update(for mode: Mode) {
         switch mode {
+        case .initial:
+            isHidden = true
         case .load:
             activityIndicator.startAnimating()
         default:
