@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */; };
-		4C0BB75D231408AC005B16C4 /* InfoLaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BB75C231408AC005B16C4 /* InfoLaunchView.xib */; };
 		4C0BB75F23142A3B005B16C4 /* LaunchesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB75E23142A3B005B16C4 /* LaunchesContainerViewController.swift */; };
 		4C0BB76123142E6B005B16C4 /* LaunchesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BB76023142E6B005B16C4 /* LaunchesViewController.storyboard */; };
 		4C0BB765231545A0005B16C4 /* PreviousLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */; };
@@ -16,7 +15,15 @@
 		4C0BB76923154CF3005B16C4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB76823154CF3005B16C4 /* Location.swift */; };
 		4C0C195E2317163C005D4C5F /* LaunchesTabmanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C195D2317163C005D4C5F /* LaunchesTabmanViewController.storyboard */; };
 		4C0C196023171675005D4C5F /* LaunchesTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C195F23171675005D4C5F /* LaunchesTabmanViewController.swift */; };
-		4C524DF32317294D00DC40AB /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C524DF22317294D00DC40AB /* CustomActivityIndicator.swift */; };
+		4C3BFBCE231A735200318C87 /* InfoLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3BFBCD231A735200318C87 /* InfoLaunchViewController.storyboard */; };
+		4C6A393B231FC999007B043D /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A393A231FC999007B043D /* LaunchesViewModel.swift */; };
+		4C6C1F97231BE00B00C7120F /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C1F96231BE00B00C7120F /* Mission.swift */; };
+		4C6C1F99231BE04500C7120F /* Lsp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C1F98231BE04500C7120F /* Lsp.swift */; };
+		4C6C1F9B231D18DB00C7120F /* MainLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C1F9A231D18DB00C7120F /* MainLaunchCell.xib */; };
+		4C6C1F9D231D18E700C7120F /* AdditionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C1F9C231D18E700C7120F /* AdditionalCell.xib */; };
+		4C6C1F9F231D193200C7120F /* HeaderAdditionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C1F9E231D193200C7120F /* HeaderAdditionalCell.xib */; };
+		4C6C1FA3231D1B0200C7120F /* HeaderAdditionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C1FA2231D1B0200C7120F /* HeaderAdditionalCell.swift */; };
+		4C6C1FA7231D280000C7120F /* MainLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C1FA6231D280000C7120F /* MainLaunchCell.swift */; };
 		4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF5230EB96C00025B08 /* AppDelegate.swift */; };
 		4C776CF8230EB96C00025B08 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776CF7230EB96C00025B08 /* LaunchesViewController.swift */; };
 		4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C776CF9230EB96C00025B08 /* Main.storyboard */; };
@@ -27,9 +34,9 @@
 		4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D1C230EC1F500025B08 /* NetworkService.swift */; };
 		4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */; };
 		4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D22230EC60600025B08 /* NextLaunchAPI.swift */; };
-		4C776D25230EC8CA00025B08 /* FutureLaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */; };
+		4C776D25230EC8CA00025B08 /* LaunchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D24230EC8CA00025B08 /* LaunchList.swift */; };
 		4C776D28230EC9F800025B08 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D27230EC9F800025B08 /* Launch.swift */; };
-		4C776D2A230ECA2800025B08 /* NextLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* NextLaunchesService.swift */; };
+		4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* LaunchesService.swift */; };
 		4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */; };
 		4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2E230F061500025B08 /* DateFormatterAPI.swift */; };
 		4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */; };
@@ -39,7 +46,6 @@
 		4CBECD04231305960051BFBF /* LoadingLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */; };
 		4CBECD062313066B0051BFBF /* LoadingLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */; };
 		4CC812C52316624C009208A7 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC812C42316624C009208A7 /* Pad.swift */; };
-		4CC812C7231662DF009208A7 /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC812C6231662DF009208A7 /* FullLaunch.swift */; };
 		4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37067231280F100187903 /* TodayLaunchesService.swift */; };
 		4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370692312815E00187903 /* LaunchListProtocol.swift */; };
 		4CD370732312BD4A00187903 /* NextLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD370722312BD4A00187903 /* NextLaunchCell.xib */; };
@@ -49,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewController.swift; sourceTree = "<group>"; };
-		4C0BB75C231408AC005B16C4 /* InfoLaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoLaunchView.xib; sourceTree = "<group>"; };
 		4C0BB75E23142A3B005B16C4 /* LaunchesContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesContainerViewController.swift; sourceTree = "<group>"; };
 		4C0BB76023142E6B005B16C4 /* LaunchesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchesViewController.storyboard; sourceTree = "<group>"; };
 		4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchAPI.swift; sourceTree = "<group>"; };
@@ -57,7 +62,15 @@
 		4C0BB76823154CF3005B16C4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4C0C195D2317163C005D4C5F /* LaunchesTabmanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchesTabmanViewController.storyboard; sourceTree = "<group>"; };
 		4C0C195F23171675005D4C5F /* LaunchesTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTabmanViewController.swift; sourceTree = "<group>"; };
-		4C524DF22317294D00DC40AB /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		4C3BFBCD231A735200318C87 /* InfoLaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoLaunchViewController.storyboard; sourceTree = "<group>"; };
+		4C6A393A231FC999007B043D /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
+		4C6C1F96231BE00B00C7120F /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		4C6C1F98231BE04500C7120F /* Lsp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lsp.swift; sourceTree = "<group>"; };
+		4C6C1F9A231D18DB00C7120F /* MainLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainLaunchCell.xib; sourceTree = "<group>"; };
+		4C6C1F9C231D18E700C7120F /* AdditionalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalCell.xib; sourceTree = "<group>"; };
+		4C6C1F9E231D193200C7120F /* HeaderAdditionalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderAdditionalCell.xib; sourceTree = "<group>"; };
+		4C6C1FA2231D1B0200C7120F /* HeaderAdditionalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAdditionalCell.swift; sourceTree = "<group>"; };
+		4C6C1FA6231D280000C7120F /* MainLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLaunchCell.swift; sourceTree = "<group>"; };
 		4C776CF2230EB96C00025B08 /* UpSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C776CF5230EB96C00025B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C776CF7230EB96C00025B08 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
@@ -70,9 +83,9 @@
 		4C776D1C230EC1F500025B08 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4C776D1F230EC4A400025B08 /* LaunchLibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibraryAPI.swift; sourceTree = "<group>"; };
 		4C776D22230EC60600025B08 /* NextLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchAPI.swift; sourceTree = "<group>"; };
-		4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureLaunchList.swift; sourceTree = "<group>"; };
+		4C776D24230EC8CA00025B08 /* LaunchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchList.swift; sourceTree = "<group>"; };
 		4C776D27230EC9F800025B08 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		4C776D29230ECA2800025B08 /* NextLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesService.swift; sourceTree = "<group>"; };
+		4C776D29230ECA2800025B08 /* LaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesService.swift; sourceTree = "<group>"; };
 		4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+GenerateFromComponents.swift"; sourceTree = "<group>"; };
 		4C776D2E230F061500025B08 /* DateFormatterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterAPI.swift; sourceTree = "<group>"; };
 		4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +95,6 @@
 		4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingLaunchCell.xib; sourceTree = "<group>"; };
 		4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLaunchCell.swift; sourceTree = "<group>"; };
 		4CC812C42316624C009208A7 /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
-		4CC812C6231662DF009208A7 /* FullLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunch.swift; sourceTree = "<group>"; };
 		4CD37067231280F100187903 /* TodayLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesService.swift; sourceTree = "<group>"; };
 		4CD370692312815E00187903 /* LaunchListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListProtocol.swift; sourceTree = "<group>"; };
 		4CD370722312BD4A00187903 /* NextLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextLaunchCell.xib; sourceTree = "<group>"; };
@@ -108,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */,
-				4C0BB75C231408AC005B16C4 /* InfoLaunchView.xib */,
+				4C3BFBCD231A735200318C87 /* InfoLaunchViewController.storyboard */,
+				4C6C1FA1231D1AEB00C7120F /* Cell */,
 			);
 			path = InfoLaunchViewController;
 			sourceTree = "<group>";
@@ -118,8 +131,29 @@
 			children = (
 				4C776D16230EB9ED00025B08 /* NextLaunchesViewModel.swift */,
 				4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */,
+				4C6A393A231FC999007B043D /* LaunchesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4C6C1FA0231D1AE200C7120F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				4C6C1F9E231D193200C7120F /* HeaderAdditionalCell.xib */,
+				4C6C1FA2231D1B0200C7120F /* HeaderAdditionalCell.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		4C6C1FA1231D1AEB00C7120F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C6C1FA0231D1AE200C7120F /* Header */,
+				4C6C1F9A231D18DB00C7120F /* MainLaunchCell.xib */,
+				4C6C1FA6231D280000C7120F /* MainLaunchCell.swift */,
+				4C6C1F9C231D18E700C7120F /* AdditionalCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4C776CE9230EB96C00025B08 = {
@@ -144,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				4C776CF5230EB96C00025B08 /* AppDelegate.swift */,
-				4C524DF22317294D00DC40AB /* CustomActivityIndicator.swift */,
 				4C776D2D230ECF0F00025B08 /* Extension */,
 				4C776D26230EC8CD00025B08 /* Model */,
 				4C776D21230EC4AE00025B08 /* API */,
@@ -188,7 +221,7 @@
 			children = (
 				4C776D1C230EC1F500025B08 /* NetworkService.swift */,
 				4CD37067231280F100187903 /* TodayLaunchesService.swift */,
-				4C776D29230ECA2800025B08 /* NextLaunchesService.swift */,
+				4C776D29230ECA2800025B08 /* LaunchesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -285,9 +318,10 @@
 		4CD3706F2312858F00187903 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				4C776D24230EC8CA00025B08 /* FutureLaunchList.swift */,
+				4C776D24230EC8CA00025B08 /* LaunchList.swift */,
 				4C776D27230EC9F800025B08 /* Launch.swift */,
-				4CC812C6231662DF009208A7 /* FullLaunch.swift */,
+				4C6C1F96231BE00B00C7120F /* Mission.swift */,
+				4C6C1F98231BE04500C7120F /* Lsp.swift */,
 				4C0BB76823154CF3005B16C4 /* Location.swift */,
 				4CC812C42316624C009208A7 /* Pad.swift */,
 			);
@@ -381,14 +415,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3BFBCE231A735200318C87 /* InfoLaunchViewController.storyboard in Resources */,
+				4C6C1F9F231D193200C7120F /* HeaderAdditionalCell.xib in Resources */,
 				4C0C195E2317163C005D4C5F /* LaunchesTabmanViewController.storyboard in Resources */,
+				4C6C1F9B231D18DB00C7120F /* MainLaunchCell.xib in Resources */,
 				4C776D00230EB96D00025B08 /* LaunchScreen.storyboard in Resources */,
+				4C6C1F9D231D18E700C7120F /* AdditionalCell.xib in Resources */,
 				4CD370732312BD4A00187903 /* NextLaunchCell.xib in Resources */,
 				4C776CFD230EB96D00025B08 /* Assets.xcassets in Resources */,
 				4CBECD04231305960051BFBF /* LoadingLaunchCell.xib in Resources */,
 				4C776CFB230EB96C00025B08 /* Main.storyboard in Resources */,
 				4C0BB76123142E6B005B16C4 /* LaunchesViewController.storyboard in Resources */,
-				4C0BB75D231408AC005B16C4 /* InfoLaunchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,22 +505,25 @@
 				4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */,
 				4CC812C52316624C009208A7 /* Pad.swift in Sources */,
 				4C0BB76923154CF3005B16C4 /* Location.swift in Sources */,
+				4C6C1FA3231D1B0200C7120F /* HeaderAdditionalCell.swift in Sources */,
 				4CBECD022312CC5D0051BFBF /* NextLaunchCell.swift in Sources */,
 				4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */,
 				4CD370752312C06B00187903 /* CountryCodes.swift in Sources */,
 				4C7FAE462312652800BD136C /* TodayLaunchesViewModel.swift in Sources */,
+				4C6C1FA7231D280000C7120F /* MainLaunchCell.swift in Sources */,
 				4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */,
-				4C524DF32317294D00DC40AB /* CustomActivityIndicator.swift in Sources */,
 				4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */,
-				4C776D25230EC8CA00025B08 /* FutureLaunchList.swift in Sources */,
-				4CC812C7231662DF009208A7 /* FullLaunch.swift in Sources */,
+				4C6A393B231FC999007B043D /* LaunchesViewModel.swift in Sources */,
+				4C776D25230EC8CA00025B08 /* LaunchList.swift in Sources */,
+				4C6C1F97231BE00B00C7120F /* Mission.swift in Sources */,
 				4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */,
 				4C776CF8230EB96C00025B08 /* LaunchesViewController.swift in Sources */,
 				4C776D17230EB9ED00025B08 /* NextLaunchesViewModel.swift in Sources */,
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
 				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
 				4CBECD062313066B0051BFBF /* LoadingLaunchCell.swift in Sources */,
-				4C776D2A230ECA2800025B08 /* NextLaunchesService.swift in Sources */,
+				4C6C1F99231BE04500C7120F /* Lsp.swift in Sources */,
+				4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
 				4C776D19230EB9F800025B08 /* LaunchesViewModelProtocol.swift in Sources */,
 				4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */,

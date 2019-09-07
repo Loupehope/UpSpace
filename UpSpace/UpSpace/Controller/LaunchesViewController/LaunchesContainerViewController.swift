@@ -18,9 +18,6 @@ final class LaunchesContainerViewController: UIViewController {
         let navigaiton = UINavigationController(rootViewController: launchesViewCointroller)
         navigaiton.navigationBar.topItem?.title = "Launches"
         navigaiton.navigationBar.prefersLargeTitles = true
-        navigaiton.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigaiton.navigationBar.shadowImage = UIImage()
-        navigaiton.navigationBar.backgroundColor = .white
         add(controller: navigaiton, to: containerView)
     }
 }

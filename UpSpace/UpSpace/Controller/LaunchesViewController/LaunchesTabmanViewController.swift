@@ -14,25 +14,25 @@ import UIKit
 class LaunchesTabmanViewController: TabmanViewController {
     private var nextLaunchesViewController: LaunchesViewController = {
         let controller = LaunchesViewController.instantiate()
-        controller.viewModel = NextLaunchesViewModel()
+        controller.viewModel = NextLaunchesViewModel(api: NextLaunchAPI(), mode: .next)
         return controller
     }()
     private var previousLaunchesViewController: LaunchesViewController = {
         let controller = LaunchesViewController.instantiate()
-        controller.viewModel = PreviousLaunchesViewModel()
+        controller.viewModel = PreviousLaunchesViewModel(api: PreviousLaunchAPI(), mode: .previous)
         return controller
     }()
     private var topBar: TMBar = {
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap
         bar.layout.contentMode = .fit
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+        bar.backgroundView.style = .blur(style: .light)
         bar.buttons.customize { button in
-            button.font = UIFont.systemFont(ofSize: 17)
-            button.selectedTintColor = .black
             button.tintColor = .lightGray
+            button.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         }
-        bar.indicator.tintColor = .clear
+        bar.indicator.cornerStyle = .rounded
+        bar.indicator.weight = .light
         return bar
     }()
     private var controllers = [LaunchesViewController]()
@@ -40,6 +40,9 @@ class LaunchesTabmanViewController: TabmanViewController {
     override func viewDidLoad() {
         automaticallyAdjustsChildInsets = false
         super.viewDidLoad()
+        edgesForExtendedLayout = []
+        nextLaunchesViewController.navController = navigationController
+        previousLaunchesViewController.navController = navigationController
         controllers.append(nextLaunchesViewController)
         controllers.append(previousLaunchesViewController)
         dataSource = self

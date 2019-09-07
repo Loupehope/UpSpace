@@ -11,8 +11,8 @@ import Foundation
 struct Pad: Decodable {
     let id: Int
     let name: String
-    let infoURLs: [String]
-    let wikiURL: String
+    let infoURLs: [String]?
+    let wikiURL: String?
     let latitude: Double
     let longitude: Double
 }

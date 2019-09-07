@@ -14,14 +14,16 @@
         <scene sceneID="dAy-nR-KTP">
             <objects>
                 <tabBarController id="nGD-Hd-wu0" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7hT-t8-ICZ">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="7hT-t8-ICZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99206763505935669" green="0.98442679643630981" blue="0.97647064924240112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BlU-2f-5HE" kind="relationship" relationship="viewControllers" id="IAq-4B-1OA"/>
                         <segue destination="L8R-WF-iCY" kind="relationship" relationship="viewControllers" id="KZX-Hu-T9O"/>
+                        <segue destination="uYq-Gj-nAE" kind="relationship" relationship="viewControllers" id="LwE-Jn-Xxq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaZ-rM-mZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,21 +38,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijL-JG-Pag">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRY-c4-kXc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <connections>
+                                    <segue destination="vyu-Y4-BC1" kind="embed" id="4rG-vQ-TWT"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ijL-JG-Pag" firstAttribute="top" secondItem="7wY-ZQ-hSu" secondAttribute="top" id="GGU-Ah-2Im"/>
-                            <constraint firstItem="7wY-ZQ-hSu" firstAttribute="trailing" secondItem="ijL-JG-Pag" secondAttribute="trailing" id="bkh-DE-rGS"/>
-                            <constraint firstItem="ijL-JG-Pag" firstAttribute="leading" secondItem="7wY-ZQ-hSu" secondAttribute="leading" id="m3q-3Z-dYi"/>
-                            <constraint firstItem="7wY-ZQ-hSu" firstAttribute="bottom" secondItem="ijL-JG-Pag" secondAttribute="bottom" id="wwN-MX-V8a"/>
+                            <constraint firstItem="oRY-c4-kXc" firstAttribute="top" secondItem="7wY-ZQ-hSu" secondAttribute="top" id="TOS-N0-uwW"/>
+                            <constraint firstItem="7wY-ZQ-hSu" firstAttribute="bottom" secondItem="oRY-c4-kXc" secondAttribute="bottom" id="jli-tn-VsB"/>
+                            <constraint firstItem="7wY-ZQ-hSu" firstAttribute="trailing" secondItem="oRY-c4-kXc" secondAttribute="trailing" id="lsv-sb-z55"/>
+                            <constraint firstItem="oRY-c4-kXc" firstAttribute="leading" secondItem="7wY-ZQ-hSu" secondAttribute="leading" id="rY6-fc-TlT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wY-ZQ-hSu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Launches" id="zFW-L9-Edc"/>
+                    <tabBarItem key="tabBarItem" title="Launches" image="launches" selectedImage="launches" id="zFW-L9-Edc">
+                        <color key="badgeColor" red="0.97648364310000002" green="0.97644716499999995" blue="0.97647196049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Next Launches" largeTitleDisplayMode="never" id="tEj-NE-bta">
                         <barButtonItem key="rightBarButtonItem" id="Q60-lu-vmY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Op-Je-j6g">
@@ -61,14 +67,32 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="containerView" destination="ijL-JG-Pag" id="JS0-iU-lSk"/>
+                        <outlet property="containerView" destination="oRY-c4-kXc" id="YD0-dX-h48"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BU0-cn-GUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="470" y="60"/>
         </scene>
-        <!--Today-->
+        <!--Favourite-->
+        <scene sceneID="12h-NM-g9t">
+            <objects>
+                <viewController id="uYq-Gj-nAE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cAD-zU-mHM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="obm-D7-hHH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favourite" image="favourite" selectedImage="favourite" id="CZY-Ak-Xk2">
+                        <color key="badgeColor" red="0.9881460071" green="0.9805052876" blue="0.97254914049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFx-dt-5pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-609" y="870"/>
+        </scene>
+        <!--Next-->
         <scene sceneID="hVD-Jl-894">
             <objects>
                 <viewController id="5si-Ob-8KC" customClass="TodayLaunchesViewController" customModule="UpSpace" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +144,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RaF-5H-XIU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Today" id="0Hf-mg-5Nm"/>
+                    <navigationItem key="navigationItem" title="Next" id="0Hf-mg-5Nm"/>
                     <connections>
                         <outlet property="tableView" destination="8jl-DY-Pv7" id="ITa-GW-wi3"/>
                     </connections>
@@ -129,11 +153,13 @@
             </objects>
             <point key="canvasLocation" x="1412" y="-602"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Next-->
         <scene sceneID="uOK-2u-46H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BlU-2f-5HE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="JkD-Bf-D2F"/>
+                    <tabBarItem key="tabBarItem" title="Next" image="next launch" selectedImage="next launch" id="JkD-Bf-D2F">
+                        <color key="badgeColor" red="0.9881460071" green="0.9805052876" blue="0.97254914049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Dnp-QA-RVI">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -149,5 +175,24 @@
             </objects>
             <point key="canvasLocation" x="471" y="-602"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ze1-P4-EFe">
+            <objects>
+                <viewController id="vyu-Y4-BC1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UNX-UW-uO2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wE-1b-CLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="869"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="favourite" width="27" height="25"/>
+        <image name="launches" width="25" height="25"/>
+        <image name="next launch" width="20" height="26"/>
+    </resources>
 </document>

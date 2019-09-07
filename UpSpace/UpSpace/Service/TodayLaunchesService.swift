@@ -27,7 +27,7 @@ final class TodayLaunchesService: NetworkService {
         Alamofire.request(launchURL).responseData {
             switch $0.result {
             case let .success(data):
-                guard let result = try? JSONDecoder().decode(FutureLaunchList.self, from: data) else {
+                guard let result = try? JSONDecoder().decode(LaunchList.self, from: data) else {
                     fatalError("Couldn't decode JSON response")
                 }
                 DispatchQueue.main.async {

@@ -26,8 +26,13 @@ final class NextLaunchAPI: LaunchLibraryAPI {
     
     init(startDate: Date = Date() + 1.days) {
         super.init()
+        reload(startDate: startDate)
+    }
+    
+    override func reload(startDate: Date) {
         self.previousDate = dateFormatter.convertToRequest(date: startDate)
         self.nextDate = dateFormatter.convertToRequest(date: Date() + 7.months)
+        loadAll = false
     }
     
     override func set(dateString: String) {

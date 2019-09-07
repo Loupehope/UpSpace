@@ -9,43 +9,33 @@
 import Foundation
 
 struct Launch: Decodable, Equatable {
-    static func == (lhs: Launch, rhs: Launch) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
     let id: Int
     let name: String
     let isostart: String
+    let status: Int
     let location: Location
+    let missions: [Mission]
+    let vidURLs: [String]
+    let infoURLs: [String]
     var start: Date {
         guard let result = DateFormatterAPI().getDate(from: isostart) else {
             fatalError("Couldn't convert date from string")
         }
         return result
     }
+    
     static func makeEmptyLaunch(with date: Date) -> Launch {
-        let location = Location(id: 0, countryCode: "")
+        let location = Location(id: 0, countryCode: "", pads: [])
         let dateString = DateFormatterAPI.makeiSOString(for: date)
-        return Launch(id: 0, name: String(), isostart: dateString, location: location)
+        return Launch(id: 0, name: "", isostart: dateString, status: 0, location: location, missions: [], vidURLs: [], infoURLs: [])
+    }
+    
+    static func == (lhs: Launch, rhs: Launch) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 /*
-// MARK: - Mission
-struct Mission: Decodable {
-    let id: Int
-    let name, missionDescription: String
-    let type: Int
-    let wikiURL: String
-    let typeName: String
-    let agencies: [Lsp]
-    let payloads: [JSONAny]
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case missionDescription = "description"
-        case type, wikiURL, typeName, agencies, payloads
-    }
-}
+
 
 struct Rocket: Decodable {
     let id: Int
@@ -58,21 +48,11 @@ struct Rocket: Decodable {
 }
 
 // MARK: - Lsp
-struct Lsp: Decodable {
-    let id: Int
-    let name, abbrev, countryCode: String
-    let type: Int
-    let infoURL: JSONNull?
-    let wikiURL: String
-    let changed: String
-    let infoURLs: [String]
-}
+
 
 // MARK: - Launch
 final class FullLaunch: Launch {
-    let status: Int
-    let vidURLs: [String]
-    let infoURLs: [String]
+ 
     let holdreason: String?
     let failreason: String?
     let rocket: Rocket

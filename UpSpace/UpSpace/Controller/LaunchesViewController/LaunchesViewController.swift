@@ -14,9 +14,15 @@ final class LaunchesViewController: UITableViewController {
     private var isScrolled = false // Check is method "scrollViewDidScroll" called
     private var isInitialLoading = true
     private var isAllLaunches = false // Check is all launches download from the server
+    private let refreshController: UIRefreshControl = {
+        let controller = UIRefreshControl()
+        controller.addTarget(self, action: #selector(refreshLaunchesData(_:)), for: .valueChanged)
+        return controller
+    }()
     private var newIndexPaths: [IndexPath]?
     private var timerUpdating: Timer?
     private var activityIndicatorView = UIActivityIndicatorView(style: .gray)
+    var navController: UINavigationController?
     var viewModel: LaunchesViewModelProtocol?
     private var launches = [Launch]() {
         didSet {
@@ -30,15 +36,25 @@ final class LaunchesViewController: UITableViewController {
         }
     }
     
+    @objc func refreshLaunchesData(_ sender: Any) {
+        launches = []
+        isInitialLoading = true
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        viewModel?.update()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = activityIndicatorView
+        tableView.refreshControl = refreshController
         tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         tableView.register(cellType: NextLaunchCell.self)
-        tableView.register(cellType: LoadingLaunchCell.self)
-        //tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 1))
+        tableView.register(headerFooterViewType: LoadingLaunchCell.self)
         viewModel?.onLaunchesChanged = { [weak self] list in
             guard let self = self else { return }
+            self.refreshController.endRefreshing()
             guard let list = list else {
                 self.isAllLaunches = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -87,22 +103,27 @@ private extension LaunchesViewController {
 
 extension LaunchesViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launches.count + 1
+        return launches.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = tableView.dequeueReusableHeaderFooterView(LoadingLaunchCell.self)
+        guard !isInitialLoading else {
+            footer?.mode = .initial
+            return footer
+        }
+        footer?.mode = isAllLaunches ? .stop : .load
+        return footer
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row >= launches.count {
-            let cell = tableView.dequeueReusableCell(for: indexPath) as LoadingLaunchCell
-            guard !isInitialLoading else {
-                cell.update(for: .initial)
-                return cell
-            }
-            cell.update(for: isAllLaunches ? .stop : .load)
-            return cell
-        }
         let cell = tableView.dequeueReusableCell(for: indexPath) as NextLaunchCell
         let launch = launches[indexPath.row]
-        cell.set(launch: launch)
+        cell.launch = launch
         return cell
     }
 }
@@ -118,6 +139,13 @@ extension LaunchesViewController {
             isScrolled = true
             viewModel?.loadMore()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < launches.count else { return }
+        let controller = InfoLaunchViewController.instantiate()
+        controller.launch = launches[indexPath.row]
+        navController?.pushViewController(controller, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

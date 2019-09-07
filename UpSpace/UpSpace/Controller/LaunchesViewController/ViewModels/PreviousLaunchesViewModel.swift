@@ -9,42 +9,13 @@
 import Foundation
 import SwiftDate
 
-final class PreviousLaunchesViewModel: LaunchesViewModelProtocol {
-    private let launchAPI = PreviousLaunchAPI()
-    private let service: NextLaunchesService
-    private var previousLaunch: Launch?
-    private var oldList: LaunchListProtocol = FutureLaunchList(launches: [])
-    var onLaunchesChanged: ((LaunchListProtocol?) -> Void)?
-    
-    init() {
-        service = NextLaunchesService(launchAPI: launchAPI)
-    }
-    
-    func loadMore() {
-        service.load { [weak self] list in
-            guard let self = self else { return }
-            guard let list = list else { return }
-            guard self.oldList.launches != list.launches else {
-                self.onLaunchesChanged?(nil)
-                return
-            }
-            self.oldList = self.sort(launches: list)
-            if let launch = self.oldList.launches.last {
-                self.previousLaunch = launch
-                self.launchAPI.set(dateString: launch.isostart)
-            }
-            self.onLaunchesChanged?(self.oldList)
-        }
-    }
-}
-
-private extension PreviousLaunchesViewModel {
-    private func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
-        let launch = previousLaunch != nil ? previousLaunch : Launch.makeEmptyLaunch(with: Date() - 1.days)
+final class PreviousLaunchesViewModel: LaunchesViewModel {
+    override func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
+        let launch = previousLaunch != nil ? previousLaunch : Launch.makeEmptyLaunch(with: Date())
         let nextLaunches = launches.launches.filter { $0.start.timeIntervalSince1970 <= launch?.start.timeIntervalSince1970 ?? 0 }
         let sorted = nextLaunches.sorted { first, second in
             first.start > second.start
         }
-        return FutureLaunchList(launches: sorted)
+        return LaunchList(launches: sorted)
     }
 }

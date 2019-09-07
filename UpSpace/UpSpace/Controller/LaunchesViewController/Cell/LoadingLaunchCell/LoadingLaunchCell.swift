@@ -9,27 +9,35 @@
 import Reusable
 import UIKit
 
-final class LoadingLaunchCell: UITableViewCell {
+final class LoadingLaunchCell: UITableViewHeaderFooterView {
     enum Mode {
         case load, stop, initial
     }
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var activityIndicator: CustomActivityIndicator!
-    
-    func update(for mode: Mode) {
-        switch mode {
-        case .initial:
-            isHidden = true
-        case .load:
-            activityIndicator.startAnimating()
-        default:
-            titleLabel.text = "There are all available launches"
-            titleLabel.isHidden = false
-            activityIndicator.stopAnimating()
-            activityIndicator.isHidden = true
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.hidesWhenStopped = true
+        }
+    }
+    var mode: Mode? {
+        didSet {
+            guard let mode = mode else { return }
+            switch mode {
+            case .initial:
+                isHidden = true
+            case .load:
+                activityIndicator.startAnimating()
+            default:
+                titleLabel.text = "There are all available launches"
+                titleLabel.isHidden = false
+                activityIndicator.stopAnimating()
+                activityIndicator.isHidden = true
+            }
         }
     }
 }
+
+// MARK: NibReusable
 
 extension LoadingLaunchCell: NibReusable {
     static var reuseIdentifier: String {

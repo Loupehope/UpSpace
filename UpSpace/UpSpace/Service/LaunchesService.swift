@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-final class NextLaunchesService: NetworkService {
+final class LaunchesService: NetworkService {
     private let launchAPI: LaunchLibraryAPI
     private var launchURL: URL? {
         return URL.generateURL(scheme: launchAPI.scheme,
@@ -27,7 +27,7 @@ final class NextLaunchesService: NetworkService {
         Alamofire.request(launchURL).responseData {
             switch $0.result {
             case let .success(data):
-                guard let result = try? JSONDecoder().decode(FutureLaunchList.self, from: data) else {
+                guard let result = try? JSONDecoder().decode(LaunchList.self, from: data) else {
                     fatalError("Couldn't decode JSON response")
                 }
                 DispatchQueue.main.async {

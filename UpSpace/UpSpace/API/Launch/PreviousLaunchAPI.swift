@@ -12,31 +12,36 @@ import SwiftDate
 final class PreviousLaunchAPI: LaunchLibraryAPI {
     private var nextDate = ""
     private var previousDate = ""
-    private var loadAll = false
+    private var loadAll = true
     private let dateFormatter = DateFormatterAPI()
     override var path: String {
         return "/1.4/launch/"
     }
     override var params: [String: String] {
-        return ["startdate": previousDate, "enddate": nextDate, "limit": "200"]
+        return ["startdate": previousDate, "enddate": nextDate, "limit": "300"]
     }
     
-    init(startDate: Date = Date() - 1.days) {
+    init(startDate: Date = Date()) {
         super.init()
-        self.previousDate = dateFormatter.convertToRequest(date: Date() - 7.months)
-        self.nextDate = dateFormatter.convertToRequest(date: startDate)
+        reload(startDate: startDate)
+    }
+    
+    override func reload(startDate: Date) {
+        previousDate = dateFormatter.convertToRequest(date: Date() - 7.months)
+        nextDate = dateFormatter.convertToRequest(date: startDate)
+        loadAll.toggle()
     }
     
     override func set(dateString: String) {
         guard let date = dateFormatter.getDate(from: dateString) else { return }
         defer {
-            self.nextDate = dateFormatter.convertToRequest(date: date - 1.days )
+            nextDate = dateFormatter.convertToRequest(date: date - 1.days )
         }
         loadAll = check(date: date)
         guard !loadAll else {
-            self.previousDate = dateFormatter.convertToRequest(date: date - 10.years)
+            previousDate = dateFormatter.convertToRequest(date: date - 10.years)
             return }
-        self.previousDate = dateFormatter.convertToRequest(date: date - 7.months)
+        previousDate = dateFormatter.convertToRequest(date: date - 7.months)
     }
 }
 

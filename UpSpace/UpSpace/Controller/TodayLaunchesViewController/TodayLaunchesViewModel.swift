@@ -12,6 +12,8 @@ final class TodayLaunchesViewModel: LaunchesViewModelProtocol {
     private let service = TodayLaunchesService(launchAPI: TodayLaunchAPI())
     var onLaunchesChanged: ((LaunchListProtocol?) -> Void)?
     
+    func update() {}
+    
     func loadMore() {
         service.load { [weak self] list in
             guard let self = self else { return }
