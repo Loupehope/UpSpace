@@ -5,6 +5,6 @@ target 'UpSpace' do
    pod 'Reusable'
    pod 'Alamofire'
    pod 'SwiftDate'
-   pod 'Dwifft'
+   pod 'Tabman'
 
 end

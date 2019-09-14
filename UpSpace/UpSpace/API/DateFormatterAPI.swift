@@ -9,14 +9,33 @@
 import Foundation
 
 final class DateFormatterAPI: DateFormatter {
-    func transformComing(dateString: String) -> Date? {
-        dateFormat = "MMMM dd, yyyy HH:mm:ss"
-        let strWithoutUTC = String(dateString[...dateString.index(dateString.endIndex, offsetBy: -5)])
-        return date(from: strWithoutUTC)
+    private static var iSO8601DateWithMillisec: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        return dateFormatter
     }
     
-    func convert(date: Date) -> String {
+    func getDate(from string: String) -> Date? {
+        return DateFormatterAPI.iSO8601DateWithMillisec.date(from: string)
+    }
+    
+    func convertToRequest(date: Date) -> String {
         dateFormat = "yyyy-MM-dd"
         return string(from: date)
+    }
+}
+
+extension DateFormatterAPI {
+    static func formatForCell(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.locale = .current
+        return formatter.string(from: date)
+    }
+    
+    static func makeiSOString(for date: Date) -> String {
+        return DateFormatterAPI.iSO8601DateWithMillisec.string(from: date)
     }
 }
