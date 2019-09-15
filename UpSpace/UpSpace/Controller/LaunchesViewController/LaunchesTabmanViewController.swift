@@ -26,13 +26,17 @@ class LaunchesTabmanViewController: TabmanViewController {
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap
         bar.layout.contentMode = .fit
-        bar.backgroundView.style = .blur(style: .light)
+        bar.layer.cornerRadius = 10
+        //swiftlint:disable discouraged_object_literal
+        bar.backgroundColor = #colorLiteral(red: 0.9332515597, green: 0.9333857298, blue: 0.9332222342, alpha: 1)
         bar.buttons.customize { button in
-            button.tintColor = .lightGray
+            button.tintColor = #colorLiteral(red: 0.2250607014, green: 0.2795445025, blue: 0.3133514225, alpha: 1)
+            button.selectedTintColor = #colorLiteral(red: 0.842899859, green: 0.1364972591, blue: 0.1388344765, alpha: 1)
             button.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         }
         bar.indicator.cornerStyle = .rounded
         bar.indicator.weight = .light
+        bar.indicator.tintColor = #colorLiteral(red: 0.842899859, green: 0.1364972591, blue: 0.1388344765, alpha: 1)
         return bar
     }()
     private var controllers = [LaunchesViewController]()

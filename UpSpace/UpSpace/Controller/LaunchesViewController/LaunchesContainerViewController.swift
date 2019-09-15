@@ -15,10 +15,18 @@ final class LaunchesContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navigaiton = UINavigationController(rootViewController: launchesViewCointroller)
-        navigaiton.navigationBar.topItem?.title = "Launches"
-        navigaiton.navigationBar.prefersLargeTitles = true
-        add(controller: navigaiton, to: containerView)
+        let navigation = UINavigationController(rootViewController: launchesViewCointroller)
+        navigation.navigationBar.topItem?.title = "Launches"
+        navigation.navigationBar.prefersLargeTitles = true
+        navigation.navigationBar.isTranslucent = false
+        navigation.navigationBar.tintColor = .white
+        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().tintColor = UIColor.white
+        //swiftlint:disable discouraged_object_literal
+        navigation.navigationBar.barTintColor = #colorLiteral(red: 0.2143261731, green: 0.263715446, blue: 0.2975959778, alpha: 1)
+        navigation.navigationBar.shadowImage = UIImage()
+        add(controller: navigation, to: containerView)
     }
 }
 

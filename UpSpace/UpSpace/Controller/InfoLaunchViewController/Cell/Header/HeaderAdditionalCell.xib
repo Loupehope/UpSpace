@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo8-GM-srX">
-                        <rect key="frame" x="20" y="1" width="70" height="27.5"/>
+                        <rect key="frame" x="8" y="1" width="70" height="27.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC4-XF-oqL">
                                 <rect key="frame" x="8" y="5" width="54.5" height="18"/>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.2721427381" green="0.55842465159999999" blue="0.96474891900000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.77452087400000003" green="0.21691521999999999" blue="0.18427920340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fC4-XF-oqL" firstAttribute="centerY" secondItem="Wo8-GM-srX" secondAttribute="centerY" id="CaV-SN-8Ta"/>
                             <constraint firstItem="fC4-XF-oqL" firstAttribute="centerX" secondItem="Wo8-GM-srX" secondAttribute="centerX" id="Nd2-Ov-fcQ"/>
@@ -39,7 +39,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Wo8-GM-srX" firstAttribute="top" secondItem="egO-SY-0S3" secondAttribute="top" constant="1" id="1i1-HY-fmv"/>
-                    <constraint firstItem="Wo8-GM-srX" firstAttribute="leading" secondItem="egO-SY-0S3" secondAttribute="leading" constant="20" id="R6P-ps-gOc"/>
+                    <constraint firstItem="Wo8-GM-srX" firstAttribute="leading" secondItem="egO-SY-0S3" secondAttribute="leading" constant="8" id="R6P-ps-gOc"/>
                     <constraint firstAttribute="bottom" secondItem="Wo8-GM-srX" secondAttribute="bottom" constant="1" id="gd4-Rc-gi1"/>
                 </constraints>
             </tableViewCellContentView>
