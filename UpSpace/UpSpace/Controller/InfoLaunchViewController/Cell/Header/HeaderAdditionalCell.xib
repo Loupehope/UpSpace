@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo8-GM-srX">
-                        <rect key="frame" x="8" y="1" width="70" height="27.5"/>
+                        <rect key="frame" x="16" y="1" width="70" height="27.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC4-XF-oqL">
                                 <rect key="frame" x="8" y="5" width="54.5" height="18"/>
@@ -39,7 +39,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Wo8-GM-srX" firstAttribute="top" secondItem="egO-SY-0S3" secondAttribute="top" constant="1" id="1i1-HY-fmv"/>
-                    <constraint firstItem="Wo8-GM-srX" firstAttribute="leading" secondItem="egO-SY-0S3" secondAttribute="leading" constant="8" id="R6P-ps-gOc"/>
+                    <constraint firstItem="Wo8-GM-srX" firstAttribute="leading" secondItem="egO-SY-0S3" secondAttribute="leading" constant="16" id="R6P-ps-gOc"/>
                     <constraint firstAttribute="bottom" secondItem="Wo8-GM-srX" secondAttribute="bottom" constant="1" id="gd4-Rc-gi1"/>
                 </constraints>
             </tableViewCellContentView>

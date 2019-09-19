@@ -42,6 +42,9 @@
 		4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */; };
 		4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */; };
 		4C7FAE462312652800BD136C /* TodayLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */; };
+		4CABD00B23336ADB005D2D1D /* TimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABD00A23336ADB005D2D1D /* TimeCell.xib */; };
+		4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */; };
+		4CABD00F233370EF005D2D1D /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* TimeCell.swift */; };
 		4CBECD022312CC5D0051BFBF /* NextLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */; };
 		4CBECD04231305960051BFBF /* LoadingLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */; };
 		4CBECD062313066B0051BFBF /* LoadingLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */; };
@@ -91,6 +94,9 @@
 		4C7FAE402312606D00BD136C /* TodayLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewController.swift; sourceTree = "<group>"; };
 		4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchAPI.swift; sourceTree = "<group>"; };
 		4C7FAE452312652800BD136C /* TodayLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesViewModel.swift; sourceTree = "<group>"; };
+		4CABD00A23336ADB005D2D1D /* TimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCell.xib; sourceTree = "<group>"; };
+		4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellViewModel.swift; sourceTree = "<group>"; };
+		4CABD00E233370EF005D2D1D /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 		4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchCell.swift; sourceTree = "<group>"; };
 		4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingLaunchCell.xib; sourceTree = "<group>"; };
 		4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLaunchCell.swift; sourceTree = "<group>"; };
@@ -149,9 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				4C6C1FA0231D1AE200C7120F /* Header */,
-				4C6C1F9A231D18DB00C7120F /* MainLaunchCell.xib */,
-				4C6C1FA6231D280000C7120F /* MainLaunchCell.swift */,
+				4CABD00923336AB9005D2D1D /* MainCell */,
 				4C6C1F9C231D18E700C7120F /* AdditionalCell.xib */,
+				4CABD0102333A64D005D2D1D /* TimeCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -250,6 +256,25 @@
 				4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		4CABD00923336AB9005D2D1D /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C6C1F9A231D18DB00C7120F /* MainLaunchCell.xib */,
+				4C6C1FA6231D280000C7120F /* MainLaunchCell.swift */,
+			);
+			path = MainCell;
+			sourceTree = "<group>";
+		};
+		4CABD0102333A64D005D2D1D /* TimeCell */ = {
+			isa = PBXGroup;
+			children = (
+				4CABD00A23336ADB005D2D1D /* TimeCell.xib */,
+				4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */,
+				4CABD00E233370EF005D2D1D /* TimeCell.swift */,
+			);
+			path = TimeCell;
 			sourceTree = "<group>";
 		};
 		4CBECD07231306770051BFBF /* NextLaunchCell */ = {
@@ -415,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CABD00B23336ADB005D2D1D /* TimeCell.xib in Resources */,
 				4C3BFBCE231A735200318C87 /* InfoLaunchViewController.storyboard in Resources */,
 				4C6C1F9F231D193200C7120F /* HeaderAdditionalCell.xib in Resources */,
 				4C0C195E2317163C005D4C5F /* LaunchesTabmanViewController.storyboard in Resources */,
@@ -500,11 +526,13 @@
 				4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */,
 				4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */,
 				4C0BB75F23142A3B005B16C4 /* LaunchesContainerViewController.swift in Sources */,
+				4CABD00F233370EF005D2D1D /* TimeCell.swift in Sources */,
 				4C0BB765231545A0005B16C4 /* PreviousLaunchAPI.swift in Sources */,
 				4C7FAE412312606D00BD136C /* TodayLaunchesViewController.swift in Sources */,
 				4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */,
 				4CC812C52316624C009208A7 /* Pad.swift in Sources */,
 				4C0BB76923154CF3005B16C4 /* Location.swift in Sources */,
+				4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */,
 				4C6C1FA3231D1B0200C7120F /* HeaderAdditionalCell.swift in Sources */,
 				4CBECD022312CC5D0051BFBF /* NextLaunchCell.swift in Sources */,
 				4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */,

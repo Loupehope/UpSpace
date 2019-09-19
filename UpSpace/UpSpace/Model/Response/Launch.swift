@@ -13,6 +13,9 @@ struct Launch: Decodable, Equatable {
     let name: String
     let isostart: String
     let status: Int
+    var isFinished: Bool {
+        return start.timeIntervalSince1970 < Date().timeIntervalSince1970
+    }
     let location: Location
     let missions: [Mission]
     let vidURLs: [String]

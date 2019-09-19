@@ -11,7 +11,7 @@ import UIKit
 
 final class HeaderAdditionalCell: UITableViewHeaderFooterView {
     private enum Section: Int {
-        case mission = 1, location = 2, rocket = 3
+        case time = 1, mission = 2, location = 3, rocket = 4
     }
     @IBOutlet private var backView: UIView! {
         didSet {
@@ -20,7 +20,7 @@ final class HeaderAdditionalCell: UITableViewHeaderFooterView {
     }
     @IBOutlet private var titleLabel: UILabel!
     
-    private let sectionTitles: [Section: String] = [.mission: "Mission", .location: "Location", .rocket: "Rocket"]
+    private let sectionTitles: [Section: String] = [.time: "Time", .mission: "Mission", .location: "Location", .rocket: "Rocket"]
     var section: Int? {
         didSet {
             guard let section = section else { return }

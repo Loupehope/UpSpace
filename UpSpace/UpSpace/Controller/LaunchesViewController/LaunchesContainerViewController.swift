@@ -24,7 +24,7 @@ final class LaunchesContainerViewController: UIViewController {
         navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().tintColor = UIColor.white
         //swiftlint:disable discouraged_object_literal
-        navigation.navigationBar.barTintColor = #colorLiteral(red: 0.2143261731, green: 0.263715446, blue: 0.2975959778, alpha: 1)
+        navigation.navigationBar.barTintColor = #colorLiteral(red: 0.2250607014, green: 0.2795445025, blue: 0.3133514225, alpha: 1)
         navigation.navigationBar.shadowImage = UIImage()
         add(controller: navigation, to: containerView)
     }

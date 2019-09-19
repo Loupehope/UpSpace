@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="M13-Vw-shF">
-                                <rect key="frame" x="75" y="14" width="287" height="41.5"/>
+                                <rect key="frame" x="75" y="8" width="287" height="53.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le1-zv-D9B">
                                         <rect key="frame" x="0.0" y="0.0" width="287" height="20.5"/>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY8-EQ-KJv">
-                                        <rect key="frame" x="0.0" y="22.5" width="287" height="19"/>
+                                        <rect key="frame" x="0.0" y="22.5" width="287" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -53,14 +53,14 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96471232175827026" green="0.9646943211555481" blue="0.96470648050308228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="eYC-a9-3Vt" firstAttribute="centerY" secondItem="NUi-kN-PTi" secondAttribute="centerY" id="AKv-8O-2dt"/>
                             <constraint firstAttribute="trailing" secondItem="ssh-7G-pny" secondAttribute="trailing" constant="8" id="KQ8-qt-IfV"/>
                             <constraint firstItem="ssh-7G-pny" firstAttribute="leading" secondItem="M13-Vw-shF" secondAttribute="trailing" constant="8" id="aJo-dE-1hd"/>
                             <constraint firstItem="ssh-7G-pny" firstAttribute="centerY" secondItem="NUi-kN-PTi" secondAttribute="centerY" id="fA6-3I-df9"/>
                             <constraint firstItem="eYC-a9-3Vt" firstAttribute="leading" secondItem="NUi-kN-PTi" secondAttribute="leading" constant="16" id="nbL-cJ-nes"/>
-                            <constraint firstItem="M13-Vw-shF" firstAttribute="top" secondItem="NUi-kN-PTi" secondAttribute="top" constant="14" id="p0y-IF-KDe"/>
+                            <constraint firstItem="M13-Vw-shF" firstAttribute="top" secondItem="NUi-kN-PTi" secondAttribute="top" constant="8" id="p0y-IF-KDe"/>
                             <constraint firstItem="M13-Vw-shF" firstAttribute="centerY" secondItem="NUi-kN-PTi" secondAttribute="centerY" id="pTP-rK-qQf"/>
                             <constraint firstItem="M13-Vw-shF" firstAttribute="leading" secondItem="eYC-a9-3Vt" secondAttribute="trailing" constant="15" id="sxb-0F-h3U"/>
                         </constraints>

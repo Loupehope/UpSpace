@@ -17,13 +17,13 @@
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="7hT-t8-ICZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.97648364310000002" green="0.97644716499999995" blue="0.97647196049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.22402381900000001" green="0.26222604510000003" blue="0.29412230849999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.93333959579467773" green="0.93332213163375854" blue="0.93333393335342407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.93333959580000003" green="0.93332213159999999" blue="0.93333393340000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" red="0.7745208740234375" green="0.21691522002220154" blue="0.18427920341491699" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                                <color key="value" red="0.22402381896972656" green="0.26222604513168335" blue="0.29412230849266052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="value" red="0.23581716420000001" green="0.27791193130000003" blue="0.30980867150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -52,7 +52,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.22402381896972656" green="0.26222604513168335" blue="0.29412230849266052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.23581716420000001" green="0.27791193130000003" blue="0.30980867150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="oRY-c4-kXc" firstAttribute="top" secondItem="7wY-ZQ-hSu" secondAttribute="top" id="TOS-N0-uwW"/>
                             <constraint firstItem="7wY-ZQ-hSu" firstAttribute="bottom" secondItem="oRY-c4-kXc" secondAttribute="bottom" id="jli-tn-VsB"/>
@@ -171,7 +171,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" shadowImage="clear" backIndicatorImage="clear" largeTitles="YES" id="Dnp-QA-RVI">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1925646960735321" green="0.21908944845199585" blue="0.25098481774330139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.23581716420000001" green="0.27791193130000003" blue="0.30980867150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.93333959580000003" green="0.93332213159999999" blue="0.93333393340000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>

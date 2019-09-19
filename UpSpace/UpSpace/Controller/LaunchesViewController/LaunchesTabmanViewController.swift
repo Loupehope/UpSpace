@@ -28,7 +28,7 @@ class LaunchesTabmanViewController: TabmanViewController {
         bar.layout.contentMode = .fit
         bar.layer.cornerRadius = 10
         //swiftlint:disable discouraged_object_literal
-        bar.backgroundColor = #colorLiteral(red: 0.9332515597, green: 0.9333857298, blue: 0.9332222342, alpha: 1)
+        bar.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         bar.buttons.customize { button in
             button.tintColor = #colorLiteral(red: 0.2250607014, green: 0.2795445025, blue: 0.3133514225, alpha: 1)
             button.selectedTintColor = #colorLiteral(red: 0.842899859, green: 0.1364972591, blue: 0.1388344765, alpha: 1)
