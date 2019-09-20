@@ -15,10 +15,6 @@ final class TodayLaunchesViewController: UIViewController {
     }
     private var launches = [Launch]() {
         didSet {
-            let indexPaths = stride(from: oldValue.count, to: launches.count, by: 1).map { IndexPath(row: $0, section: 0) }
-            tableView.beginUpdates()
-            tableView.insertRows(at: indexPaths, with: .fade)
-            tableView.endUpdates()
         }
     }
     private let viewModel = TodayLaunchesViewModel()

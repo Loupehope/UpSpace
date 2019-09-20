@@ -45,6 +45,7 @@
 		4CABD00B23336ADB005D2D1D /* TimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABD00A23336ADB005D2D1D /* TimeCell.xib */; };
 		4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */; };
 		4CABD00F233370EF005D2D1D /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* TimeCell.swift */; };
+		4CAE94B12334B89700D81D48 /* UIViewController+ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE94B02334B89700D81D48 /* UIViewController+ContainerView.swift */; };
 		4CBECD022312CC5D0051BFBF /* NextLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */; };
 		4CBECD04231305960051BFBF /* LoadingLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */; };
 		4CBECD062313066B0051BFBF /* LoadingLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */; };
@@ -97,6 +98,7 @@
 		4CABD00A23336ADB005D2D1D /* TimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCell.xib; sourceTree = "<group>"; };
 		4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellViewModel.swift; sourceTree = "<group>"; };
 		4CABD00E233370EF005D2D1D /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
+		4CAE94B02334B89700D81D48 /* UIViewController+ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ContainerView.swift"; sourceTree = "<group>"; };
 		4CBECD012312CC5D0051BFBF /* NextLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchCell.swift; sourceTree = "<group>"; };
 		4CBECD03231305960051BFBF /* LoadingLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingLaunchCell.xib; sourceTree = "<group>"; };
 		4CBECD052313066B0051BFBF /* LoadingLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLaunchCell.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */,
+				4CAE94B02334B89700D81D48 /* UIViewController+ContainerView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				4C6C1F99231BE04500C7120F /* Lsp.swift in Sources */,
 				4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
+				4CAE94B12334B89700D81D48 /* UIViewController+ContainerView.swift in Sources */,
 				4C776D19230EB9F800025B08 /* LaunchesViewModelProtocol.swift in Sources */,
 				4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */,
 				4C0C196023171675005D4C5F /* LaunchesTabmanViewController.swift in Sources */,
