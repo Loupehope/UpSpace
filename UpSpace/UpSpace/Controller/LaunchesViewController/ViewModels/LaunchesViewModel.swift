@@ -26,10 +26,9 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
     }
     
     func update() {
-        let startDate = mode == .next ? Date() : Date() + 1
         oldList = LaunchList(launches: [])
         previousLaunch = nil
-        launchAPI.reload(startDate: startDate)
+        launchAPI.reload(startDate: Date())
         loadMore()
     }
     

@@ -43,7 +43,6 @@
                     <constraint firstAttribute="bottom" secondItem="Wo8-GM-srX" secondAttribute="bottom" constant="1" id="gd4-Rc-gi1"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="backView" destination="Wo8-GM-srX" id="fWC-Oa-sBS"/>
                 <outlet property="titleLabel" destination="fC4-XF-oqL" id="acR-kT-eev"/>

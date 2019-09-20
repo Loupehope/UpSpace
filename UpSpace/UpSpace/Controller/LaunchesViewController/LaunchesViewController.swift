@@ -163,6 +163,8 @@ extension LaunchesViewController {
     }
 }
 
+// MARK: StoryboardSceneBased
+
 extension LaunchesViewController: StoryboardSceneBased {
     static var sceneStoryboard: UIStoryboard {
         return UIStoryboard(name: "LaunchesViewController", bundle: nil)

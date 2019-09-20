@@ -14,6 +14,7 @@ class InfoLaunchViewController: UITableViewController {
         didSet {
             guard let launch = launch else { return }
             title = launch.isFinished ? "Previous" : "Upcoming"
+            tableView.reloadData()
         }
     }
     
