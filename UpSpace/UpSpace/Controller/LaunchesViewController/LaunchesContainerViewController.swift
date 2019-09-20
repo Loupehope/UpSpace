@@ -31,4 +31,8 @@ final class LaunchesContainerViewController: UIViewController {
         super.viewDidLoad()
         add(controller: navController, to: containerView)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

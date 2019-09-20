@@ -26,6 +26,10 @@ class InfoLaunchViewController: UITableViewController {
         tableView.register(cellType: TimeCell.self)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         guard let finished = launch?.isFinished else {
             return 0

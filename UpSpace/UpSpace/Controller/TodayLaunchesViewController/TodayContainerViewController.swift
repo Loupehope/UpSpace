@@ -28,4 +28,8 @@ final class TodayContainerViewController: UIViewController {
         add(controller: infoLaunchViewController, to: containerView)
         viewModel.loadMore()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return navigationController?.preferredStatusBarStyle ?? .default
+    }
 }
