@@ -6,6 +6,7 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
+import CRRefresh
 import Reusable
 import UIKit
 
@@ -17,11 +18,18 @@ final class LaunchesViewController: UITableViewController {
     private let refreshController: UIRefreshControl = {
         let controller = UIRefreshControl()
         controller.addTarget(self, action: #selector(refreshLaunchesData(_:)), for: .valueChanged)
+        controller.tintColor = .white
         return controller
     }()
     private var newIndexPaths: [IndexPath]?
     private var timerUpdating: Timer?
-    private var activityIndicatorView = UIActivityIndicatorView(style: .gray)
+    private let activityIndicator: UIActivityIndicatorView = {
+        let frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        let indicator = UIActivityIndicatorView(frame: frame)
+        indicator.color = .white
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     var navController: UINavigationController?
     var viewModel: LaunchesViewModelProtocol?
     private var launches = [Launch]() {
@@ -30,7 +38,6 @@ final class LaunchesViewController: UITableViewController {
             isLaunchesLoaded = true
             guard isInitialLoading else { return }
             isInitialLoading.toggle()
-            activityIndicatorView.stopAnimating()
             reloadTableView(for: newIndexPaths)
             tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         }
@@ -39,6 +46,7 @@ final class LaunchesViewController: UITableViewController {
     @objc func refreshLaunchesData(_ sender: Any) {
         launches = []
         isInitialLoading = true
+        activityIndicator.stopAnimating()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -47,7 +55,6 @@ final class LaunchesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = activityIndicatorView
         tableView.refreshControl = refreshController
         tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         tableView.register(cellType: NextLaunchCell.self)
@@ -69,7 +76,7 @@ final class LaunchesViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        activityIndicatorView.startAnimating()
+        activityIndicator.startAnimating()
     }
 }
 
@@ -91,6 +98,7 @@ private extension LaunchesViewController {
         self.timerUpdating = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             guard self.isLaunchesLoaded else { return }
+            self.activityIndicator.stopAnimating()
             self.reloadTableView(for: self.newIndexPaths)
             self.timerUpdating?.invalidate()
             self.timerUpdating = nil
@@ -106,25 +114,19 @@ extension LaunchesViewController {
         return launches.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 44
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = tableView.dequeueReusableHeaderFooterView(LoadingLaunchCell.self)
-        guard !isInitialLoading else {
-            footer?.mode = .initial
-            return footer
-        }
-        footer?.mode = isAllLaunches ? .stop : .load
-        return footer
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as NextLaunchCell
         let launch = launches[indexPath.row]
         cell.launch = launch
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return activityIndicator
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return activityIndicator.frame.height
     }
 }
 
@@ -137,6 +139,7 @@ extension LaunchesViewController {
         
         if offsetY > contentHeight - scrollView.frame.size.height - 100 && !isScrolled && !isInitialLoading {
             isScrolled = true
+            activityIndicator.startAnimating()
             viewModel?.loadMore()
         }
     }
