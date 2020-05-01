@@ -45,6 +45,6 @@ final class MainLaunchCell: UITableViewCell {
 
 extension MainLaunchCell: NibReusable {
     static var reuseIdentifier: String {
-        return "MainLaunchCell"
+        "MainLaunchCell"
     }
 }

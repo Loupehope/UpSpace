@@ -12,10 +12,10 @@ import Foundation
 final class LaunchesService: NetworkService {
     private let launchAPI: LaunchLibraryAPI
     private var launchURL: URL? {
-        return URL.generateURL(scheme: launchAPI.scheme,
-                               host: launchAPI.host,
-                               path: launchAPI.path,
-                               params: launchAPI.params)
+        URL.generateURL(scheme: launchAPI.scheme,
+                        host: launchAPI.host,
+                        path: launchAPI.path,
+                        params: launchAPI.params)
     }
     
     init(launchAPI: LaunchLibraryAPI) {
@@ -24,7 +24,8 @@ final class LaunchesService: NetworkService {
     
     func load(_ completionHandler: @escaping (LaunchListProtocol?) -> Void) {
         guard let launchURL = launchURL else { fatalError("Incorrect URL") }
-        Alamofire.request(launchURL).responseData {
+        
+        AF.request(launchURL).responseData {
             switch $0.result {
             case let .success(data):
                 guard let result = try? JSONDecoder().decode(LaunchList.self, from: data) else {

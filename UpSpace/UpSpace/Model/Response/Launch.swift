@@ -14,7 +14,7 @@ struct Launch: Decodable, Equatable {
     let isostart: String
     let status: Int
     var isFinished: Bool {
-        return start.timeIntervalSince1970 < Date().timeIntervalSince1970
+        start.timeIntervalSince1970 < Date().timeIntervalSince1970
     }
     let location: Location
     let missions: [Mission]
@@ -34,7 +34,7 @@ struct Launch: Decodable, Equatable {
     }
     
     static func == (lhs: Launch, rhs: Launch) -> Bool {
-        return lhs.id == rhs.id
+        lhs.id == rhs.id
     }
 }
 /*

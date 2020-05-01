@@ -34,6 +34,6 @@ final class HeaderAdditionalCell: UITableViewHeaderFooterView {
 
 extension HeaderAdditionalCell: NibReusable {
     static var reuseIdentifier: String {
-        return "HeaderAdditionalCell"
+        "HeaderAdditionalCell"
     }
 }

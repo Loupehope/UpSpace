@@ -16,7 +16,7 @@ final class NextLaunchAPI: LaunchLibraryAPI {
     private var limit = 0
     private let dateFormatter = DateFormatterAPI()
     override var path: String {
-        return "/1.4/launch/"
+        "/1.4/launch/"
     }
     override var params: [String: String] {
         guard loadAll else {
@@ -51,7 +51,7 @@ final class NextLaunchAPI: LaunchLibraryAPI {
 
 private extension NextLaunchAPI {
     private var borderYear: Int {
-        return 2_023
+        2_023
     }
     
     // Check is date bigger or equel "2023-01-01" or note
