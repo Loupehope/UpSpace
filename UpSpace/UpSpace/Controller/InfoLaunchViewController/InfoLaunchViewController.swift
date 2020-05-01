@@ -27,7 +27,7 @@ class InfoLaunchViewController: UITableViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +38,7 @@ class InfoLaunchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        1
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,7 +56,7 @@ class InfoLaunchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section > 0 ? 29 : 0
+        section > 0 ? 29 : 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,6 +93,6 @@ class InfoLaunchViewController: UITableViewController {
 
 extension InfoLaunchViewController: StoryboardSceneBased {
     static var sceneStoryboard: UIStoryboard {
-        return UIStoryboard(name: "InfoLaunchViewController", bundle: nil)
+        UIStoryboard(name: "InfoLaunchViewController", bundle: nil)
     }
 }

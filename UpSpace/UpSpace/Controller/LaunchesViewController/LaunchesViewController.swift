@@ -6,7 +6,6 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import CRRefresh
 import Reusable
 import UIKit
 
@@ -111,7 +110,7 @@ private extension LaunchesViewController {
 
 extension LaunchesViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launches.count
+        launches.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,11 +121,11 @@ extension LaunchesViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return activityIndicator
+        activityIndicator
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return activityIndicator.frame.height
+        activityIndicator.frame.height
     }
 }
 
@@ -152,11 +151,11 @@ extension LaunchesViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row >= launches.count ? 50 : 78
+        indexPath.row >= launches.count ? 50 : 78
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row >= launches.count ? 50 : UITableView.automaticDimension
+        indexPath.row >= launches.count ? 50 : UITableView.automaticDimension
     }
     
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -170,6 +169,6 @@ extension LaunchesViewController {
 
 extension LaunchesViewController: StoryboardSceneBased {
     static var sceneStoryboard: UIStoryboard {
-        return UIStoryboard(name: "LaunchesViewController", bundle: nil)
+        UIStoryboard(name: "LaunchesViewController", bundle: nil)
     }
 }

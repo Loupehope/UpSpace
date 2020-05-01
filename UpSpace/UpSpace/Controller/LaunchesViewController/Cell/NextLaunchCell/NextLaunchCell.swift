@@ -28,6 +28,6 @@ final class NextLaunchCell: UITableViewCell {
 
 extension NextLaunchCell: NibReusable {
     static var reuseIdentifier: String {
-        return "LaunchCell"
+        "LaunchCell"
     }
 }

@@ -41,6 +41,6 @@ final class LoadingLaunchCell: UITableViewHeaderFooterView {
 
 extension LoadingLaunchCell: NibReusable {
     static var reuseIdentifier: String {
-        return "LoadingCell"
+        "LoadingCell"
     }
 }

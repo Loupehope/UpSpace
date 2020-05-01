@@ -30,6 +30,6 @@ final class TodayContainerViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return navigationController?.preferredStatusBarStyle ?? .default
+        navigationController?.preferredStatusBarStyle ?? .default
     }
 }

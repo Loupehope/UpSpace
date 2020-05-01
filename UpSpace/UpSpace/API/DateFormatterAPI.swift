@@ -17,7 +17,7 @@ final class DateFormatterAPI: DateFormatter {
     }
     
     func getDate(from string: String) -> Date? {
-        return DateFormatterAPI.iSO8601DateWithMillisec.date(from: string)
+        DateFormatterAPI.iSO8601DateWithMillisec.date(from: string)
     }
     
     func convertToRequest(date: Date) -> String {
@@ -36,6 +36,6 @@ extension DateFormatterAPI {
     }
     
     static func makeiSOString(for date: Date) -> String {
-        return DateFormatterAPI.iSO8601DateWithMillisec.string(from: date)
+        DateFormatterAPI.iSO8601DateWithMillisec.string(from: date)
     }
 }

@@ -36,6 +36,6 @@ final class TimeCell: UITableViewCell {
 
 extension TimeCell: NibReusable {
     static var reuseIdentifier: String {
-        return "TimeCell"
+        "TimeCell"
     }
 }
