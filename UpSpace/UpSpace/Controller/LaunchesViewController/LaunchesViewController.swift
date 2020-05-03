@@ -12,38 +12,21 @@ import UIKit
 
 final class LaunchesViewController: UITableViewController {
     private lazy var tableDirector = TableDirector(tableView: tableView)
-    
-    private let refreshController: UIRefreshControl = {
-        let controller = UIRefreshControl()
-        controller.addTarget(self, action: #selector(refreshLaunchesData(_:)), for: .valueChanged)
-        controller.tintColor = .white
-        return controller
-    }()
-    
     private var launches: [Launch] = []
     
     var navController: UINavigationController?
-    
     var viewModel: LaunchesViewModelProtocol?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.refreshControl = refreshController
         tableView.contentInset = UIEdgeInsets(top: 48, left: 0, bottom: 2, right: 0)
-        tableView.contentOffset = CGPoint(x: 0, y: -refreshController.frame.size.height)
         
         viewModel?.onLaunchesChanged = { [weak self] list in
-            self?.updateRefreshing(isRefreshing: false)
             self?.updateLaunches(with: list?.launches ?? [])
         }
 
         tableDirector.clearTableView()
         viewModel?.loadMore()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        refreshController.beginRefreshing()
     }
 }
 
@@ -69,20 +52,10 @@ private extension LaunchesViewController {
         navController?.pushViewController(controller, animated: true)
     }
     
-    @objc func refreshLaunchesData(_ sender: Any) {
+    func refreshLaunches() {
         launches = []
         tableDirector.clearTableView()
         viewModel?.update()
-    }
-}
-
-private extension LaunchesViewController {
-    func updateRefreshing(isRefreshing: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            isRefreshing
-                ? self?.refreshController.beginRefreshing()
-                : self?.refreshController.endRefreshing()
-        }
     }
 }
 
