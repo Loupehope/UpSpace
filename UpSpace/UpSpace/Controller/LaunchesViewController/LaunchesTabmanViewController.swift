@@ -17,11 +17,13 @@ class LaunchesTabmanViewController: TabmanViewController {
         controller.viewModel = NextLaunchesViewModel(api: NextLaunchAPI(), mode: .next)
         return controller
     }()
+    
     private var previousLaunchesViewController: LaunchesViewController = {
         let controller = LaunchesViewController.instantiate()
         controller.viewModel = PreviousLaunchesViewModel(api: PreviousLaunchAPI(), mode: .previous)
         return controller
     }()
+    
     private var topBar: TMBar = {
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap
@@ -39,17 +41,21 @@ class LaunchesTabmanViewController: TabmanViewController {
         bar.indicator.tintColor = #colorLiteral(red: 0.842899859, green: 0.1364972591, blue: 0.1388344765, alpha: 1)
         return bar
     }()
+    
     private var controllers = [LaunchesViewController]()
     
     override func viewDidLoad() {
         automaticallyAdjustsChildInsets = false
         super.viewDidLoad()
+        
         edgesForExtendedLayout = []
         nextLaunchesViewController.navController = navigationController
         previousLaunchesViewController.navController = navigationController
         controllers.append(nextLaunchesViewController)
         controllers.append(previousLaunchesViewController)
+        
         dataSource = self
+        
         addBar(topBar, dataSource: self, at: .top)
     }
 }

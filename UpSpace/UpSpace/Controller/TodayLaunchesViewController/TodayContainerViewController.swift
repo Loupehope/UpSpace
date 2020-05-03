@@ -20,11 +20,13 @@ final class TodayContainerViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.onLaunchesChanged = { launches in
             guard let launches = launches else { return }
             guard let result = launches.launches.first else { return }
             self.launch = result
         }
+        
         add(controller: infoLaunchViewController, to: containerView)
         viewModel.loadMore()
     }
