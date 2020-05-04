@@ -13,5 +13,5 @@ extension UIFont {
     
     static let describingFont: UIFont = .systemFont(ofSize: 15)
     
-     static let largeTitleFont: UIFont = .boldSystemFont(ofSize: 34)
+    static let largeTitleFont: UIFont = .boldSystemFont(ofSize: 34)
 }
