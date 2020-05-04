@@ -34,7 +34,7 @@ class BaseInitializableCell: UITableViewCell, InitializableUI {
     }
     
     func configureUI() {
-        // override
+        selectionStyle = .none
     }
     
     func localizeUI() {

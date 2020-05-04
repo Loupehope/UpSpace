@@ -10,6 +10,13 @@ import TableKit
 
 extension TableSection {
     static var empty: TableSection {
-        TableSection(rows: [EmptyRow.zeroHeightRow])
+        .create(with: [EmptyRow.zeroHeightRow])
+    }
+    
+    static func create(with rows: [Row]) -> TableSection {
+        let section = TableSection(headerView: UIView(frame: .zero),
+                                   footerView: UIView(frame: .zero),
+                                   rows: rows)
+        return section
     }
 }

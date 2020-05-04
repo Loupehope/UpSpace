@@ -9,8 +9,17 @@
 import TableKit
 
 extension TableDirector {
-    func replaceSection(with section: TableSection, at index: Int) {
-        remove(sectionAt: index).insert(section: section, atIndex: index).reload()
+    func replaceSection(at index: Int, with section: TableSection, and animation: UITableView.RowAnimation) {
+        replaceSection(at: index, with: section)
+        
+        switch animation {
+        case .none:
+            reload()
+        default:
+            tableView?.beginUpdates()
+            tableView?.reloadSections([index], with: animation)
+            tableView?.endUpdates()
+        }
     }
     
     func clearTableView() {

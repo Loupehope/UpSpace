@@ -7,7 +7,7 @@
 //
 
 protocol ConfigurableUI {
-    associatedtype ViewModel
+    associatedtype DataSource
     
-    func configure(with _: ViewModel)
+    func configure(with _: DataSource)
 }

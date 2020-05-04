@@ -15,13 +15,12 @@ final class NextLaunchCell: BaseInitializableCell {
     private let titleLabel = UILabel()
     private let dateLabel = UILabel()
     private let textInfoStackView = UIStackView()
-    private let goIconImageView = UIImageView()
     
     override func addUI() {
         super.addUI()
         
         textInfoStackView.addArrangedSubviews(titleLabel, dateLabel)
-        containerView.addSubviews(countryIconImageView, textInfoStackView, goIconImageView)
+        containerView.addSubviews(countryIconImageView, textInfoStackView)
         addSubviews(containerView)
     }
     
@@ -39,16 +38,10 @@ final class NextLaunchCell: BaseInitializableCell {
             make.size.equalTo(CGSize.countryIconImageViewSize)
         }
         
-        goIconImageView.snp.remakeConstraints { make in
-            make.trailing.equalToSuperview().inset(8)
-            make.centerY.equalToSuperview()
-            make.size.equalTo(CGSize.goIconImageViewSize)
-        }
-        
         textInfoStackView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(8)
             make.leading.equalTo(countryIconImageView.snp.trailing).offset(16)
-            make.trailing.equalTo(goIconImageView.snp.leading)
+            make.trailing.equalToSuperview().inset(8)
         }
     }
     
@@ -63,8 +56,6 @@ final class NextLaunchCell: BaseInitializableCell {
         
         titleLabel.numberOfLines = 0
         dateLabel.numberOfLines = 0
-        
-        goIconImageView.image = .goImage
         
         containerView.layer.cornerRadius = 8
         containerView.backgroundColor = .white
@@ -89,5 +80,4 @@ extension NextLaunchCell: ConfigurableCell {
 
 private extension CGSize {
     static let countryIconImageViewSize = CGSize(width: 44, height: 44)
-    static let goIconImageViewSize = CGSize(width: 25, height: 25)
 }

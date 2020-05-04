@@ -12,7 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        true
+    //swiftlint:disable multiline_parameters_brackets
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow()
+        window?.backgroundColor = .darkGraySpace
+        window?.rootViewController = TabBarController()
+        window?.makeKeyAndVisible()
+        
+        return true
     }
 }

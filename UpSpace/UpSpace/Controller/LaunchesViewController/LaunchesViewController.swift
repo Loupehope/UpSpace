@@ -6,31 +6,40 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import Reusable
 import TableKit
 import UIKit
 
-final class LaunchesViewController: UITableViewController {
+final class LaunchesViewController: BaseTableViewController {
     private lazy var tableDirector = TableDirector(tableView: tableView)
+    
     private var launches: [Launch] = []
+    private var launchesViewModel: LaunchesViewModelProtocol?
     
     var navController: UINavigationController?
-    var viewModel: LaunchesViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = "Launches"
         tableView.contentInset = UIEdgeInsets(top: 48, left: 0, bottom: 2, right: 0)
         
-        viewModel?.onLaunchesChanged = { [weak self] list in
-            self?.updateLaunches(with: list?.launches ?? [])
-        }
-
         tableDirector.clearTableView()
-        viewModel?.loadMore()
+        launchesViewModel?.loadMore()
     }
 }
 
-// MARK: Private
+// MARK: - ConfigurableUI
+
+extension LaunchesViewController: ConfigurableUI {
+    func configure(with viewModel: LaunchesViewModelProtocol) {
+        launchesViewModel = viewModel
+        
+        launchesViewModel?.onLaunchesChanged = { [weak self] list in
+            self?.updateLaunches(with: list?.launches ?? [])
+        }
+    }
+}
+
+// MARK: - Private
 
 private extension LaunchesViewController {
     func updateLaunches(with list: [Launch]) {
@@ -43,26 +52,21 @@ private extension LaunchesViewController {
                 }
         }
         
-        tableDirector.replaceSection(with: .init(rows: rows), at: .zero)
+        DispatchQueue.main.async { [weak self] in
+            self?.tableDirector.replaceSection(at: .zero,
+                                               with: .create(with: rows),
+                                               and: .fade)
+        }
     }
     
     func didSelectRow(for item: Launch?) {
-        let controller = InfoLaunchViewController.instantiate()
-        controller.launch = item
+        let controller = InfoLaunchViewController()
         navController?.pushViewController(controller, animated: true)
     }
     
     func refreshLaunches() {
         launches = []
         tableDirector.clearTableView()
-        viewModel?.update()
-    }
-}
-
-// MARK: StoryboardSceneBased
-
-extension LaunchesViewController: StoryboardSceneBased {
-    static var sceneStoryboard: UIStoryboard {
-        UIStoryboard(name: "LaunchesViewController", bundle: nil)
+        launchesViewModel?.update()
     }
 }
