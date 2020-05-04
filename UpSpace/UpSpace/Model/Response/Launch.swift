@@ -14,7 +14,7 @@ struct Launch: Decodable, Equatable {
     let isostart: String
     let status: Int
     var isFinished: Bool {
-        return start.timeIntervalSince1970 < Date().timeIntervalSince1970
+        start.timeIntervalSince1970 < Date().timeIntervalSince1970
     }
     let location: Location
     let missions: [Mission]
@@ -28,13 +28,20 @@ struct Launch: Decodable, Equatable {
     }
     
     static func makeEmptyLaunch(with date: Date) -> Launch {
-        let location = Location(id: 0, countryCode: "", pads: [])
+        let location = Location(id: 0, countryCode: .empty, pads: [])
         let dateString = DateFormatterAPI.makeiSOString(for: date)
-        return Launch(id: 0, name: "", isostart: dateString, status: 0, location: location, missions: [], vidURLs: [], infoURLs: [])
+        return Launch(id: 0,
+                      name: .empty,
+                      isostart: dateString,
+                      status: 0,
+                      location: location,
+                      missions: [],
+                      vidURLs: [],
+                      infoURLs: [])
     }
     
     static func == (lhs: Launch, rhs: Launch) -> Bool {
-        return lhs.id == rhs.id
+        lhs.id == rhs.id
     }
 }
 /*

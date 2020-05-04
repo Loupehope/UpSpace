@@ -11,6 +11,8 @@ disabled_rules:
 - trailing_whitespace
 - discouraged_optional_collection
 - multiline_arguments_brackets
+- discouraged_object_literal
+- unavailable_function
 
 opt_in_rules:
 - anyobject_protocol

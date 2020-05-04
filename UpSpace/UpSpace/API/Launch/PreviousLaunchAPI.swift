@@ -10,15 +10,15 @@ import Foundation
 import SwiftDate
 
 final class PreviousLaunchAPI: LaunchLibraryAPI {
-    private var nextDate = ""
-    private var previousDate = ""
+    private var nextDate: String = .empty
+    private var previousDate: String = .empty
     private var loadAll = true
     private let dateFormatter = DateFormatterAPI()
     override var path: String {
-        return "/1.4/launch/"
+        "/1.4/launch/"
     }
     override var params: [String: String] {
-        return ["startdate": previousDate, "enddate": nextDate, "limit": "300"]
+        ["startdate": previousDate, "enddate": nextDate, "limit": "300"]
     }
     
     init(startDate: Date = Date()) {
@@ -49,7 +49,7 @@ final class PreviousLaunchAPI: LaunchLibraryAPI {
 
 private extension PreviousLaunchAPI {
     private var borderYear: Int {
-        return 1_998
+        1_998
     }
     
     // Check is date smaller or equel "2023-01-01" or note

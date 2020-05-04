@@ -1,48 +1,40 @@
 PODS:
-  - Alamofire (4.8.2)
-  - AutoInsetter (1.7.2)
-  - CRRefresh (1.1.3)
-  - Pageboy (3.2.3)
-  - Reusable (4.1.0):
-    - Reusable/Storyboard (= 4.1.0)
-    - Reusable/View (= 4.1.0)
-  - Reusable/Storyboard (4.1.0)
-  - Reusable/View (4.1.0)
-  - SwiftDate (6.0.3)
-  - SwiftLint (0.34.0)
-  - Tabman (2.4.3):
-    - AutoInsetter (~> 1.7.2)
-    - Pageboy (~> 3.2.3)
+  - Alamofire (5.1.0)
+  - Pageboy (3.5.1)
+  - SnapKit (5.0.1)
+  - SwiftDate (6.1.0)
+  - SwiftLint (0.39.2)
+  - TableKit (2.10.0)
+  - Tabman (2.8.2):
+    - Pageboy (~> 3.5.1)
 
 DEPENDENCIES:
   - Alamofire
-  - CRRefresh
-  - Reusable
+  - SnapKit
   - SwiftDate
   - SwiftLint
+  - TableKit
   - Tabman
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
-    - AutoInsetter
-    - CRRefresh
     - Pageboy
-    - Reusable
+    - SnapKit
     - SwiftDate
     - SwiftLint
+    - TableKit
     - Tabman
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AutoInsetter: 176c5c069b40bf6afa51bf7081be346ab70ca315
-  CRRefresh: 1415d4ae06837fa7bb064c44f2e102f3ef517044
-  Pageboy: 347c49b3a7f15aa78ddb6bf5c6c3b113e382fe52
-  Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
-  SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
-  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
-  Tabman: c2c83ebfcbec3e5be67e27a1dd6689a4e3efccd3
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Pageboy: 288353d4cc848c24deec2f7542f325089247c136
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
+  Tabman: 05f32e419b07411b5ec74516212ffbff2a9dfc0e
 
-PODFILE CHECKSUM: 4b877ea3ac4afc475a0c5a267eaa937c43eec46c
+PODFILE CHECKSUM: 2d53f7005fca74b9db2016a07fe16fd1345f0b5c
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.1
