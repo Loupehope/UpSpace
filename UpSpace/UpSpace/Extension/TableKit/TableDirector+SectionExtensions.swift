@@ -12,13 +12,19 @@ extension TableDirector {
     func replaceSection(at index: Int, with section: TableSection, and animation: UITableView.RowAnimation) {
         replaceSection(at: index, with: section)
         
-        switch animation {
-        case .none:
-            reload()
-        default:
-            tableView?.beginUpdates()
-            tableView?.reloadSections([index], with: animation)
-            tableView?.endUpdates()
+        let completion = { [weak self] in
+            switch animation {
+            case .none:
+                self?.reload()
+            default:
+                self?.tableView?.beginUpdates()
+                self?.tableView?.reloadSections([index], with: animation)
+                self?.tableView?.endUpdates()
+            }
+        }
+        
+        DispatchQueue.main.async {
+            completion()
         }
     }
     

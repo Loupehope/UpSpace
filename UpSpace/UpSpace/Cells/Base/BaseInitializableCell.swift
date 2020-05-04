@@ -35,6 +35,7 @@ class BaseInitializableCell: UITableViewCell, InitializableUI {
     
     func configureUI() {
         selectionStyle = .none
+        backgroundColor = .clear
     }
     
     func localizeUI() {

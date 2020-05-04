@@ -6,6 +6,7 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
+import SnapKit
 import TableKit
 import UIKit
 
@@ -73,57 +74,55 @@ final class InfoTimeCell: BaseInitializableCell {
         super.setupUI()
         
         dateStackView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview().inset(CGFloat.smallInset)
             make.leading.trailing.equalToSuperview()
         }
         
         horizontalSeparator.snp.remakeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.leading.equalToSuperview()
-            make.height.equalTo(1)
+            make.height.equalTo(CGFloat.defaultSeparatorHeight)
         }
         
         yearVerticalSeparator.snp.makeConstraints { make in
             make.leading.equalTo(yearStackView.snp.trailing)
-            make.width.equalTo(1)
+            make.width.equalTo(CGFloat.defaultSeparatorHeight)
             make.height.equalToSuperview()
         }
         
         monthVerticalSeparator.snp.makeConstraints { make in
             make.leading.equalTo(monthStackView.snp.trailing)
-            make.width.equalTo(1)
+            make.width.equalTo(CGFloat.defaultSeparatorHeight)
             make.height.equalToSuperview()
         }
         
         dayVerticalSeparator.snp.makeConstraints { make in
             make.leading.equalTo(dayStackView.snp.trailing)
-            make.width.equalTo(1)
+            make.width.equalTo(CGFloat.defaultSeparatorHeight)
             make.height.equalToSuperview()
         }
         
         hourVerticalSeparator.snp.makeConstraints { make in
             make.leading.equalTo(hourStackView.snp.trailing)
-            make.width.equalTo(1)
+            make.width.equalTo(CGFloat.defaultSeparatorHeight)
             make.height.equalToSuperview()
         }
         
         minVerticalSeparator.snp.makeConstraints { make in
             make.leading.equalTo(minStackView.snp.trailing)
-            make.width.equalTo(1)
+            make.width.equalTo(CGFloat.defaultSeparatorHeight)
             make.height.equalToSuperview()
         }
         
         containerView.snp.remakeConstraints { make in
-            make.trailing.leading.equalToSuperview().inset(16)
-            make.top.bottom.equalToSuperview().inset(4)
+            make.trailing.leading.equalToSuperview().inset(CGFloat.defaultInset)
+            make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
             make.height.equalTo(72)
         }
     }
     
     override func configureUI() {
         super.configureUI()
-        
-        backgroundColor = .clear
         
         [
             yearStackView,
@@ -158,14 +157,14 @@ final class InfoTimeCell: BaseInitializableCell {
         ].forEach {
             $0.textColor = .darkGray
             $0.textAlignment = .center
-            $0.font = .systemFont(ofSize: 15)
+            $0.font = .describingFont
         }
         
         dateStackView.axis = .horizontal
         dateStackView.distribution = .fillEqually
         
         containerView.backgroundColor = .white
-        containerView.layer.cornerRadius = 8
+        containerView.layer.cornerRadius = .defaultCornerRadius
         
         secLabel.textColor = .redSpace
     }

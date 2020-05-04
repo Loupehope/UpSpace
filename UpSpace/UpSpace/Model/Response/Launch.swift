@@ -28,9 +28,16 @@ struct Launch: Decodable, Equatable {
     }
     
     static func makeEmptyLaunch(with date: Date) -> Launch {
-        let location = Location(id: 0, countryCode: "", pads: [])
+        let location = Location(id: 0, countryCode: .empty, pads: [])
         let dateString = DateFormatterAPI.makeiSOString(for: date)
-        return Launch(id: 0, name: "", isostart: dateString, status: 0, location: location, missions: [], vidURLs: [], infoURLs: [])
+        return Launch(id: 0,
+                      name: .empty,
+                      isostart: dateString,
+                      status: 0,
+                      location: location,
+                      missions: [],
+                      vidURLs: [],
+                      infoURLs: [])
     }
     
     static func == (lhs: Launch, rhs: Launch) -> Bool {

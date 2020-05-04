@@ -11,7 +11,7 @@ import SwiftDate
 
 final class TimeCellViewModel {
     private var timerUpdating: Timer?
-    private var difference: TimeInterval = 0
+    private var difference: TimeInterval = .zero
     var onTimeChanged: (([String]) -> Void)?
     
     init(time: Date) {

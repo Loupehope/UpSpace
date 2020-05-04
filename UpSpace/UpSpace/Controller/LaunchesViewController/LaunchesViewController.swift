@@ -52,11 +52,7 @@ private extension LaunchesViewController {
                 }
         }
         
-        DispatchQueue.main.async { [weak self] in
-            self?.tableDirector.replaceSection(at: .zero,
-                                               with: .create(with: rows),
-                                               and: .fade)
-        }
+        tableDirector.replaceSection(at: .zero, with: .create(with: rows), and: .fade)
     }
     
     func didSelectRow(for item: Launch?) {

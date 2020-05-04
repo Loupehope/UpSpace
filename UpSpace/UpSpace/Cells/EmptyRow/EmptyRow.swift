@@ -12,7 +12,7 @@ final class EmptyRow: TableRow<EmptyCell> {}
 
 extension EmptyRow {
     static var defaultHeightRow: EmptyRow {
-        .init(item: 44)
+        .init(item: .defaultHeight)
     }
     
     static var zeroHeightRow: EmptyRow {

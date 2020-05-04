@@ -6,6 +6,7 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
+import SnapKit
 import TableKit
 import UIKit
 
@@ -21,27 +22,27 @@ final class NextLaunchCell: BaseInitializableCell {
         
         textInfoStackView.addArrangedSubviews(titleLabel, dateLabel)
         containerView.addSubviews(countryIconImageView, textInfoStackView)
-        addSubviews(containerView)
+        addSubview(containerView)
     }
     
     override func setupUI() {
         super.setupUI()
         
         containerView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(2)
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview().inset(CGFloat.tinyInset)
+            make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
         
         countryIconImageView.snp.remakeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
+            make.leading.equalToSuperview().inset(CGFloat.defaultInset)
             make.centerY.equalToSuperview()
             make.size.equalTo(CGSize.countryIconImageViewSize)
         }
         
         textInfoStackView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(8)
-            make.leading.equalTo(countryIconImageView.snp.trailing).offset(16)
-            make.trailing.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview().inset(CGFloat.smallInset)
+            make.leading.equalTo(countryIconImageView.snp.trailing).offset(CGFloat.defaultInset)
+            make.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
     }
     
@@ -49,18 +50,16 @@ final class NextLaunchCell: BaseInitializableCell {
         super.configureUI()
         
         textInfoStackView.axis = .vertical
-        textInfoStackView.spacing = 2
+        textInfoStackView.spacing = .tinyInset
         
-        dateLabel.font = .systemFont(ofSize: 15)
+        dateLabel.font = .describingFont
         dateLabel.textColor = .darkGray
         
-        titleLabel.numberOfLines = 0
-        dateLabel.numberOfLines = 0
+        titleLabel.numberOfLines = .zero
+        dateLabel.numberOfLines = .zero
         
-        containerView.layer.cornerRadius = 8
+        containerView.layer.cornerRadius = .defaultCornerRadius
         containerView.backgroundColor = .white
-        
-        backgroundColor = .clear
     }
     
     override func prepareForReuse() {
@@ -79,5 +78,5 @@ extension NextLaunchCell: ConfigurableCell {
 }
 
 private extension CGSize {
-    static let countryIconImageViewSize = CGSize(width: 44, height: 44)
+    static let countryIconImageViewSize = CGSize(width: .defaultHeight, height: .defaultHeight)
 }

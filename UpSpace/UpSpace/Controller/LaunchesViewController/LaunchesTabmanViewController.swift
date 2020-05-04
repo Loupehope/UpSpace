@@ -53,7 +53,7 @@ class LaunchesTabmanViewController: TabmanViewController {
 
 extension LaunchesTabmanViewController: PageboyViewControllerDataSource, TMBarDataSource {
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        let title = index > 0 ? "Previous" : "Upcoming"
+        let title = index > .zero ? "Previous" : "Upcoming"
         return TMBarItem(title: title)
     }
     
@@ -81,7 +81,7 @@ private extension LaunchesTabmanViewController {
             bar.buttons.customize { button in
                 button.tintColor = .darkGraySpace
                 button.selectedTintColor = .redSpace
-                button.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+                button.font = .default
             }
             
             bar.indicator.cornerStyle = .rounded

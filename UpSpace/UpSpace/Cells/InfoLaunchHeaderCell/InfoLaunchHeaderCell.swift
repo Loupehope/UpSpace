@@ -6,6 +6,7 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
+import SnapKit
 import TableKit
 import UIKit
 
@@ -24,27 +25,25 @@ final class InfoLaunchHeaderCell: BaseInitializableCell {
         super.setupUI()
         
         titleLabel.snp.remakeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(8)
-            make.top.bottom.equalToSuperview().inset(4)
+            make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
+            make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
         }
         
         containerView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(4)
-            make.leading.equalToSuperview().offset(16)
+            make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
+            make.leading.equalToSuperview().offset(CGFloat.defaultInset)
         }
     }
 
     override func configureUI() {
         super.configureUI()
         
-        titleLabel.font = .systemFont(ofSize: 15)
+        titleLabel.font = .describingFont
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
         
-        containerView.layer.cornerRadius = 8
+        containerView.layer.cornerRadius = .defaultCornerRadius
         containerView.backgroundColor = .redSpace
-        
-        backgroundColor = .clear
     }
 }
 

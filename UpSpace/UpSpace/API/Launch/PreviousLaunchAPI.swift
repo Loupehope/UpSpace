@@ -10,8 +10,8 @@ import Foundation
 import SwiftDate
 
 final class PreviousLaunchAPI: LaunchLibraryAPI {
-    private var nextDate = ""
-    private var previousDate = ""
+    private var nextDate: String = .empty
+    private var previousDate: String = .empty
     private var loadAll = true
     private let dateFormatter = DateFormatterAPI()
     override var path: String {

@@ -53,8 +53,8 @@ final class CosmosNavigationController: UINavigationController {
 private extension CosmosNavigationController {
     enum Appearance {
         static let backgroundColor: UIColor = .darkGraySpace
-        static let titleFont: UIFont = .systemFont(ofSize: 17)
-        static let largeTitleFont: UIFont = .boldSystemFont(ofSize: 34)
+        static let titleFont: UIFont = .default
+        static let largeTitleFont: UIFont = .largeTitleFont
         static let titleColor: UIColor = .white
     }
 }

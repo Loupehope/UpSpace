@@ -1,11 +1,6 @@
 PODS:
   - Alamofire (5.1.0)
   - Pageboy (3.5.1)
-  - Reusable (4.1.1):
-    - Reusable/Storyboard (= 4.1.1)
-    - Reusable/View (= 4.1.1)
-  - Reusable/Storyboard (4.1.1)
-  - Reusable/View (4.1.1)
   - SnapKit (5.0.1)
   - SwiftDate (6.1.0)
   - SwiftLint (0.39.2)
@@ -15,7 +10,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Reusable
   - SnapKit
   - SwiftDate
   - SwiftLint
@@ -26,7 +20,6 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Pageboy
-    - Reusable
     - SnapKit
     - SwiftDate
     - SwiftLint
@@ -36,13 +29,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Pageboy: 288353d4cc848c24deec2f7542f325089247c136
-  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
   Tabman: 05f32e419b07411b5ec74516212ffbff2a9dfc0e
 
-PODFILE CHECKSUM: d42d91f8d562fff27b7cf002a386ed1a05d2dd4e
+PODFILE CHECKSUM: 2d53f7005fca74b9db2016a07fe16fd1345f0b5c
 
 COCOAPODS: 1.9.1

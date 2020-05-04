@@ -23,8 +23,12 @@ final class TabBarController: UITabBarController {
         configureViewControllers()
         configureAppearence()
     }
-    
-    private func configureViewControllers() {
+}
+
+// MARK: - Private
+
+private extension TabBarController {
+    func configureViewControllers() {
         let items = TabBarItems.items()
         let itemsViewControllers = [nextLaunchViewController, launchesViewController]
         
@@ -32,7 +36,7 @@ final class TabBarController: UITabBarController {
         viewControllers = [nextLaunchViewController, launchesViewController]
     }
     
-    private func configureAppearence() {
+    func configureAppearence() {
         tabBar.unselectedItemTintColor = .darkGraySpace
         tabBar.barTintColor = .whiteSpace
         tabBar.tintColor = .redSpace
