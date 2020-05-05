@@ -12,7 +12,7 @@ struct LaunchList: LaunchListProtocol, Decodable, Equatable {
     var launches: [Launch]
     
     static func == (lhs: LaunchList, rhs: LaunchList) -> Bool {
-        guard lhs.launches.count == rhs.launches.count else { return true }
+        guard lhs.launches.count == rhs.launches.count else { return false }
         for index in 0..<lhs.launches.count {
             guard lhs.launches[index] != rhs.launches[index] else { return false }
             print(#function)
