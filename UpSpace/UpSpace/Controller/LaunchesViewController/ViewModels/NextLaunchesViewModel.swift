@@ -14,7 +14,7 @@ final class NextLaunchesViewModel: LaunchesViewModel {
             previousLaunch = launches.launches.last
             return launches
         }
-        let nextLaunches = launches.launches.filter { $0.start.timeIntervalSince1970 >= launch.start.timeIntervalSince1970 }
+        let nextLaunches = launches.launches.filter { $0.start.timeIntervalSince1970 > launch.start.timeIntervalSince1970 }
         let sorted = nextLaunches.sorted { first, second in
             first.start < second.start
         }

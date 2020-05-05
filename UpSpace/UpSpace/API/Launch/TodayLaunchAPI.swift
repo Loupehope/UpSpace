@@ -11,11 +11,11 @@ import Foundation
 final class TodayLaunchAPI: LaunchLibraryAPI {
     private let formatter = DateFormatterAPI()
     override var path: String {
-        return "/1.4/launch/"
+        "/1.4/launch/"
     }
     override var params: [String: String] {
-        return ["startdate": formatter.convertToRequest(date: Date()),
-                "enddate": formatter.convertToRequest(date: Date()),
-                "limit": "100"]
+        ["startdate": formatter.convertToRequest(date: Date()),
+         "enddate": formatter.convertToRequest(date: Date()),
+         "limit": "1"]
     }
 }

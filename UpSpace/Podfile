@@ -1,10 +1,26 @@
+platform :ios, '12.0'
+
 target 'UpSpace' do
    use_frameworks!
 
+   # System
    pod 'SwiftLint'
-   pod 'Reusable'
-   pod 'Alamofire'
-   pod 'SwiftDate'
-   pod 'Tabman'
 
+   # Network
+   pod 'Alamofire'
+
+   # Utilities
+   pod 'SwiftDate'
+
+   # UI
+   pod 'Tabman'
+   pod 'SnapKit' 
+   pod 'TableKit' 
+
+   # Rx
+   pod 'RxSwift'
+   pod 'RxAlamofire'
+   pod 'RxKeyboard'
+   pod 'RxSwiftExt'
+   pod 'RxOptional'
 end

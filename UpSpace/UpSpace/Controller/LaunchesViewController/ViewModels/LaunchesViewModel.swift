@@ -12,24 +12,27 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
     enum Mode {
         case next, previous
     }
+    
     private let launchAPI: LaunchLibraryAPI
     private let service: LaunchesService
-    internal var previousLaunch: Launch?
     private var mode: Mode
     private var oldList: LaunchListProtocol = LaunchList(launches: [])
+    
+    internal var previousLaunch: Launch?
+    
     var onLaunchesChanged: ((LaunchListProtocol?) -> Void)?
     
     init(api: LaunchLibraryAPI, mode: Mode) {
         self.launchAPI = api
         self.mode = mode
+        
         service = LaunchesService(launchAPI: launchAPI)
     }
     
     func update() {
-        let startDate = mode == .next ? Date() : Date() + 1
         oldList = LaunchList(launches: [])
         previousLaunch = nil
-        launchAPI.reload(startDate: startDate)
+        launchAPI.reload(startDate: Date())
         loadMore()
     }
     
@@ -50,8 +53,7 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
         }
     }
     
-    //swiftlint:disable unavailable_function
     func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
-        fatalError("This func must be overriden in subclass")
+        fatalError("This function must be overriden in subclass")
     }
 }

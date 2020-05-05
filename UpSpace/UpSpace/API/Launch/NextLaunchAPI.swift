@@ -10,21 +10,22 @@ import Foundation
 import SwiftDate
 
 final class NextLaunchAPI: LaunchLibraryAPI {
-    private var nextDate = ""
-    private var previousDate = ""
+    private var nextDate: String = .empty
+    private var previousDate: String = .empty
     private var loadAll = false
+    private var limit = 0
     private let dateFormatter = DateFormatterAPI()
     override var path: String {
-        return "/1.4/launch/"
+        "/1.4/launch/"
     }
     override var params: [String: String] {
         guard loadAll else {
             return ["startdate": previousDate, "enddate": nextDate, "limit": "200"]
         }
-        return ["startdate": previousDate, "limit": "200"]
+        return ["startdate": previousDate, "limit": "\(limit)"]
     }
     
-    init(startDate: Date = Date() + 1.days) {
+    init(startDate: Date = Date() + 1.days, limit: Int = 200) {
         super.init()
         reload(startDate: startDate)
     }
@@ -50,7 +51,7 @@ final class NextLaunchAPI: LaunchLibraryAPI {
 
 private extension NextLaunchAPI {
     private var borderYear: Int {
-        return 2_023
+        2_023
     }
     
     // Check is date bigger or equel "2023-01-01" or note

@@ -10,10 +10,10 @@ import Foundation
 
 class LaunchLibraryAPI {
     var scheme: String {
-        return "https"
+        "https"
     }
     var host: String {
-        return "launchlibrary.net"
+        "launchlibrary.net"
     }
     var path: String {
         fatalError("This property must be overriden in subclass")
