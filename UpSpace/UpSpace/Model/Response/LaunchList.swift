@@ -13,6 +13,6 @@ struct LaunchList: LaunchListProtocol, Decodable, Equatable {
     
     static func == (lhs: LaunchList, rhs: LaunchList) -> Bool {
         guard lhs.launches.count == rhs.launches.count else { return false }
-        return zip(lhs.launches, rhs.launches).allSatisfy { $0 == $1 }
+        return lhs.launches == rhs.launches
     }
 }
