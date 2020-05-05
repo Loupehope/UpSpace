@@ -47,12 +47,10 @@ private extension TabBarController {
 private extension TabBarController {
     enum TabBarItems {
         static func items() -> [UITabBarItem] {
-            let attributes: [String: UIImage] = [
-                "Next": .nextItemTabBar,
-                "Launches": .launchesItemTabBar
-            ]
+            let titles = ["Next", "Launches"]
+            let images: [UIImage] = [.nextItemTabBar, .launchesItemTabBar]
             
-            return attributes.enumerated()
+            return zip(titles, images).enumerated()
                 .map { (tag: Int, item: (title: String, image: UIImage)) in
                     UITabBarItem(title: item.title, image: item.image, tag: tag)
                 }
