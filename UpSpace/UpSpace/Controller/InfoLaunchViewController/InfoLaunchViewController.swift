@@ -9,18 +9,6 @@
 import TableKit
 import UIKit
 
-class InfoLaunchViewController: BaseTableViewController {
-    private lazy var tableDirector = TableDirector(tableView: tableView)
-    private var launchViewModel: LaunchesViewModelProtocol?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.largeTitleDisplayMode = .never
-    }
-}
-
-extension InfoLaunchViewController: ConfigurableUI {
-    func configure(with viewModel: LaunchesViewModelProtocol) {
-        launchViewModel = viewModel
-    }
+class InfoLaunchViewController: BaseTableViewController<BaseTableViewModel> {
+    private lazy var tableDirector = TableDirector(tableView: contentView)
 }

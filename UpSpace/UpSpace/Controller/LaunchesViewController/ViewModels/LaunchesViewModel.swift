@@ -7,53 +7,63 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
-class LaunchesViewModel: LaunchesViewModelProtocol {
-    enum Mode {
-        case next, previous
-    }
-    
-    private let launchAPI: LaunchLibraryAPI
+class LaunchesViewModel: BaseTableViewModel {
+    private let disposeBag = DisposeBag()
+    private let onLaunchesLoadRelay = BehaviorRelay<LaunchListProtocol?>(value: nil)
     private let service: LaunchesService
-    private var mode: Mode
+    
     private var oldList: LaunchListProtocol = LaunchList(launches: [])
     
-    internal var previousLaunch: Launch?
+    var previousLaunch: Launch?
     
-    var onLaunchesChanged: ((LaunchListProtocol?) -> Void)?
-    
-    init(api: LaunchLibraryAPI, mode: Mode) {
-        self.launchAPI = api
-        self.mode = mode
-        
-        service = LaunchesService(launchAPI: launchAPI)
+    var onLaunchesLoadObservable: Observable<LaunchListProtocol?> {
+        onLaunchesLoadRelay.asObservable()
     }
     
+    init(api: LaunchLibraryAPI) {
+        service = LaunchesService(launchAPI: api)
+        super.init()
+    }
+    
+    func handleRefresh() {
+        update()
+    }
+    
+    func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
+        fatalError("This function must be overriden in subclass")
+    }
+}
+
+private extension LaunchesViewModel {
     func update() {
         oldList = LaunchList(launches: [])
         previousLaunch = nil
-        launchAPI.reload(startDate: Date())
+        service.reload()
         loadMore()
     }
     
     func loadMore() {
         service.load { [weak self] list in
-            guard let self = self else { return }
-            guard let list = list else { return }
-            guard self.oldList.launches != list.launches else {
-                self.onLaunchesChanged?(nil)
+            guard let self = self, let list = list else {
                 return
             }
+            
+            guard self.oldList.launches != list.launches else {
+                self.onLaunchesLoadRelay.accept(nil)
+                return
+            }
+            
             self.oldList = self.sort(launches: list)
+            
             if let launch = self.oldList.launches.last {
                 self.previousLaunch = launch
-                self.launchAPI.set(dateString: launch.isostart)
+                self.service.updateLaunch(dateString: launch.isostart)
             }
-            self.onLaunchesChanged?(self.oldList)
+            
+            self.onLaunchesLoadRelay.accept(self.oldList)
         }
-    }
-    
-    func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
-        fatalError("This function must be overriden in subclass")
     }
 }

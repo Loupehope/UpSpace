@@ -16,4 +16,9 @@ extension UITableView {
         
         return tableView
     }
+    
+    func configureCosmosTableView() {
+        backgroundColor = .tableViewSpace
+        separatorStyle = .none
+    }
 }

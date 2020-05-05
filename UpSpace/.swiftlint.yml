@@ -13,6 +13,8 @@ disabled_rules:
 - multiline_arguments_brackets
 - discouraged_object_literal
 - unavailable_function
+- multiline_parameters_brackets
+- trailing_closure
 
 opt_in_rules:
 - anyobject_protocol

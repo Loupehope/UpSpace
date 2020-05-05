@@ -12,14 +12,14 @@ import UIKit
 
 class LaunchesTabmanViewController: TabmanViewController {
     private lazy var nextLaunchesViewController: LaunchesViewController = {
-        let controller = LaunchesViewController()
-        controller.configure(with: NextLaunchesViewModel(api: NextLaunchAPI(), mode: .next))
+        let viewModel = NextLaunchesViewModel(api: NextLaunchAPI())
+        let controller = LaunchesViewController(viewModel: viewModel)
         return controller
     }()
     
     private lazy var previousLaunchesViewController: LaunchesViewController = {
-        let controller = LaunchesViewController()
-        controller.configure(with: PreviousLaunchesViewModel(api: PreviousLaunchAPI(), mode: .previous))
+        let viewModel = PreviousLaunchesViewModel(api: PreviousLaunchAPI())
+        let controller = LaunchesViewController(viewModel: viewModel)
         return controller
     }()
     
