@@ -22,8 +22,15 @@ class BaseTableViewController<ViewModelT: BaseTableViewModel>: BaseViewControlle
 
 extension BaseTableViewController {
     func bind(refreshControl: UIRefreshControl, with tableView: UITableView) {
+        let refreshRequestObservable = refreshControl.rx
+            .controlEvent(.valueChanged)
+            .asObservable()
+        
         viewModel.isRefreshingDriver
             .drive(refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        viewModel.bind(refreshRequestObservable: refreshRequestObservable)
             .disposed(by: disposeBag)
         
         tableView.rx

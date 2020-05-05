@@ -28,7 +28,7 @@ class LaunchesViewModel: BaseTableViewModel {
         super.init()
     }
     
-    func handleRefresh() {
+    override func handleRefresh() {
         update()
     }
     

@@ -7,10 +7,10 @@
 //
 
 import RxCocoa
+import RxOptional
 import RxSwift
 import TableKit
 import UIKit
-import RxOptional
 
 final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     private lazy var tableDirector = TableDirector(tableView: contentView)

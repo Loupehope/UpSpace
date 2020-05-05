@@ -13,6 +13,10 @@ import RxSwift
 class BaseTableViewModel: ViewModel {
     private let isRefreshingRelay = PublishRelay<Bool>()
     private let isBottomRelay = PublishRelay<Bool>()
+    
+    func handleRefresh() {
+        // override
+    }
 }
 
 // MARK: - PTR
@@ -32,6 +36,12 @@ extension BaseTableViewModel {
     
     func stopRefresh() {
         isRefreshingRelay.accept(false)
+    }
+    
+    func bind(refreshRequestObservable: Observable<Void>) -> Disposable {
+        refreshRequestObservable.subscribe { [weak self] in
+            self?.handleRefresh()
+        }
     }
 }
 
