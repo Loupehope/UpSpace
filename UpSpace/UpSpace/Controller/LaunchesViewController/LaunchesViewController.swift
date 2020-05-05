@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 import TableKit
 import UIKit
+import RxOptional
 
 final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     private lazy var tableDirector = TableDirector(tableView: contentView)
@@ -64,12 +65,8 @@ private extension LaunchesViewController {
 }
 
 private extension LaunchesViewController {
-    var launchesBinder: Binder<LaunchListProtocol?> {
+    var launchesBinder: Binder<LaunchListProtocol> {
         Binder(self) { base, list in
-            guard let list = list else {
-                return
-            }
-            
             base.updateLaunches(with: list.launches)
         }
     }
@@ -84,6 +81,7 @@ private extension LaunchesViewController {
         viewModel.onLaunchesLoadObservable
             .observeOn(MainScheduler.asyncInstance)
             .skip(1)
+            .filterNil()
             .bind(to: launchesBinder)
             .disposed(by: disposeBag)
         

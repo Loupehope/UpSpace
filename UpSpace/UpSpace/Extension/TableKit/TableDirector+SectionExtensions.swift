@@ -27,7 +27,7 @@ extension TableDirector {
             completion()
         }
     }
-     
+    
     func clearTableView() {
         clear().append(section: .empty).reload()
     }

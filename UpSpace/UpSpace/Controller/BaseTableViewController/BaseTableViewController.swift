@@ -29,7 +29,6 @@ extension BaseTableViewController {
         tableView.rx
             .contentOffset
             .filter { $0.y < -160 && !refreshControl.isRefreshing }
-            .observeOn(MainScheduler.instance)
             .bind { [weak self] _ in
                 self?.viewModel.startRefresh()
             }
