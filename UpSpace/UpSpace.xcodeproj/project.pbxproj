@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065568C22462DFE800B12716 /* BaseTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C12462DFE800B12716 /* BaseTableViewModel.swift */; };
 		4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */; };
 		4C0BB765231545A0005B16C4 /* PreviousLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */; };
 		4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		065568C12462DFE800B12716 /* BaseTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewModel.swift; sourceTree = "<group>"; };
 		4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewController.swift; sourceTree = "<group>"; };
 		4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchAPI.swift; sourceTree = "<group>"; };
 		4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchesViewModel.swift; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 		4CEE2790246033DE00F974FD /* BaseTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				065568C12462DFE800B12716 /* BaseTableViewModel.swift */,
 				4C3DB01624602394003D413C /* BaseTableViewController.swift */,
 			);
 			path = BaseTableViewController;
@@ -720,6 +723,7 @@
 				4C5930BA245ECAB100DDFEDD /* EmptyRow.swift in Sources */,
 				4C5930B5245EC7B600DDFEDD /* TableDirector+SectionExtensions.swift in Sources */,
 				4C776D17230EB9ED00025B08 /* NextLaunchesViewModel.swift in Sources */,
+				065568C22462DFE800B12716 /* BaseTableViewModel.swift in Sources */,
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
 				4C5930AB245EB22E00DDFEDD /* UIImage+Images.swift in Sources */,
 				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
