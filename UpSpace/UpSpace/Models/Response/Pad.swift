@@ -19,7 +19,7 @@ public struct Pad: Decodable {
     let wikiURL: String?
     
     static func makeEmptyPad() -> Pad {
-        Pad(agencies: [Agency](),
+        Pad(agencies: [],
             id: 0,
             infoURL: .empty,
             latitude: 0.0,

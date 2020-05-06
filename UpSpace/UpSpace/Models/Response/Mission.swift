@@ -30,8 +30,8 @@ struct Mission: Decodable {
                 wikiURL: .empty,
                 infoURL: .empty,
                 changed: .empty,
-                infoURLs: [String](),
-                agencies: [Agency](),
+                infoURLs: [],
+                agencies: [],
                 typeName: .empty)
     }
 }

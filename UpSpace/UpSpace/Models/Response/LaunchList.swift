@@ -23,7 +23,7 @@ struct LaunchList: Decodable, Equatable {
     
     init() {
         self.count = 0
-        self.launches = [Launch]()
+        self.launches = []
         self.offset = 0
         self.total = 0
     }

@@ -20,13 +20,13 @@ struct Rocket: Decodable {
     let wikiURL: String?
     
     static func makeEmptyRocket() -> Rocket {
-        Rocket(agencies: [Agency](),
+        Rocket(agencies: [],
                configuration: .empty,
                familyname: .empty,
                id: 0,
-               imageSizes: [Int](),
+               imageSizes: [],
                imageURL: .empty,
-               infoURLs: [String](),
+               infoURLs: [],
                name: .empty,
                wikiURL: .empty)
     }

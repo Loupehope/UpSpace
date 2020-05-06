@@ -25,7 +25,7 @@ struct Lsp: Decodable {
             countryCode: .empty,
             id: 0,
             infoURL: .empty,
-            infoURLs: [String](),
+            infoURLs: [],
             name: .empty,
             type: 0,
             wikiURL: .empty)

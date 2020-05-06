@@ -21,7 +21,7 @@ struct Location: Decodable {
                  id: 0,
                  infoURL: .empty,
                  name: .empty,
-                 pads: [Pad](),
+                 pads: [],
                  wikiURL: .empty)
     }
 }
