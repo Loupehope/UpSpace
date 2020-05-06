@@ -22,6 +22,14 @@ final class LaunchesService: NetworkService {
         self.launchAPI = launchAPI
     }
     
+    func reload() {
+        launchAPI.reload(startDate: Date())
+    }
+    
+    func updateLaunch(dateString: String) {
+        launchAPI.set(dateString: dateString)
+    }
+    
     func load(_ completionHandler: @escaping (LaunchListProtocol?) -> Void) {
         guard let launchURL = launchURL else { fatalError("Incorrect URL") }
         

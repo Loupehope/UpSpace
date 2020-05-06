@@ -12,6 +12,6 @@ struct LaunchList: LaunchListProtocol, Decodable, Equatable {
     var launches: [Launch]
     
     static func == (lhs: LaunchList, rhs: LaunchList) -> Bool {
-        return lhs.launches == rhs.launches
+        lhs.launches == rhs.launches
     }
 }
