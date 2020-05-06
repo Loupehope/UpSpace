@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LaunchesViewModelProtocol {
-    var onLaunchesChanged: ((LaunchListProtocol?) -> Void)? { get set }
+    var onLaunchesChanged: ((LaunchList?) -> Void)? { get set }
     
     func update()
     func loadMore()

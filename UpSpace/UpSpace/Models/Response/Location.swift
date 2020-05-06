@@ -9,9 +9,10 @@
 import Foundation
 
 struct Location: Decodable {
-    let id: Int
-    let countryCode: String
-    let pads: [Pad]?
-    //let infoURLs: [String]
-    //let wikiURL: String
+  var countryCode: String?
+  var id: Int?
+  var infoURL: String?
+  var name: String?
+  var pads: [Pad]?
+  var wikiURL: String?
 }

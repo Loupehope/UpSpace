@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		065568C22462DFE800B12716 /* BaseTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C12462DFE800B12716 /* BaseTableViewModel.swift */; };
+		065568C72462F2E400B12716 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C62462F2E400B12716 /* Rocket.swift */; };
+		065568C92462F33100B12716 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C82462F33100B12716 /* Agency.swift */; };
 		4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */; };
 		4C0BB765231545A0005B16C4 /* PreviousLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */; };
 		4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */; };
@@ -56,7 +58,6 @@
 		4CABD00F233370EF005D2D1D /* InfoTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */; };
 		4CC812C52316624C009208A7 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC812C42316624C009208A7 /* Pad.swift */; };
 		4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37067231280F100187903 /* TodayLaunchesService.swift */; };
-		4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370692312815E00187903 /* LaunchListProtocol.swift */; };
 		4CD370752312C06B00187903 /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370742312C06B00187903 /* CountryCodes.swift */; };
 		4CDC57AB245F598F00BE487E /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC57AA245F598F00BE487E /* UIColor+Colors.swift */; };
 		4CDC57B1245F5EF600BE487E /* CosmosNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC57B0245F5EF500BE487E /* CosmosNavigationController.swift */; };
@@ -67,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		065568C12462DFE800B12716 /* BaseTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewModel.swift; sourceTree = "<group>"; };
+		065568C62462F2E400B12716 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		065568C82462F33100B12716 /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
 		4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewController.swift; sourceTree = "<group>"; };
 		4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchAPI.swift; sourceTree = "<group>"; };
 		4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchesViewModel.swift; sourceTree = "<group>"; };
@@ -117,7 +120,6 @@
 		4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTimeCell.swift; sourceTree = "<group>"; };
 		4CC812C42316624C009208A7 /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
 		4CD37067231280F100187903 /* TodayLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesService.swift; sourceTree = "<group>"; };
-		4CD370692312815E00187903 /* LaunchListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListProtocol.swift; sourceTree = "<group>"; };
 		4CD370742312C06B00187903 /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
 		4CDC57AA245F598F00BE487E /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		4CDC57B0245F5EF500BE487E /* CosmosNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosNavigationController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06D7AAA5246301400040C9C5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				4C776D24230EC8CA00025B08 /* LaunchList.swift */,
+				4C776D27230EC9F800025B08 /* Launch.swift */,
+				4C6C1F96231BE00B00C7120F /* Mission.swift */,
+				4C6C1F98231BE04500C7120F /* Lsp.swift */,
+				4C0BB76823154CF3005B16C4 /* Location.swift */,
+				4CC812C42316624C009208A7 /* Pad.swift */,
+				065568C62462F2E400B12716 /* Rocket.swift */,
+				065568C82462F33100B12716 /* Agency.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		4C0BB75B23140880005B16C4 /* InfoLaunchViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +374,7 @@
 				4C776CF5230EB96C00025B08 /* AppDelegate.swift */,
 				4C5930AC245EB23100DDFEDD /* Resources */,
 				4C776D2D230ECF0F00025B08 /* Extension */,
-				4C776D26230EC8CD00025B08 /* Model */,
+				4C776D26230EC8CD00025B08 /* Models */,
 				4C776D21230EC4AE00025B08 /* API */,
 				4C776D1E230EC1FC00025B08 /* Service */,
 				4C776D15230EB98D00025B08 /* Controller */,
@@ -412,13 +429,12 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		4C776D26230EC8CD00025B08 /* Model */ = {
+		4C776D26230EC8CD00025B08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4CD3706E2312858200187903 /* Protocol */,
-				4CD3706F2312858F00187903 /* Response */,
+				06D7AAA5246301400040C9C5 /* Response */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4C776D2D230ECF0F00025B08 /* Extension */ = {
@@ -477,27 +493,6 @@
 				4CD370742312C06B00187903 /* CountryCodes.swift */,
 			);
 			path = Launch;
-			sourceTree = "<group>";
-		};
-		4CD3706E2312858200187903 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				4CD370692312815E00187903 /* LaunchListProtocol.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		4CD3706F2312858F00187903 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				4C776D24230EC8CA00025B08 /* LaunchList.swift */,
-				4C776D27230EC9F800025B08 /* Launch.swift */,
-				4C6C1F96231BE00B00C7120F /* Mission.swift */,
-				4C6C1F98231BE04500C7120F /* Lsp.swift */,
-				4C0BB76823154CF3005B16C4 /* Location.swift */,
-				4CC812C42316624C009208A7 /* Pad.swift */,
-			);
-			path = Response;
 			sourceTree = "<group>";
 		};
 		4CDC57AC245F59AE00BE487E /* Colors */ = {
@@ -708,7 +703,6 @@
 				4C5930A0245EAC0400DDFEDD /* ConfigurableUI.swift in Sources */,
 				4CD370752312C06B00187903 /* CountryCodes.swift in Sources */,
 				4C6C1FA7231D280000C7120F /* InfoMainCell.swift in Sources */,
-				4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */,
 				4C5930A3245EACAC00DDFEDD /* NextLaunchCell.swift in Sources */,
 				4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */,
 				4C6A393B231FC999007B043D /* LaunchesViewModel.swift in Sources */,
@@ -726,8 +720,10 @@
 				065568C22462DFE800B12716 /* BaseTableViewModel.swift in Sources */,
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
 				4C5930AB245EB22E00DDFEDD /* UIImage+Images.swift in Sources */,
+				065568C92462F33100B12716 /* Agency.swift in Sources */,
 				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
 				4C4C66E92460864700E8068D /* UIFont+Fonts.swift in Sources */,
+				065568C72462F2E400B12716 /* Rocket.swift in Sources */,
 				4C6C1F99231BE04500C7120F /* Lsp.swift in Sources */,
 				4C3DB01724602394003D413C /* BaseTableViewController.swift in Sources */,
 				4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */,

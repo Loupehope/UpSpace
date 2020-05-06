@@ -9,13 +9,13 @@
 import Foundation
 
 final class NextLaunchesViewModel: LaunchesViewModel {
-    override func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
+    override func sort(launches: LaunchList) -> LaunchList {
         guard let launch = previousLaunch else {
-            previousLaunch = launches.launches.last
+            previousLaunch = launches.launches?.last
             return launches
         }
-        let nextLaunches = launches.launches.filter { $0.start.timeIntervalSince1970 > launch.start.timeIntervalSince1970 }
-        let sorted = nextLaunches.sorted { first, second in
+        let nextLaunches = launches.launches?.filter { $0.start.timeIntervalSince1970 > launch.start.timeIntervalSince1970 }
+        let sorted = nextLaunches?.sorted { first, second in
             first.start < second.start
         }
         return LaunchList(launches: sorted)

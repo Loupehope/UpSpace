@@ -22,7 +22,7 @@ final class LaunchesService: NetworkService {
         self.launchAPI = launchAPI
     }
     
-    func load(_ completionHandler: @escaping (LaunchListProtocol?) -> Void) {
+    func load(_ completionHandler: @escaping (LaunchList?) -> Void) {
         guard let launchURL = launchURL else { fatalError("Incorrect URL") }
         
         AF.request(launchURL).responseData {

@@ -16,11 +16,11 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
     private let launchAPI: LaunchLibraryAPI
     private let service: LaunchesService
     private var mode: Mode
-    private var oldList: LaunchListProtocol = LaunchList(launches: [])
+    private var oldList = LaunchList(launches: [])
     
     internal var previousLaunch: Launch?
     
-    var onLaunchesChanged: ((LaunchListProtocol?) -> Void)?
+    var onLaunchesChanged: ((LaunchList?) -> Void)?
     
     init(api: LaunchLibraryAPI, mode: Mode) {
         self.launchAPI = api
@@ -45,15 +45,15 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
                 return
             }
             self.oldList = self.sort(launches: list)
-            if let launch = self.oldList.launches.last {
+            if let launch = self.oldList.launches?.last {
                 self.previousLaunch = launch
-                self.launchAPI.set(dateString: launch.isostart)
+              self.launchAPI.set(dateString: launch.isostart ?? "")
             }
             self.onLaunchesChanged?(self.oldList)
         }
     }
     
-    func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
+    func sort(launches: LaunchList) -> LaunchList {
         fatalError("This function must be overriden in subclass")
     }
 }
