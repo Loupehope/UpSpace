@@ -11,6 +11,7 @@ target 'UpSpace' do
 
    # Utilities
    pod 'SwiftDate'
+   pod 'DeviceKit'
 
    # UI
    pod 'Tabman'

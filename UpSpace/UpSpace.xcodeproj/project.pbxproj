@@ -13,6 +13,7 @@
 		4C0BB76923154CF3005B16C4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB76823154CF3005B16C4 /* Location.swift */; };
 		4C0C196023171675005D4C5F /* LaunchesTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C195F23171675005D4C5F /* LaunchesTabmanViewController.swift */; };
 		4C0F743E2462B8A7001D59E8 /* ObserverType+asVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F743D2462B8A7001D59E8 /* ObserverType+asVoid.swift */; };
+		4C0F74432462C305001D59E8 /* Device+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F74422462C305001D59E8 /* Device+Extensions.swift */; };
 		4C38B6072461D44600CF7485 /* UITableView+Bottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6062461D44600CF7485 /* UITableView+Bottom.swift */; };
 		4C38B60A2461D50100CF7485 /* CosmosRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */; };
 		4C3DB01524602220003D413C /* UITableView+CosmosTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DB01424602220003D413C /* UITableView+CosmosTableView.swift */; };
@@ -75,6 +76,7 @@
 		4C0BB76823154CF3005B16C4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4C0C195F23171675005D4C5F /* LaunchesTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTabmanViewController.swift; sourceTree = "<group>"; };
 		4C0F743D2462B8A7001D59E8 /* ObserverType+asVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserverType+asVoid.swift"; sourceTree = "<group>"; };
+		4C0F74422462C305001D59E8 /* Device+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Extensions.swift"; sourceTree = "<group>"; };
 		4C38B6062461D44600CF7485 /* UITableView+Bottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bottom.swift"; sourceTree = "<group>"; };
 		4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosRefreshControl.swift; sourceTree = "<group>"; };
 		4C3DB01424602220003D413C /* UITableView+CosmosTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CosmosTableView.swift"; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				4C4C66DB2460810C00E8068D /* TableKit */,
 				4C4C66DA2460810300E8068D /* UIKit */,
 				4C0F743F2462BB27001D59E8 /* Rx */,
+				4C0F74422462C305001D59E8 /* Device+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 			files = (
 				4C0F743E2462B8A7001D59E8 /* ObserverType+asVoid.swift in Sources */,
 				4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */,
+				4C0F74432462C305001D59E8 /* Device+Extensions.swift in Sources */,
 				4CDC57B7245F644E00BE487E /* TabBarController.swift in Sources */,
 				4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */,
 				4C593095245EA60100DDFEDD /* InitializableUI.swift in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
+import DeviceKit
 import RxCocoa
 import RxSwift
 import UIKit
@@ -31,7 +32,7 @@ extension BaseTableViewController {
         
         tableView.rx
             .contentOffset
-            .filter { $0.y < -160 && !tableView.isDecelerating && !refreshControl.isRefreshing }
+            .filter { $0.y < .ptrOffset && !tableView.isDecelerating && !refreshControl.isRefreshing }
             .bind(to: refreshBinder)
             .disposed(by: disposeBag)
     }
@@ -62,5 +63,11 @@ private extension BaseTableViewController {
                 base.viewModel.didScrollToTop()
             }
         }
+    }
+}
+
+private extension CGFloat {
+    static var ptrOffset: CGFloat {
+        Device.isSmallScreen ? -110 : -140
     }
 }
