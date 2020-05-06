@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Pad: Decodable {
+struct Pad: Decodable {
     let agencies: [Agency]?
     let id: Int?
     let infoURL: String?
