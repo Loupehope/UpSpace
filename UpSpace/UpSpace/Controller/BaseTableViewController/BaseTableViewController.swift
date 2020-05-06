@@ -21,21 +21,17 @@ class BaseTableViewController<ViewModelT: BaseTableViewModel>: BaseViewControlle
 }
 
 extension BaseTableViewController {
-    func bind(refreshControl: UIRefreshControl, with tableView: UITableView) {
-        let refreshRequestObservable = refreshControl.rx
-            .controlEvent(.valueChanged)
-            .asObservable()
-        
+    func bind(refreshControl: CosmosRefreshControl, with tableView: UITableView) {
         viewModel.isRefreshingDriver
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
-        viewModel.bind(refreshRequestObservable: refreshRequestObservable)
+        viewModel.bind(refreshRequestObservable: refreshControl.isRefreshObservable)
             .disposed(by: disposeBag)
         
         tableView.rx
             .contentOffset
-            .filter { $0.y < -160 && !refreshControl.isRefreshing }
+            .filter { $0.y < -160 && !tableView.isDecelerating && !refreshControl.isRefreshing }
             .bind { [weak self] _ in
                 self?.viewModel.startRefresh()
             }

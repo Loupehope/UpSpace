@@ -13,7 +13,7 @@
 		4C0BB76923154CF3005B16C4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB76823154CF3005B16C4 /* Location.swift */; };
 		4C0C196023171675005D4C5F /* LaunchesTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C195F23171675005D4C5F /* LaunchesTabmanViewController.swift */; };
 		4C38B6072461D44600CF7485 /* UIScrollView+Bottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6062461D44600CF7485 /* UIScrollView+Bottom.swift */; };
-		4C38B60A2461D50100CF7485 /* UIRefreshControl+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6092461D50100CF7485 /* UIRefreshControl+Factory.swift */; };
+		4C38B60A2461D50100CF7485 /* CosmosRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */; };
 		4C3DB01524602220003D413C /* UITableView+CosmosTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DB01424602220003D413C /* UITableView+CosmosTableView.swift */; };
 		4C3DB01724602394003D413C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DB01624602394003D413C /* BaseTableViewController.swift */; };
 		4C4C66E3246082A800E8068D /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C66E2246082A800E8068D /* String+Constants.swift */; };
@@ -74,7 +74,7 @@
 		4C0BB76823154CF3005B16C4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4C0C195F23171675005D4C5F /* LaunchesTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTabmanViewController.swift; sourceTree = "<group>"; };
 		4C38B6062461D44600CF7485 /* UIScrollView+Bottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Bottom.swift"; sourceTree = "<group>"; };
-		4C38B6092461D50100CF7485 /* UIRefreshControl+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Factory.swift"; sourceTree = "<group>"; };
+		4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosRefreshControl.swift; sourceTree = "<group>"; };
 		4C3DB01424602220003D413C /* UITableView+CosmosTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CosmosTableView.swift"; sourceTree = "<group>"; };
 		4C3DB01624602394003D413C /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		4C4C66E2246082A800E8068D /* String+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
@@ -170,12 +170,12 @@
 			path = UIScrollView;
 			sourceTree = "<group>";
 		};
-		4C38B60B2461D50D00CF7485 /* UIRefreshControl */ = {
+		4C38B60B2461D50D00CF7485 /* CosmosRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
-				4C38B6092461D50100CF7485 /* UIRefreshControl+Factory.swift */,
+				4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */,
 			);
-			path = UIRefreshControl;
+			path = CosmosRefreshControl;
 			sourceTree = "<group>";
 		};
 		4C4C66DA2460810300E8068D /* UIKit */ = {
@@ -187,7 +187,6 @@
 				4C4C66DF2460813200E8068D /* UITableView */,
 				4C4C66EA2460864A00E8068D /* UIFont */,
 				4C38B6082461D45900CF7485 /* UIScrollView */,
-				4C38B60B2461D50D00CF7485 /* UIRefreshControl */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -279,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				4C5930A1245EACA200DDFEDD /* Base */,
+				4C38B60B2461D50D00CF7485 /* CosmosRefreshControl */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -720,7 +720,7 @@
 				4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */,
 				4C67D9E224617AD30091F20E /* BaseViewController.swift in Sources */,
 				4C5930A5245EAD7500DDFEDD /* ViewModel.swift in Sources */,
-				4C38B60A2461D50100CF7485 /* UIRefreshControl+Factory.swift in Sources */,
+				4C38B60A2461D50100CF7485 /* CosmosRefreshControl.swift in Sources */,
 				4C59309C245EA8AA00DDFEDD /* UIView+AddSubviews.swift in Sources */,
 				4CDC57B1245F5EF600BE487E /* CosmosNavigationController.swift in Sources */,
 				4C3DB01524602220003D413C /* UITableView+CosmosTableView.swift in Sources */,

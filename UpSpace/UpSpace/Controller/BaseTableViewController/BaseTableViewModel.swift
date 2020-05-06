@@ -38,10 +38,12 @@ extension BaseTableViewModel {
         isRefreshingRelay.accept(false)
     }
     
-    func bind(refreshRequestObservable: Observable<Void>) -> Disposable {
-        refreshRequestObservable.subscribe { [weak self] in
-            self?.handleRefresh()
-        }
+    func bind(refreshRequestObservable: Observable<Bool>) -> Disposable {
+        refreshRequestObservable
+            .filter { $0 }
+            .bind { [weak self] _ in
+                self?.handleRefresh()
+            }
     }
 }
 

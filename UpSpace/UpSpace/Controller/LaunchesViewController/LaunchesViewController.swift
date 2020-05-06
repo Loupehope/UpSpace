@@ -49,18 +49,17 @@ private extension LaunchesViewController {
     
     func refreshLaunches() {
         tableDirector.clearTableView()
-        viewModel.handleRefresh()
     }
 }
 
 private extension LaunchesViewController {
     func addRefreshControl() {
-        let refreshControl: UIRefreshControl = .default
+        let refreshControl = CosmosRefreshControl()
         contentView.refreshControl = refreshControl
         bind(refreshControl: refreshControl, with: contentView)
         
         //HACK: fix incorrect refreshControl tintColor
-        contentView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
+        contentView.contentOffset = CGPoint(x: .zero, y: -refreshControl.frame.size.height)
     }
 }
 
