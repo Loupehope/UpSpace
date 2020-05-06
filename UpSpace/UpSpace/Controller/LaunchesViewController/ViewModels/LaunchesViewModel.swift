@@ -26,7 +26,6 @@ class LaunchesViewModel: BaseTableViewModel {
     
     init(api: LaunchLibraryAPI) {
         service = LaunchesService(launchAPI: api)
-        super.init()
     }
     
     override func handleRefresh() {
