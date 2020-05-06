@@ -20,10 +20,12 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.contentInset = UIEdgeInsets(top: 48, left: 0, bottom: 2, right: 0)
+        contentView.contentInset = .tableViewContentInset
+        
         tableDirector.clearTableView()
         addRefreshControl()
         bindViewModel()
+        
         viewModel.startRefresh()
     }
 }
@@ -32,13 +34,7 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
 
 private extension LaunchesViewController {
     func updateLaunches(with list: [Launch]) {
-        let rows = list.map {
-            TableRow<NextLaunchCell>(item: .init(launch: $0))
-                .on(.click) { [weak self] in
-                    self?.didSelectRow(for: $0.item.launch)
-                }
-        }
-        
+        let rows = viewModel.createRows(for: list, with: didSelectRow(for:))
         tableDirector.replaceSection(at: .zero, with: .create(with: rows), and: .fade)
         viewModel.stopRefresh()
     }
@@ -90,4 +86,8 @@ private extension LaunchesViewController {
             .bind(to: refreshLaunchesBinder)
             .disposed(by: disposeBag)
     }
+}
+
+private extension UIEdgeInsets {
+    static let tableViewContentInset = UIEdgeInsets(top: 48, left: 0, bottom: 2, right: 0)
 }

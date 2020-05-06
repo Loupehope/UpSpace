@@ -9,6 +9,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import TableKit
 
 class LaunchesViewModel: BaseTableViewModel {
     private let disposeBag = DisposeBag()
@@ -30,6 +31,13 @@ class LaunchesViewModel: BaseTableViewModel {
     
     override func handleRefresh() {
         update()
+    }
+    
+    func createRows(for launches: [Launch], with clickHandler: ((Launch) -> Void)?) -> [Row] {
+        launches.map {
+            TableRow<NextLaunchCell>(item: .init(launch: $0))
+                .on(.click) { clickHandler?($0.item.launch) }
+        }
     }
     
     func sort(launches: LaunchListProtocol) -> LaunchListProtocol {

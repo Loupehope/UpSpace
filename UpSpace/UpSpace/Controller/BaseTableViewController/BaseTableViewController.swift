@@ -32,27 +32,35 @@ extension BaseTableViewController {
         tableView.rx
             .contentOffset
             .filter { $0.y < -160 && !tableView.isDecelerating && !refreshControl.isRefreshing }
-            .bind { [weak self] _ in
-                self?.viewModel.startRefresh()
-            }
+            .bind(to: refreshBinder)
             .disposed(by: disposeBag)
     }
     
     func bindScrollToBottom(for tableView: UITableView, with edgeOffset: CGFloat = 20.0) {
         tableView.rx
             .contentOffset
-            .map { _ in
-                tableView.isNearBottomEdge(edgeOffset: edgeOffset) &&
-                    !(tableView.refreshControl?.isRefreshing ?? false)
-            }
+            .asVoid()
+            .map { tableView.isBottomPTRAvailable(offset: edgeOffset) }
             .distinctUntilChanged()
-            .bind { [weak viewModel] isBottom in
-                if isBottom {
-                    viewModel?.didScrollToBottom()
-                } else {
-                    viewModel?.didScrollToTop()
-                }
-            }
+            .bind(to: bottomBinder)
             .disposed(by: disposeBag)
+    }
+}
+
+private extension BaseTableViewController {
+    var refreshBinder: Binder<CGPoint> {
+        Binder(self) { base, _ in
+            base.viewModel.startRefresh()
+        }
+    }
+    
+    var bottomBinder: Binder<Bool> {
+        Binder(self) { base, isBottom in
+            if isBottom {
+                base.viewModel.didScrollToBottom()
+            } else {
+                base.viewModel.didScrollToTop()
+            }
+        }
     }
 }
