@@ -42,10 +42,6 @@ private extension LaunchesViewController {
     func didSelectRow(for item: Launch?) {
         // MOCK - Feature
     }
-    
-    func refreshLaunches() {
-        tableDirector.clearTableView()
-    }
 }
 
 private extension LaunchesViewController {
@@ -68,7 +64,7 @@ private extension LaunchesViewController {
     
     var refreshLaunchesBinder: Binder<Bool> {
         Binder(self) { base, _ in
-            base.refreshLaunches()
+            base.tableDirector.clearTableView()
         }
     }
     
