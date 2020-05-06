@@ -11,6 +11,7 @@
 		065568C72462F2E400B12716 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C62462F2E400B12716 /* Rocket.swift */; };
 		065568C92462F33100B12716 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C82462F33100B12716 /* Agency.swift */; };
 		06D7AAA7246305B70040C9C5 /* InfoLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7AAA6246305B70040C9C5 /* InfoLaunchViewModel.swift */; };
+		06F5505F24631284005AAC84 /* Optional+nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5505E24631284005AAC84 /* Optional+nil.swift */; };
 		4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */; };
 		4C0BB765231545A0005B16C4 /* PreviousLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */; };
 		4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */; };
@@ -72,6 +73,7 @@
 		065568C62462F2E400B12716 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		065568C82462F33100B12716 /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
 		06D7AAA6246305B70040C9C5 /* InfoLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewModel.swift; sourceTree = "<group>"; };
+		06F5505E24631284005AAC84 /* Optional+nil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+nil.swift"; sourceTree = "<group>"; };
 		4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewController.swift; sourceTree = "<group>"; };
 		4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchAPI.swift; sourceTree = "<group>"; };
 		4C0BB76623154754005B16C4 /* PreviousLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousLaunchesViewModel.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		06F5505D24631265005AAC84 /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				06F5505E24631284005AAC84 /* Optional+nil.swift */,
+			);
+			path = Optional;
+			sourceTree = "<group>";
+		};
 		4C0BB75B23140880005B16C4 /* InfoLaunchViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		4C4C66DC2460811A00E8068D /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				06F5505D24631265005AAC84 /* Optional */,
 				4C4C66E12460829D00E8068D /* URL */,
 				4C4C66E4246082AC00E8068D /* String */,
 				4C4C66E72460833500E8068D /* CGFloat */,
@@ -682,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */,
+				06F5505F24631284005AAC84 /* Optional+nil.swift in Sources */,
 				4CDC57B7245F644E00BE487E /* TabBarController.swift in Sources */,
 				4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */,
 				4C593095245EA60100DDFEDD /* InitializableUI.swift in Sources */,

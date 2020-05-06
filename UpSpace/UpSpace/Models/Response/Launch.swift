@@ -9,80 +9,80 @@
 import Foundation
 
 struct Launch: Decodable, Equatable {
-  var changed: String?
-  var failreason: String?
-  var hashtag: String?
-  var holdreason: String?
-  var id: Int?
-  var infoURL: String?
-  var infoURLs: [String]?
-  var inhold: Int?
-  var isoend: String?
-  var isonet: String?
-  var isostart: String?
-  var location: Location?
-  var lsp: Lsp?
-  var missions: [Mission]?
-  var name: String?
-  var net: String?
-  var netstamp: Int?
-  var probability: Int?
-  var rocket: Rocket?
-  var status: Int?
-  var tbddate: Int?
-  var tbdtime: Int?
-  var vidURL: String?
-  var vidURLs: [String]?
-  var westamp: Int?
-  var windowend: String?
-  var windowstart: String?
-  var wsstamp: Int?
-  
-  var isFinished: Bool {
-    start.timeIntervalSince1970 < Date().timeIntervalSince1970
-  }
-  
-  var start: Date {
-    guard let result = DateFormatterAPI().getDate(from: isostart ?? "") else {
-      fatalError("Couldn't convert date from string")
+    let changed: String?
+    let failreason: String?
+    let hashtag: String?
+    let holdreason: String?
+    let id: Int?
+    let infoURL: String?
+    let infoURLs: [String]?
+    let inhold: Int?
+    let isoend: String?
+    let isonet: String?
+    let isostart: String?
+    let location: Location?
+    let lsp: Lsp?
+    let missions: [Mission]?
+    let name: String?
+    let net: String?
+    let netstamp: Int?
+    let probability: Int?
+    let rocket: Rocket?
+    let status: Int?
+    let tbddate: Int?
+    let tbdtime: Int?
+    let vidURL: String?
+    let vidURLs: [String]?
+    let westamp: Int?
+    let windowend: String?
+    let windowstart: String?
+    let wsstamp: Int?
+    
+    var isFinished: Bool {
+        start.timeIntervalSince1970 < Date().timeIntervalSince1970
     }
-    return result
-  }
-  
-  static func == (lhs: Launch, rhs: Launch) -> Bool {
-      lhs.id == rhs.id
-  }
-  
-  static func makeEmptyLaunch(with date: Date) -> Launch {
-    let location = Location(countryCode: .empty, id: 0, pads: [])
-    let dateString = DateFormatterAPI.makeiSOString(for: date)
-    return Launch(changed: .empty,
-                  failreason: .empty,
-                  hashtag: .empty,
-                  holdreason: .empty,
-                  id: 0,
-                  infoURL: .empty,
-                  infoURLs: [String](),
-                  inhold: 0,
-                  isoend: .empty,
-                  isonet: .empty,
-                  isostart: dateString,
-                  location: location,
-                  lsp: Lsp(),
-                  missions: [Mission](),
-                  name: .empty,
-                  net: .empty,
-                  netstamp: 0,
-                  probability: 0,
-                  rocket: Rocket(),
-                  status: 0,
-                  tbddate: 0,
-                  tbdtime: 0,
-                  vidURL: .empty,
-                  vidURLs: [String](),
-                  westamp: 0,
-                  windowend: .empty,
-                  windowstart: .empty,
-                  wsstamp: 0)
-  }
+    
+    var start: Date {
+        guard let result = DateFormatterAPI().getDate(from: isostart ?? "") else {
+            fatalError("Couldn't convert date from string")
+        }
+        return result
+    }
+    
+    static func == (lhs: Launch, rhs: Launch) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    static func makeEmptyLaunch(with date: Date) -> Launch {
+        let location = Location.makeEmptyLocation()
+        let dateString = DateFormatterAPI.makeiSOString(for: date)
+        return Launch(changed: .empty,
+                      failreason: .empty,
+                      hashtag: .empty,
+                      holdreason: .empty,
+                      id: 0,
+                      infoURL: .empty,
+                      infoURLs: [String](),
+                      inhold: 0,
+                      isoend: .empty,
+                      isonet: .empty,
+                      isostart: dateString,
+                      location: location,
+                      lsp: Lsp.makeEmptyLsp(),
+                      missions: [Mission](),
+                      name: .empty,
+                      net: .empty,
+                      netstamp: 0,
+                      probability: 0,
+                      rocket: Rocket.makeEmptyRocket(),
+                      status: 0,
+                      tbddate: 0,
+                      tbdtime: 0,
+                      vidURL: .empty,
+                      vidURLs: [String](),
+                      westamp: 0,
+                      windowend: .empty,
+                      windowstart: .empty,
+                      wsstamp: 0)
+    }
 }

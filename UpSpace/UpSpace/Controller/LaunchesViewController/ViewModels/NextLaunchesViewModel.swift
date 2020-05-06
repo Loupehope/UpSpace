@@ -18,6 +18,6 @@ final class NextLaunchesViewModel: LaunchesViewModel {
         let sorted = nextLaunches?.sorted { first, second in
             first.start < second.start
         }
-        return LaunchList(launches: sorted)
+        return LaunchList(launches: sorted ?? [Launch]())
     }
 }

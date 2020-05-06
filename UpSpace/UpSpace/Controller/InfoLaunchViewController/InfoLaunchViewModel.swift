@@ -8,11 +8,11 @@
 
 import Foundation
 
-class InfoLaunchViewModel: BaseTableViewModel {
-  var launch: Launch?
-  
-  init(launch: Launch?) {
-    super.init()
-    self.launch = launch
-  }
+final class InfoLaunchViewModel: BaseTableViewModel {
+    let launch: Launch
+    
+    init(launch: Launch) {
+        self.launch = launch
+        super.init()
+    }
 }

@@ -9,12 +9,26 @@
 import Foundation
 
 struct LaunchList: Decodable, Equatable {
-  var count: Int?
-  var launches: [Launch]?
-  var offset: Int?
-  var total: Int?
-        
-  static func == (lhs: LaunchList, rhs: LaunchList) -> Bool {
-      lhs.launches == rhs.launches
-  }
+    let count: Int?
+    let launches: [Launch]?
+    let offset: Int?
+    let total: Int?
+    
+    init(launches: [Launch]) {
+        self.count = 0
+        self.offset = 0
+        self.total = 0
+        self.launches = launches
+    }
+    
+    init() {
+        self.count = 0
+        self.launches = [Launch]()
+        self.offset = 0
+        self.total = 0
+    }
+    
+    static func == (lhs: LaunchList, rhs: LaunchList) -> Bool {
+        lhs.launches == rhs.launches
+    }
 }

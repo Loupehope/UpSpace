@@ -9,13 +9,25 @@
 import Foundation
 
 struct Agency: Decodable {
-  var abbrev: String?
-  var changed: String?
-  var countryCode: String?
-  var id: Int?
-  var infoURL: String?
-  var infoURLs: [String]?
-  var name: String?
-  var type: Int?
-  var wikiURL: String?
+    let abbrev: String?
+    let changed: String?
+    let countryCode: String?
+    let id: Int?
+    let infoURL: String?
+    let infoURLs: [String]?
+    let name: String?
+    let type: Int?
+    let wikiURL: String?
+    
+    static func makeEmptyAgency() -> Agency {
+        Agency(abbrev: .empty,
+               changed: .empty,
+               countryCode: .empty,
+               id: 0,
+               infoURL: .empty,
+               infoURLs: [String](),
+               name: .empty,
+               type: 0,
+               wikiURL: .empty)
+    }
 }

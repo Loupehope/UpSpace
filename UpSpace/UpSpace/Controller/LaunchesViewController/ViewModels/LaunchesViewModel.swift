@@ -16,7 +16,7 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
     private let launchAPI: LaunchLibraryAPI
     private let service: LaunchesService
     private var mode: Mode
-    private var oldList = LaunchList(launches: [])
+    private var oldList = LaunchList()
     
     internal var previousLaunch: Launch?
     
@@ -47,7 +47,7 @@ class LaunchesViewModel: LaunchesViewModelProtocol {
             self.oldList = self.sort(launches: list)
             if let launch = self.oldList.launches?.last {
                 self.previousLaunch = launch
-              self.launchAPI.set(dateString: launch.isostart ?? "")
+                self.launchAPI.set(dateString: launch.isostart.orEmpty)
             }
             self.onLaunchesChanged?(self.oldList)
         }

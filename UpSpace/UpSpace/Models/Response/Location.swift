@@ -9,10 +9,19 @@
 import Foundation
 
 struct Location: Decodable {
-  var countryCode: String?
-  var id: Int?
-  var infoURL: String?
-  var name: String?
-  var pads: [Pad]?
-  var wikiURL: String?
+    let countryCode: String?
+    let id: Int?
+    let infoURL: String?
+    let name: String?
+    let pads: [Pad]?
+    let wikiURL: String?
+    
+    static func makeEmptyLocation() -> Location {
+        Location(countryCode: .empty,
+                 id: 0,
+                 infoURL: .empty,
+                 name: .empty,
+                 pads: [Pad](),
+                 wikiURL: .empty)
+    }
 }

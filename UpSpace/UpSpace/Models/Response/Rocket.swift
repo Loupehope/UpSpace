@@ -9,13 +9,25 @@
 import Foundation
 
 struct Rocket: Decodable {
-  var agencies: [Agency]?
-  var configuration: String?
-  var familyname: String?
-  var id: Int?
-  var imageSizes: [Int]?
-  var imageURL: String?
-  var infoURLs: [String]?
-  var name: String?
-  var wikiURL: String?
+    let agencies: [Agency]?
+    let configuration: String?
+    let familyname: String?
+    let id: Int?
+    let imageSizes: [Int]?
+    let imageURL: String?
+    let infoURLs: [String]?
+    let name: String?
+    let wikiURL: String?
+    
+    static func makeEmptyRocket() -> Rocket {
+        Rocket(agencies: [Agency](),
+               configuration: .empty,
+               familyname: .empty,
+               id: 0,
+               imageSizes: [Int](),
+               imageURL: .empty,
+               infoURLs: [String](),
+               name: .empty,
+               wikiURL: .empty)
+    }
 }

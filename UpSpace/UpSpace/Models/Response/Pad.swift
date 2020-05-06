@@ -9,12 +9,23 @@
 import Foundation
 
 public struct Pad: Decodable {
-  var agencies: [Agency]?
-  var id: Int?
-  var infoURL: String?
-  var latitude: Float?
-  var longitude: Float?
-  var mapURL: String?
-  var name: String?
-  var wikiURL: String?
+    let agencies: [Agency]?
+    let id: Int?
+    let infoURL: String?
+    let latitude: Float?
+    let longitude: Float?
+    let mapURL: String?
+    let name: String?
+    let wikiURL: String?
+    
+    static func makeEmptyPad() -> Pad {
+        Pad(agencies: [Agency](),
+            id: 0,
+            infoURL: .empty,
+            latitude: 0.0,
+            longitude: 0.0,
+            mapURL: .empty,
+            name: .empty,
+            wikiURL: .empty)
+    }
 }
