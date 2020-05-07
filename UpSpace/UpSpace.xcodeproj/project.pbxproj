@@ -10,6 +10,9 @@
 		065568C22462DFE800B12716 /* BaseTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C12462DFE800B12716 /* BaseTableViewModel.swift */; };
 		065568C72462F2E400B12716 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C62462F2E400B12716 /* Rocket.swift */; };
 		065568C92462F33100B12716 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C82462F33100B12716 /* Agency.swift */; };
+		06C4ED2D24642F9900CDA326 /* NextLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */; };
+		06C4ED322464648E00CDA326 /* CircleImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED312464648E00CDA326 /* CircleImageCell.swift */; };
+		06C4ED342464701B00CDA326 /* CircleImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */; };
 		06D7AAA7246305B70040C9C5 /* InfoLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7AAA6246305B70040C9C5 /* InfoLaunchViewModel.swift */; };
 		06F5505F24631284005AAC84 /* Optional+nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F5505E24631284005AAC84 /* Optional+nil.swift */; };
 		4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */; };
@@ -72,6 +75,9 @@
 		065568C12462DFE800B12716 /* BaseTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewModel.swift; sourceTree = "<group>"; };
 		065568C62462F2E400B12716 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		065568C82462F33100B12716 /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
+		06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesViewController.swift; sourceTree = "<group>"; };
+		06C4ED312464648E00CDA326 /* CircleImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCell.swift; sourceTree = "<group>"; };
+		06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCellViewModel.swift; sourceTree = "<group>"; };
 		06D7AAA6246305B70040C9C5 /* InfoLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewModel.swift; sourceTree = "<group>"; };
 		06F5505E24631284005AAC84 /* Optional+nil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+nil.swift"; sourceTree = "<group>"; };
 		4C0BB75923140862005B16C4 /* InfoLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLaunchViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06C4ED2B24642F7F00CDA326 /* NextLaunchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */,
+			);
+			path = NextLaunchViewController;
+			sourceTree = "<group>";
+		};
+		06C4ED302464647100CDA326 /* CircleImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				06C4ED312464648E00CDA326 /* CircleImageCell.swift */,
+				06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */,
+			);
+			path = CircleImageCell;
+			sourceTree = "<group>";
+		};
 		06D7AAA5246301400040C9C5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +352,7 @@
 		4C5930AE245EBA4200DDFEDD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				06C4ED302464647100CDA326 /* CircleImageCell */,
 				4C5930AF245EBA4B00DDFEDD /* Base */,
 				4C6C1FA0231D1AE200C7120F /* InfoLaunchHeaderCell */,
 				4C5930A7245EADA000DDFEDD /* NextLaunchCell */,
@@ -405,6 +429,7 @@
 		4C776D15230EB98D00025B08 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06C4ED2B24642F7F00CDA326 /* NextLaunchViewController */,
 				4C0BB75B23140880005B16C4 /* InfoLaunchViewController */,
 				4C776D1A230EBA0700025B08 /* LaunchesViewController */,
 				4CDC57B2245F5F0F00BE487E /* CosmosNavigationController.swift */,
@@ -726,9 +751,12 @@
 				4C6C1F97231BE00B00C7120F /* Mission.swift in Sources */,
 				4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */,
 				4C776CF8230EB96C00025B08 /* LaunchesViewController.swift in Sources */,
+				06C4ED342464701B00CDA326 /* CircleImageCellViewModel.swift in Sources */,
 				4C5930A9245EADAD00DDFEDD /* NextLaunchCellViewModel.swift in Sources */,
 				4CDC57AB245F598F00BE487E /* UIColor+Colors.swift in Sources */,
 				4C5930B3245EBEC300DDFEDD /* TableSection+Extensions.swift in Sources */,
+				06C4ED322464648E00CDA326 /* CircleImageCell.swift in Sources */,
+				06C4ED2D24642F9900CDA326 /* NextLaunchesViewController.swift in Sources */,
 				4C5930BA245ECAB100DDFEDD /* EmptyRow.swift in Sources */,
 				06D7AAA7246305B70040C9C5 /* InfoLaunchViewModel.swift in Sources */,
 				4C5930B5245EC7B600DDFEDD /* TableDirector+SectionExtensions.swift in Sources */,

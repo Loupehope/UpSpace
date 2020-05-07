@@ -11,16 +11,25 @@ import UIKit
 
 class InfoLaunchViewController: BaseTableViewController {
     private lazy var tableDirector = TableDirector(tableView: tableView)
-    private var launchViewModel: LaunchesViewModelProtocol?
+    private var launchViewModel: InfoLaunchViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+        // Add action selector
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: nil)]
+        configureAppearence()
+    }
+    
+    func configureAppearence() {
+        let circleImage = TableRow<CircleImageCell>(item: CircleImageCellViewModel(launch: launchViewModel?.launch ?? Launch.makeEmptyLaunch(with: Date())))
+        let section = TableSection(rows: [circleImage])
+        tableDirector += section
     }
 }
 
 extension InfoLaunchViewController: ConfigurableUI {
-    func configure(with viewModel: LaunchesViewModelProtocol) {
+    func configure(with viewModel: InfoLaunchViewModel) {
         launchViewModel = viewModel
     }
 }
