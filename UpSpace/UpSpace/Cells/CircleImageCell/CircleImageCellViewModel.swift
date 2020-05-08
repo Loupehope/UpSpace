@@ -6,12 +6,12 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class CircleImageCellViewModel: ViewModel {
-    let image: String?
+    let image: UIImage?
     
-    init(launch: Launch) {
-        self.image = "flags/" + (launch.location?.countryCode?.lowercased() ?? .empty)
+    init(image: UIImage?) {
+        self.image = image
     }
 }

@@ -24,4 +24,22 @@ extension UIImage {
     static let calendarLaunch = #imageLiteral(resourceName: "date")
     
     static let clockLaunch = #imageLiteral(resourceName: "clock")
+    
+    static let usa = #imageLiteral(resourceName: "usa")
+    
+    static let china = #imageLiteral(resourceName: "china")
+    
+    static let guf = #imageLiteral(resourceName: "guf")
+    
+    static let india = #imageLiteral(resourceName: "india")
+    
+    static let japan = #imageLiteral(resourceName: "japan")
+    
+    static let kazakhstan = #imageLiteral(resourceName: "kazakhstan")
+    
+    static let russia = #imageLiteral(resourceName: "russia")
+    
+    static let unk = #imageLiteral(resourceName: "unk")
+    
+    static let zeland = #imageLiteral(resourceName: "zeland")
 }

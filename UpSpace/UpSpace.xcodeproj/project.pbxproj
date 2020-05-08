@@ -10,6 +10,7 @@
 		065568C22462DFE800B12716 /* BaseTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C12462DFE800B12716 /* BaseTableViewModel.swift */; };
 		065568C72462F2E400B12716 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C62462F2E400B12716 /* Rocket.swift */; };
 		065568C92462F33100B12716 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065568C82462F33100B12716 /* Agency.swift */; };
+		065A733C24661C0900E7B959 /* Launch+icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A733B24661C0900E7B959 /* Launch+icons.swift */; };
 		06C4ED2D24642F9900CDA326 /* NextLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */; };
 		06C4ED322464648E00CDA326 /* CircleImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED312464648E00CDA326 /* CircleImageCell.swift */; };
 		06C4ED342464701B00CDA326 /* CircleImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */; };
@@ -75,6 +76,7 @@
 		065568C12462DFE800B12716 /* BaseTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewModel.swift; sourceTree = "<group>"; };
 		065568C62462F2E400B12716 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		065568C82462F33100B12716 /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
+		065A733B24661C0900E7B959 /* Launch+icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+icons.swift"; sourceTree = "<group>"; };
 		06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesViewController.swift; sourceTree = "<group>"; };
 		06C4ED312464648E00CDA326 /* CircleImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCell.swift; sourceTree = "<group>"; };
 		06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCellViewModel.swift; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065A733A24661BEE00E7B959 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				065A733B24661C0900E7B959 /* Launch+icons.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		06C4ED2B24642F7F00CDA326 /* NextLaunchViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +481,7 @@
 		4C776D26230EC8CD00025B08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				065A733A24661BEE00E7B959 /* Extension */,
 				06D7AAA5246301400040C9C5 /* Response */,
 			);
 			path = Models;
@@ -776,6 +787,7 @@
 				4C776D19230EB9F800025B08 /* LaunchesViewModelProtocol.swift in Sources */,
 				4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */,
 				4C0C196023171675005D4C5F /* LaunchesTabmanViewController.swift in Sources */,
+				065A733C24661C0900E7B959 /* Launch+icons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

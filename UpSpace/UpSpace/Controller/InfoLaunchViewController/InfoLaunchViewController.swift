@@ -22,8 +22,10 @@ class InfoLaunchViewController: BaseTableViewController {
     }
     
     func configureAppearence() {
-        let circleImage = TableRow<CircleImageCell>(item: CircleImageCellViewModel(launch: launchViewModel?.launch ?? Launch.makeEmptyLaunch(with: Date())))
-        let section = TableSection(rows: [circleImage])
+        let image: UIImage? = Launch.countryIcon(country: launchViewModel?.launch.location?.countryCode)
+        let circleImageSection = TableRow<CircleImageCell>(item: CircleImageCellViewModel(image: image))
+        guard image != nil else { return }
+        let section = TableSection(rows: [circleImageSection])
         tableDirector += section
     }
 }

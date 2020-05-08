@@ -10,51 +10,27 @@ import TableKit
 import UIKit
 
 final class CircleImageCell: BaseInitializableCell {
-    private let containerView = UIView()
     private let circleImageView = UIImageView()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        initializeUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        initializeUI()
-    }
     
     override func addUI() {
         super.addUI()
         
-        containerView.addSubview(circleImageView)
-        addSubview(containerView)
+        addSubview(circleImageView)
     }
     
     override func setupUI() {
         super.setupUI()
         
         circleImageView.snp.remakeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
+            make.center.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
+            //make.size.equalTo(sizeThatFits(CGSize(width: 50, height: 50)))
         }
-        
-        containerView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
-            make.leading.equalToSuperview().offset(CGFloat.defaultInset)
-        }
-    }
-    
-    override func configureUI() {
-        super.configureUI()
-        
-        containerView.backgroundColor = .tableViewSpace
     }
 }
 
 extension CircleImageCell: ConfigurableCell {
     func configure(with model: CircleImageCellViewModel) {
-        circleImageView.image = UIImage(named: model.image ?? .empty)
+        circleImageView.image = model.image
     }
 }
