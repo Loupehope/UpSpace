@@ -54,7 +54,6 @@ extension BaseTableViewController {
         
         tableView.rx
             .willDisplayCell
-            .distinctUntilChanged { $0.indexPath == $1.indexPath }
             .map { [weak contentView] in
                 guard let contentView = contentView else {
                     return false

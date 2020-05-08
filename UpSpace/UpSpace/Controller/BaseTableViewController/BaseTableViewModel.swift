@@ -74,12 +74,3 @@ extension BaseTableViewModel {
             }
     }
 }
-
-class InfoLaunchViewModel: BaseTableViewModel {
-    var launch: Launch?
-    
-    init(launch: Launch?) {
-        self.launch = launch
-        super.init()
-    }
-}
