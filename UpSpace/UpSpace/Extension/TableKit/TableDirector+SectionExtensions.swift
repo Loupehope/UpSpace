@@ -39,6 +39,8 @@ extension TableDirector {
     }
     
     private func perform(action: () -> Void, withAnimation isAnimating: Bool) {
+        tableView?.isUserInteractionEnabled = false
+        
         if !isAnimating {
             UIView.performWithoutAnimation {
                 action()
@@ -46,5 +48,7 @@ extension TableDirector {
         } else {
             action()
         }
+        
+        tableView?.isUserInteractionEnabled = true
     }
 }
