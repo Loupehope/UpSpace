@@ -32,6 +32,10 @@ class LaunchesViewModel: BaseTableViewModel {
         update()
     }
     
+    override func handleLoadMore() {
+        loadMore()
+    }
+    
     func createRows(for launches: [Launch], with clickHandler: ((Launch) -> Void)?) -> [Row] {
         launches.map {
             TableRow<NextLaunchCell>(item: .init(launch: $0))

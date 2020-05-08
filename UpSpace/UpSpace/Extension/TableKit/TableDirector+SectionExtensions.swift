@@ -11,24 +11,45 @@ import TableKit
 extension TableDirector {
     func replaceSection(at index: Int, with section: TableSection, and animation: UITableView.RowAnimation) {
         replaceSection(at: index, with: section)
-        
-        let completion = { [weak self] in
-            switch animation {
-            case .none:
-                self?.reload()
-            default:
-                self?.tableView?.beginUpdates()
-                self?.tableView?.reloadSections([index], with: animation)
-                self?.tableView?.endUpdates()
-            }
-        }
-        
-        DispatchQueue.main.async {
-            completion()
-        }
+        reloadSections(at: [index], with: animation)
+    }
+    
+    func appendSection(_ section: TableSection, with animation: UITableView.RowAnimation) {
+        append(section: section)
+        appendSections(at: [sections.count - 1], with: animation)
     }
     
     func clearTableView() {
-        clear().append(section: .empty).reload()
+        clear().reload()
+    }
+    
+    private func appendSections(at indexes: IndexSet, with animation: UITableView.RowAnimation) {
+        let completion = { [weak self] in
+            self?.tableView?.beginUpdates()
+            self?.tableView?.insertSections(indexes, with: animation)
+            self?.tableView?.endUpdates()
+        }
+        
+        perform(action: completion, withAnimation: animation != .none)
+    }
+    
+    private func reloadSections(at indexes: IndexSet, with animation: UITableView.RowAnimation) {
+        let completion = { [weak self] in
+            self?.tableView?.beginUpdates()
+            self?.tableView?.reloadSections(indexes, with: animation)
+            self?.tableView?.endUpdates()
+        }
+        
+        perform(action: completion, withAnimation: animation != .none)
+    }
+    
+    private func perform(action: () -> Void, withAnimation isAnimating: Bool) {
+        if !isAnimating {
+            UIView.performWithoutAnimation {
+                action()
+            }
+        } else {
+            action()
+        }
     }
 }
