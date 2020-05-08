@@ -10,8 +10,8 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     private lazy var nextLaunchViewController: CosmosNavigationController = {
-        let controller = InfoLaunchViewController()
-        controller.configure(with: NextLaunchesViewModel(api: NextLaunchAPI(limit: 1), mode: .next))
+        let viewModel = NextLaunchesViewModel(api: NextLaunchAPI(limit: 1))
+        let controller = InfoLaunchViewController(viewModel: viewModel)
         return controller.withNavigationController()
     }()
     
