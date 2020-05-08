@@ -32,17 +32,40 @@ extension BaseTableViewController {
         
         tableView.rx
             .contentOffset
+            .asObservable()
             .filter { $0.y < .ptrOffset && !tableView.isDecelerating && !refreshControl.isRefreshing }
             .bind(to: refreshBinder)
             .disposed(by: disposeBag)
     }
     
-    func bindScrollToBottom(for tableView: UITableView, with edgeOffset: CGFloat = 20.0) {
+    func bindScrollToBottom(activityView: CosmosActivityView,
+                            for tableView: UITableView,
+                            with edgeOffset: CGFloat = -.defaultHeight) {
+        viewModel.isBottomObservable
+            .observeOn(MainScheduler.asyncInstance)
+            .do(onNext: { [weak contentView] in
+                contentView?.tableFooterView = $0 ? activityView : UIView(frame: .zero)
+            })
+            .bind(to: activityView.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        viewModel.bind(loadMoreRequestObservable: activityView.isAnimatingObservable)
+            .disposed(by: disposeBag)
+        
         tableView.rx
-            .contentOffset
-            .asVoid()
-            .map { tableView.isBottomPTRAvailable(offset: edgeOffset) }
-            .distinctUntilChanged()
+            .willDisplayCell
+            .map { [weak contentView] in
+                guard let contentView = contentView else {
+                    return false
+                }
+                
+                let lastSection = contentView.numberOfSections - 1
+                let lastCell = contentView.numberOfRows(inSection: lastSection) - 1
+                let intexPath = IndexPath(row: lastCell, section: lastSection)
+                
+                return $0.indexPath == intexPath && !activityView.isAnimating
+            }
+            .filter { $0 }
             .bind(to: bottomBinder)
             .disposed(by: disposeBag)
     }
@@ -56,12 +79,8 @@ private extension BaseTableViewController {
     }
     
     var bottomBinder: Binder<Bool> {
-        Binder(self) { base, isBottom in
-            if isBottom {
-                base.viewModel.didScrollToBottom()
-            } else {
-                base.viewModel.didScrollToTop()
-            }
+        Binder(self) { base, _ in
+            base.viewModel.didScrollToBottom()
         }
     }
 }

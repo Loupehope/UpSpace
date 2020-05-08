@@ -17,6 +17,10 @@ class BaseTableViewModel: ViewModel {
     func handleRefresh() {
         // override
     }
+    
+    func handleLoadMore() {
+        // override
+    }
 }
 
 // MARK: - PTR
@@ -39,7 +43,7 @@ extension BaseTableViewModel {
     }
     
     func bind(refreshRequestObservable: Observable<Bool>) -> Disposable {
-        refreshRequestObservable
+        refreshRequestObservable.concat(isRefreshingObservable)
             .filter { $0 }
             .bind { [weak self] _ in
                 self?.handleRefresh()
@@ -50,8 +54,8 @@ extension BaseTableViewModel {
 // MARK: - Bottom Activity
 
 extension BaseTableViewModel {
-    var isBottomDriver: Driver<Bool> {
-        isBottomRelay.asDriver(onErrorJustReturn: false)
+    var isBottomObservable: Observable<Bool> {
+        isBottomRelay.asObservable()
     }
     
     func didScrollToBottom() {
@@ -60,5 +64,13 @@ extension BaseTableViewModel {
     
     func didScrollToTop() {
         isBottomRelay.accept(false)
+    }
+    
+    func bind(loadMoreRequestObservable: Observable<Bool>) -> Disposable {
+        loadMoreRequestObservable.withLatestFrom(isBottomRelay)
+            .filter { $0 }
+            .bind { [weak self] _ in
+                self?.handleLoadMore()
+            }
     }
 }

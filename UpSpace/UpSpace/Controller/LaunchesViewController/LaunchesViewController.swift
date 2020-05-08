@@ -24,6 +24,7 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
         
         tableDirector.clearTableView()
         addRefreshControl()
+        addBottomRefreshControl()
         bindViewModel()
         
         viewModel.startRefresh()
@@ -35,7 +36,9 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
 private extension LaunchesViewController {
     func updateLaunches(with list: [Launch]) {
         let rows = viewModel.createRows(for: list, with: didSelectRow(for:))
-        tableDirector.replaceSection(at: .zero, with: .create(with: rows), and: .fade)
+        tableDirector.appendSection(.create(with: rows), with: .fade)
+        
+        viewModel.didScrollToTop()
         viewModel.stopRefresh()
     }
     
@@ -53,12 +56,18 @@ private extension LaunchesViewController {
         //HACK: fix incorrect refreshControl tintColor
         contentView.contentOffset = CGPoint(x: .zero, y: -refreshControl.frame.size.height)
     }
+    
+    func addBottomRefreshControl() {
+        let activityView: CosmosActivityView = .default
+        contentView.tableFooterView = activityView
+        bindScrollToBottom(activityView: activityView, for: contentView)
+    }
 }
 
 private extension LaunchesViewController {
-    var launchesBinder: Binder<LaunchListProtocol> {
+    var launchesBinder: Binder<LaunchListProtocol?> {
         Binder(self) { base, list in
-            base.updateLaunches(with: list.launches)
+            base.updateLaunches(with: list?.launches ?? [])
         }
     }
     
@@ -72,7 +81,6 @@ private extension LaunchesViewController {
         viewModel.onLaunchesLoadObservable
             .observeOn(MainScheduler.asyncInstance)
             .skip(1)
-            .filterNil()
             .bind(to: launchesBinder)
             .disposed(by: disposeBag)
         
