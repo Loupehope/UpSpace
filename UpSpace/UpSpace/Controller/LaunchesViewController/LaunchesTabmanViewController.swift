@@ -29,6 +29,7 @@ class LaunchesTabmanViewController: TabmanViewController {
         automaticallyAdjustsChildInsets = false
         super.viewDidLoad()
         
+        navigationTitle = "Launches"
         nextLaunchesViewController.navController = navigationController
         previousLaunchesViewController.navController = navigationController
         

@@ -8,10 +8,16 @@
 
 import UIKit
 
-extension UIImage {    
+extension UIImage {
+    // MARK: - Tab Bar
+    
     static let nextItemTabBar = #imageLiteral(resourceName: "next launch")
     
     static let launchesItemTabBar = #imageLiteral(resourceName: "launches")
+    
+    static let favouritesItemTabBar = #imageLiteral(resourceName: "favourite")
+    
+    // MARK: - Info Launch
     
     static let failureLaunchStatus = #imageLiteral(resourceName: "failure")
     

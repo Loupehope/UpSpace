@@ -22,6 +22,6 @@ target 'UpSpace' do
    pod 'RxSwift'
    pod 'RxAlamofire'
    pod 'RxKeyboard'
-   pod 'RxSwiftExt'
    pod 'RxOptional'
+   pod "RxRealm"
 end

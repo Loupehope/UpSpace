@@ -60,6 +60,9 @@
 		4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */; };
 		4CABD00F233370EF005D2D1D /* InfoTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */; };
 		4CC812C52316624C009208A7 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC812C42316624C009208A7 /* Pad.swift */; };
+		4CCF32842465DB7700EE24E1 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF32832465DB7700EE24E1 /* FavouritesViewController.swift */; };
+		4CCF32872465DB8700EE24E1 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF32862465DB8700EE24E1 /* FavouritesViewModel.swift */; };
+		4CCF32892465DC5800EE24E1 /* UIViewController+NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF32882465DC5800EE24E1 /* UIViewController+NavigationTitle.swift */; };
 		4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37067231280F100187903 /* TodayLaunchesService.swift */; };
 		4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370692312815E00187903 /* LaunchListProtocol.swift */; };
 		4CD370752312C06B00187903 /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370742312C06B00187903 /* CountryCodes.swift */; };
@@ -126,6 +129,9 @@
 		4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellViewModel.swift; sourceTree = "<group>"; };
 		4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTimeCell.swift; sourceTree = "<group>"; };
 		4CC812C42316624C009208A7 /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
+		4CCF32832465DB7700EE24E1 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		4CCF32862465DB8700EE24E1 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		4CCF32882465DC5800EE24E1 /* UIViewController+NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationTitle.swift"; sourceTree = "<group>"; };
 		4CD37067231280F100187903 /* TodayLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesService.swift; sourceTree = "<group>"; };
 		4CD370692312815E00187903 /* LaunchListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListProtocol.swift; sourceTree = "<group>"; };
 		4CD370742312C06B00187903 /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDC57B4245F600900BE487E /* UIViewController+Navigation.swift */,
+				4CCF32882465DC5800EE24E1 /* UIViewController+NavigationTitle.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -441,6 +448,7 @@
 				4C776D1A230EBA0700025B08 /* LaunchesViewController */,
 				4CDC57B2245F5F0F00BE487E /* CosmosNavigationController.swift */,
 				4CDC57BA245FDB1E00BE487E /* TabBarController */,
+				4CCF32852465DB7B00EE24E1 /* FavouritesViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -510,6 +518,15 @@
 				4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */,
 			);
 			path = InfoTimeCell;
+			sourceTree = "<group>";
+		};
+		4CCF32852465DB7B00EE24E1 /* FavouritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CCF32832465DB7700EE24E1 /* FavouritesViewController.swift */,
+				4CCF32862465DB8700EE24E1 /* FavouritesViewModel.swift */,
+			);
+			path = FavouritesViewController;
 			sourceTree = "<group>";
 		};
 		4CD3706B231283BD00187903 /* Protocol */ = {
@@ -762,10 +779,12 @@
 				4C38B6072461D44600CF7485 /* UITableView+Bottom.swift in Sources */,
 				4CABD00F233370EF005D2D1D /* InfoTimeCell.swift in Sources */,
 				4C59309E245EAA8C00DDFEDD /* UIStackView+AddArrangedSubviews.swift in Sources */,
+				4CCF32892465DC5800EE24E1 /* UIViewController+NavigationTitle.swift in Sources */,
 				4C593097245EA68C00DDFEDD /* BaseInitializableView.swift in Sources */,
 				4C0BB765231545A0005B16C4 /* PreviousLaunchAPI.swift in Sources */,
 				4C0BB75A23140862005B16C4 /* InfoLaunchViewController.swift in Sources */,
 				4C4C66E3246082A800E8068D /* String+Constants.swift in Sources */,
+				4CCF32872465DB8700EE24E1 /* FavouritesViewModel.swift in Sources */,
 				4CC812C52316624C009208A7 /* Pad.swift in Sources */,
 				4C0BB76923154CF3005B16C4 /* Location.swift in Sources */,
 				4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */,
@@ -795,6 +814,7 @@
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
 				4C5930AB245EB22E00DDFEDD /* UIImage+Images.swift in Sources */,
 				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
+				4CCF32842465DB7700EE24E1 /* FavouritesViewController.swift in Sources */,
 				4C4C66E92460864700E8068D /* UIFont+Fonts.swift in Sources */,
 				4C6C1F99231BE04500C7120F /* Lsp.swift in Sources */,
 				4C3DB01724602394003D413C /* BaseTableViewController.swift in Sources */,
