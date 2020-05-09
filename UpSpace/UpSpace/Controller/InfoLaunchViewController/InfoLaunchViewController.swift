@@ -15,7 +15,7 @@ class InfoLaunchViewController: BaseTableViewController<InfoLaunchViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        // Add action selector here
+
         navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save,
                                                               target: self,
                                                               action: nil)]
@@ -23,6 +23,12 @@ class InfoLaunchViewController: BaseTableViewController<InfoLaunchViewModel> {
     }
     
     func configureAppearence() {
-        tableDirector.appendSection(viewModel.createCountrySection(), with: .none)
+        let sections = [
+            viewModel.createCountrySection(),
+            viewModel.createMainInfoSection(),
+            viewModel.createTimerSection()
+        ]
+        
+        tableDirector.appendSections(sections)
     }
 }
