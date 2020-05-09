@@ -16,15 +16,17 @@ class InfoLaunchViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        // Add action selector
+        // Add action selector here
         navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: nil)]
         configureAppearence()
     }
     
     func configureAppearence() {
-        let image: UIImage? = Launch.countryIcon(country: launchViewModel?.launch.location?.countryCode)
+        let image = Launch.countryIcon(country: launchViewModel?.launch.location?.countryCode)
         let circleImageSection = TableRow<CircleImageCell>(item: CircleImageCellViewModel(image: image))
-        guard image != nil else { return }
+        guard image != nil else {
+            return
+        }
         let section = TableSection(rows: [circleImageSection])
         tableDirector += section
     }

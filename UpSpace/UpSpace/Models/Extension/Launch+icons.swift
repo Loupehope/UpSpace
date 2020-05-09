@@ -12,24 +12,23 @@ extension Launch {
     static func countryIcon(country: String?) -> UIImage? {
         switch country {
         case "USA":
-            print("USA")
-            return UIImage.usa
+            return .usa
         case "CHI":
-            return UIImage.china
+            return .china
         case "GUF":
-            return UIImage.guf
+            return .guf
         case "IND":
-            return UIImage.india
+            return .india
         case "JAP":
-            return UIImage.japan
+            return .japan
         case "KAZ":
-            return UIImage.kazakhstan
+            return .kazakhstan
         case "RUS":
-            return UIImage.russia
+            return .russia
         case "UNK":
-            return UIImage.unk
+            return .unk
         case "ZEL":
-            return UIImage.zeland
+            return .zeland
         default:
             return nil
         }

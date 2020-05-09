@@ -24,7 +24,6 @@ final class CircleImageCell: BaseInitializableCell {
         circleImageView.snp.remakeConstraints { make in
             make.center.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
-            //make.size.equalTo(sizeThatFits(CGSize(width: 50, height: 50)))
         }
     }
 }
