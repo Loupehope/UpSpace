@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.1.0)
+  - DeviceKit (3.1.0)
   - Pageboy (3.5.1)
   - RxAlamofire (5.2.0):
     - RxAlamofire/Core (= 5.2.0)
@@ -35,6 +36,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - DeviceKit
   - RxAlamofire
   - RxKeyboard
   - RxOptional
@@ -49,6 +51,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DeviceKit
     - Pageboy
     - RxAlamofire
     - RxCocoa
@@ -65,6 +68,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  DeviceKit: b9a28acbad6b8dbccf456814b6f95bef17a6654f
   Pageboy: 288353d4cc848c24deec2f7542f325089247c136
   RxAlamofire: 878eb06baefd76df6062889be11592434e6c4a95
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -79,6 +83,6 @@ SPEC CHECKSUMS:
   TableKit: 65645d0dd786e21dc61464da59ad770c60a07282
   Tabman: 05f32e419b07411b5ec74516212ffbff2a9dfc0e
 
-PODFILE CHECKSUM: 0922df2cfa443d20c11e06d72710ea177cff1cad
+PODFILE CHECKSUM: 69ec2d9dfe618ba408917c8ec351baffcb811ad9
 
 COCOAPODS: 1.9.1

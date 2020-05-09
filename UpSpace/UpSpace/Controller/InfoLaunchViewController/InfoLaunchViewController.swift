@@ -9,9 +9,8 @@
 import TableKit
 import UIKit
 
-class InfoLaunchViewController: BaseTableViewController {
-    private lazy var tableDirector = TableDirector(tableView: tableView)
-    private var launchViewModel: InfoLaunchViewModel?
+class InfoLaunchViewController: BaseTableViewController<InfoLaunchViewModel> {
+    private lazy var tableDirector = TableDirector(tableView: contentView)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +21,12 @@ class InfoLaunchViewController: BaseTableViewController {
     }
     
     func configureAppearence() {
-        let image = Launch.countryIcon(country: launchViewModel?.launch.location?.countryCode)
+        let image = Launch.countryIcon(country: viewModel.launch.location?.countryCode)
         let circleImageSection = TableRow<CircleImageCell>(item: CircleImageCellViewModel(image: image))
         guard image != nil else {
             return
         }
         let section = TableSection(rows: [circleImageSection])
         tableDirector += section
-    }
-}
-
-extension InfoLaunchViewController: ConfigurableUI {
-    func configure(with viewModel: InfoLaunchViewModel) {
-        launchViewModel = viewModel
     }
 }

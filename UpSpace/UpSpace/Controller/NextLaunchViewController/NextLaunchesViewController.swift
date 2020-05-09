@@ -8,15 +8,5 @@
 
 import UIKit
 
-class NextLaunchesViewController: BaseTableViewController {
-    private var nextLaunchViewModel: NextLaunchesViewModel?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
-extension NextLaunchesViewController: ConfigurableUI {
-    func configure(with viewModel: NextLaunchesViewModel) {
-        nextLaunchViewModel = viewModel
-    }
+final class NextLaunchesViewController: BaseTableViewController<NextLaunchesViewModel> {
 }
