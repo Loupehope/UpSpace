@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import TableKit
 
 final class InfoLaunchViewModel: BaseTableViewModel {
     let launch: Launch
@@ -14,5 +15,14 @@ final class InfoLaunchViewModel: BaseTableViewModel {
     init(launch: Launch) {
         self.launch = launch
         super.init()
+    }
+    
+    func createCountrySection() -> TableSection {
+        guard let image = launch.countryIcon else {
+            return .empty
+        }
+        
+        let countryRow = TableRow<CircleImageCell>(item: .init(image: image))
+        return .create(with: [countryRow])
     }
 }
