@@ -36,10 +36,4 @@ final class InfoLaunchViewModel: BaseTableViewModel {
         let mainInfoRow = TableRow<InfoTimeCell>(item: .empty)
         return .create(with: [header, mainInfoRow])
     }
-    
-    func createAnotherSection() -> TableSection {
-        let header = TableRow<InfoLaunchHeaderCell>(item: "Mission")
-        let mainInfoRow = TableRow<InfoTimeCell>(item: .empty)
-        return .create(with: [header, mainInfoRow])
-    }
 }
