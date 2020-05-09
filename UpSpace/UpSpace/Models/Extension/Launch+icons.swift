@@ -9,17 +9,17 @@
 import UIKit
 
 extension Launch {
-    static func countryIcon(country: String?) -> UIImage? {
-        switch country {
+    var countryIcon: UIImage? {
+        switch location?.countryCode {
         case "USA":
             return .usa
-        case "CHI":
+        case "CHN":
             return .china
         case "GUF":
             return .guf
         case "IND":
             return .india
-        case "JAP":
+        case "JPN":
             return .japan
         case "KAZ":
             return .kazakhstan
@@ -27,7 +27,7 @@ extension Launch {
             return .russia
         case "UNK":
             return .unk
-        case "ZEL":
+        case "NZL":
             return .zeland
         default:
             return nil
