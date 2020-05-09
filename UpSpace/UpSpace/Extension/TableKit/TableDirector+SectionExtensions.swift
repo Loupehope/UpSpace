@@ -21,6 +21,10 @@ extension TableDirector {
         perform(action: completion, withAnimation: animation != .none)
     }
     
+    func replaceAllSections(with sections: [TableSection], and animation: UITableView.RowAnimation = .none) {
+        clear().appendSections(sections, with: animation)
+    }
+    
     func appendSection(_ section: TableSection, with animation: UITableView.RowAnimation) {
         append(section: section)
         let lastSection = sections.count - 1
@@ -32,6 +36,12 @@ extension TableDirector {
         }
         
         perform(action: completion, withAnimation: animation != .none)
+    }
+    
+    func appendSections(_ sections: [TableSection], with animation: UITableView.RowAnimation = .none) {
+        sections.forEach {
+            appendSection($0, with: animation)
+        }
     }
     
     func clearTableView() {

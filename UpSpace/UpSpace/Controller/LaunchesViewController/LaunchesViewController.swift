@@ -42,8 +42,9 @@ private extension LaunchesViewController {
         viewModel.stopRefresh()
     }
     
-    func didSelectRow(for item: Launch?) {
-        // MOCK - Feature
+    func didSelectRow(for item: Launch) {
+        let infoLaunchController = InfoLaunchViewController(viewModel: .init(launch: item))
+        navController?.pushViewController(infoLaunchController, animated: true)
     }
 }
 

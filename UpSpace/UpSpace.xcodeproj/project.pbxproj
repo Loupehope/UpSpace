@@ -69,7 +69,6 @@
 		4CABD00F233370EF005D2D1D /* InfoTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */; };
 		4CC812C52316624C009208A7 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC812C42316624C009208A7 /* Pad.swift */; };
 		4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37067231280F100187903 /* TodayLaunchesService.swift */; };
-		4CD370752312C06B00187903 /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD370742312C06B00187903 /* CountryCodes.swift */; };
 		4CDC57AB245F598F00BE487E /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC57AA245F598F00BE487E /* UIColor+Colors.swift */; };
 		4CDC57B1245F5EF600BE487E /* CosmosNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC57B0245F5EF500BE487E /* CosmosNavigationController.swift */; };
 		4CDC57B5245F600900BE487E /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC57B4245F600900BE487E /* UIViewController+Navigation.swift */; };
@@ -142,7 +141,6 @@
 		4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTimeCell.swift; sourceTree = "<group>"; };
 		4CC812C42316624C009208A7 /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
 		4CD37067231280F100187903 /* TodayLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchesService.swift; sourceTree = "<group>"; };
-		4CD370742312C06B00187903 /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
 		4CDC57AA245F598F00BE487E /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		4CDC57B0245F5EF500BE487E /* CosmosNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosNavigationController.swift; sourceTree = "<group>"; };
 		4CDC57B4245F600900BE487E /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
@@ -603,7 +601,6 @@
 				4C776D22230EC60600025B08 /* NextLaunchAPI.swift */,
 				4C0BB764231545A0005B16C4 /* PreviousLaunchAPI.swift */,
 				4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */,
-				4CD370742312C06B00187903 /* CountryCodes.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -820,7 +817,6 @@
 				4C6C1FA3231D1B0200C7120F /* InfoLaunchHeaderCell.swift in Sources */,
 				4C776D1D230EC1F500025B08 /* NetworkService.swift in Sources */,
 				4C5930A0245EAC0400DDFEDD /* ConfigurableUI.swift in Sources */,
-				4CD370752312C06B00187903 /* CountryCodes.swift in Sources */,
 				4C6C1FA7231D280000C7120F /* InfoMainCell.swift in Sources */,
 				4C5930A3245EACAC00DDFEDD /* NextLaunchCell.swift in Sources */,
 				4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */,

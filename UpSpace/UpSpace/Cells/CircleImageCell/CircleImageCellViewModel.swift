@@ -9,9 +9,9 @@
 import UIKit
 
 final class CircleImageCellViewModel: ViewModel {
-    let image: UIImage?
+    let image: UIImage
     
-    init(image: UIImage?) {
+    init(image: UIImage) {
         self.image = image
     }
 }

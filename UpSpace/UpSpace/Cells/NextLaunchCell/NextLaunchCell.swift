@@ -71,9 +71,9 @@ final class NextLaunchCell: BaseInitializableCell {
 
 extension NextLaunchCell: ConfigurableCell {
     func configure(with viewModel: NextLaunchCellViewModel) {
-        countryIconImageView.image = CountryCodes.getImage(for: viewModel.launch.location?.countryCode ?? "")
-        titleLabel.text = viewModel.launch.name
-        dateLabel.text = DateFormatterAPI.formatForCell(date: viewModel.launch.start)
+        countryIconImageView.image = viewModel.countryIcon
+        titleLabel.text = viewModel.launchTitle
+        dateLabel.text = viewModel.launchDate
     }
 }
 
