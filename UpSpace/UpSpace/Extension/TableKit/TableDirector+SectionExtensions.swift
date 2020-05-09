@@ -22,8 +22,7 @@ extension TableDirector {
     }
     
     func replaceAllSections(with sections: [TableSection], and animation: UITableView.RowAnimation = .none) {
-        clear()
-        appendSections(sections, with: animation)
+        clear().appendSections(sections, with: animation)
     }
     
     func appendSection(_ section: TableSection, with animation: UITableView.RowAnimation) {
