@@ -7,53 +7,74 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+import TableKit
 
-class LaunchesViewModel: LaunchesViewModelProtocol {
-    enum Mode {
-        case next, previous
-    }
-    
-    private let launchAPI: LaunchLibraryAPI
+class LaunchesViewModel: BaseTableViewModel {
+    private let disposeBag = DisposeBag()
+    private let onLaunchesLoadRelay = BehaviorRelay<LaunchList?>(value: nil)
     private let service: LaunchesService
-    private var mode: Mode
+    
     private var oldList = LaunchList()
     
-    internal var previousLaunch: Launch?
+    var previousLaunch: Launch?
     
-    var onLaunchesChanged: ((LaunchList?) -> Void)?
-    
-    init(api: LaunchLibraryAPI, mode: Mode) {
-        self.launchAPI = api
-        self.mode = mode
-        
-        service = LaunchesService(launchAPI: launchAPI)
+    var onLaunchesLoadObservable: Observable<LaunchList?> {
+        onLaunchesLoadRelay.asObservable()
     }
     
-    func update() {
-        oldList = LaunchList(launches: [])
-        previousLaunch = nil
-        launchAPI.reload(startDate: Date())
+    init(api: LaunchLibraryAPI) {
+        service = LaunchesService(launchAPI: api)
+    }
+    
+    override func handleRefresh() {
+        update()
+    }
+    
+    override func handleLoadMore() {
         loadMore()
     }
     
-    func loadMore() {
-        service.load { [weak self] list in
-            guard let self = self else { return }
-            guard let list = list else { return }
-            guard self.oldList.launches != list.launches else {
-                self.onLaunchesChanged?(nil)
-                return
-            }
-            self.oldList = self.sort(launches: list)
-            if let launch = self.oldList.launches?.last {
-                self.previousLaunch = launch
-                self.launchAPI.set(dateString: launch.isostart.orEmpty)
-            }
-            self.onLaunchesChanged?(self.oldList)
+    func createRows(for launches: [Launch], with clickHandler: ((Launch) -> Void)?) -> [Row] {
+        launches.map {
+            TableRow<NextLaunchCell>(item: .init(launch: $0))
+                .on(.click) { clickHandler?($0.item.launch) }
         }
     }
     
     func sort(launches: LaunchList) -> LaunchList {
         fatalError("This function must be overriden in subclass")
+    }
+}
+
+private extension LaunchesViewModel {
+    func update() {
+        oldList = LaunchList(launches: [])
+        previousLaunch = nil
+        service.reload()
+        loadMore()
+    }
+    
+    func loadMore() {
+        service.load { [weak self] list in
+            guard let self = self, let list = list else {
+                return
+            }
+            
+            guard self.oldList.launches != list.launches else {
+                self.onLaunchesLoadRelay.accept(nil)
+                return
+            }
+            
+            self.oldList = self.sort(launches: list)
+            
+            if let launch = self.oldList.launches?.last, let isostart = launch.isostart {
+                self.previousLaunch = launch
+                self.service.updateLaunch(dateString: isostart)
+            }
+            
+            self.onLaunchesLoadRelay.accept(self.oldList)
+        }
     }
 }
