@@ -96,7 +96,9 @@ final class InfoMainCell: BaseInitializableCell {
 
 // MOCK
 extension InfoMainCell: ConfigurableCell {
-    func configure(with data: String) {
+    func configure(with model: InfoMainCellViewModel) {
+        titleLabel.text = model.launch.name
+        dateLabel.text = model.launch.start.toString()
     }
 }
 

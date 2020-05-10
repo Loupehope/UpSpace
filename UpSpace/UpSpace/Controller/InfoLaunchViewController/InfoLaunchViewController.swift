@@ -26,7 +26,10 @@ class InfoLaunchViewController: BaseTableViewController<InfoLaunchViewModel> {
         let sections = [
             viewModel.createCountrySection(),
             viewModel.createMainInfoSection(),
-            viewModel.createTimerSection()
+            viewModel.createTimerSection(),
+            viewModel.createMissionSection(),
+            viewModel.createLspSection(),
+            viewModel.createRocketSection()
         ]
         
         tableDirector.appendSections(sections)
