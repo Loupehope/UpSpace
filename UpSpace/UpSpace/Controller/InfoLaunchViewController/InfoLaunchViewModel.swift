@@ -27,7 +27,7 @@ final class InfoLaunchViewModel: BaseTableViewModel {
     }
     
     func createMainInfoSection() -> TableSection {
-        let mainInfoRow = TableRow<InfoMainCell>(item: InfoMainCellViewModel(launch: launch))
+        let mainInfoRow = TableRow<InfoMainCell>(item: .init(launch: launch))
         return .create(with: [mainInfoRow])
     }
     
@@ -38,34 +38,32 @@ final class InfoLaunchViewModel: BaseTableViewModel {
     }
     
     func createMissionSection() -> TableSection {
-        guard let mission = launch.missions?.last else {
-            return .empty
+        guard let mission = launch.missions?.last,
+            let missionName = mission.name,
+            let missionDesc = mission.description else {
+                return .empty
         }
         let header = TableRow<InfoLaunchHeaderCell>(item: "Mission")
-        let missionRow = TableRow<InfoMissionCell>(item: InfoMissionCellViewModel(
-            missionName: mission.name.orEmpty,
-            missionDesc: mission.description.orEmpty))
+        let missionRow = TableRow<InfoMissionCell>(item: .init(missionName: missionName,
+                                                               missionDesc: missionDesc))
         return .create(with: [header, missionRow])
     }
     
     func createLspSection() -> TableSection {
-        guard let lsp = launch.lsp else {
+        guard let lsp = launch.lsp, let lspName = lsp.name else {
             return .empty
         }
         let header = TableRow<InfoLaunchHeaderCell>(item: "LSP")
-        let lspRow = TableRow<InfoLspCell>(item: InfoLspCellViewModel(lspName: lsp.name.orEmpty))
+        let lspRow = TableRow<InfoLabelCell>(item: .init(text: lspName))
         return .create(with: [header, lspRow])
     }
     
     func createRocketSection() -> TableSection {
-        guard let rocket = launch.rocket else {
+        guard let rocket = launch.rocket, let rocketName = rocket.name else {
             return .empty
         }
         let header = TableRow<InfoLaunchHeaderCell>(item: "Rocket")
-        let rocketRow = TableRow<InfoRocketCell>(item: InfoRocketCellViewModel(
-            rocketName: rocket.name.orEmpty,
-            rocketFamily: rocket.familyname.orEmpty,
-            rocketConfig: rocket.configuration.orEmpty))
+        let rocketRow = TableRow<InfoLabelCell>(item: .init(text: rocketName))
         return .create(with: [header, rocketRow])
     }
 }

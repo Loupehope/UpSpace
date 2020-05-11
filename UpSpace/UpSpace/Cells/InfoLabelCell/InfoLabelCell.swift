@@ -1,5 +1,5 @@
 //
-//  InfoLspCell.swift
+//  InfoLabelCell.swift
 //  UpSpace
 //
 //  Created by Andrew on 09/05/2020.
@@ -9,13 +9,13 @@
 import TableKit
 import UIKit
 
-final class InfoLspCell: BaseInitializableCell {
+final class InfoLabelCell: BaseInitializableCell {
     private let containerView = UIView()
-    private let lspNameLabel = UILabel()
+    private let titleLabel = UILabel()
     
     override func addUI() {
         super.addUI()
-        containerView.addSubview(lspNameLabel)
+        containerView.addSubview(titleLabel)
         addSubview(containerView)
     }
     
@@ -27,7 +27,7 @@ final class InfoLspCell: BaseInitializableCell {
             make.top.bottom.equalToSuperview()
         }
         
-        lspNameLabel.snp.remakeConstraints { make in
+        titleLabel.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
             make.top.bottom.equalToSuperview().inset(CGFloat.smallInset)
         }
@@ -39,12 +39,12 @@ final class InfoLspCell: BaseInitializableCell {
         containerView.layer.cornerRadius = CGFloat.defaultCornerRadius
         containerView.backgroundColor = .whiteSpace
         
-        lspNameLabel.numberOfLines = 0
+        titleLabel.numberOfLines = 0
     }
 }
 
-extension InfoLspCell: ConfigurableCell {
-    func configure(with model: InfoLspCellViewModel) {
-        lspNameLabel.text = model.lspName
+extension InfoLabelCell: ConfigurableCell {
+    func configure(with model: InfoLabelCellViewModel) {
+        titleLabel.text = model.text
     }
 }

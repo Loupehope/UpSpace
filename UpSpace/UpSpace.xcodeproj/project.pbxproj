@@ -12,11 +12,9 @@
 		065A733C24661C0900E7B959 /* Launch+icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A733B24661C0900E7B959 /* Launch+icons.swift */; };
 		067365232466FFC80024433C /* InfoMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067365222466FFC80024433C /* InfoMissionCell.swift */; };
 		067365252466FFD80024433C /* InfoMissionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067365242466FFD80024433C /* InfoMissionCellViewModel.swift */; };
-		06736528246711C10024433C /* InfoLspCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06736527246711C10024433C /* InfoLspCell.swift */; };
-		0673652A246711CC0024433C /* InfoLspCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06736529246711CC0024433C /* InfoLspCellViewModel.swift */; };
+		06736528246711C10024433C /* InfoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06736527246711C10024433C /* InfoLabelCell.swift */; };
+		0673652A246711CC0024433C /* InfoLabelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06736529246711CC0024433C /* InfoLabelCellViewModel.swift */; };
 		0673652C246714680024433C /* InfoMainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673652B246714680024433C /* InfoMainCellViewModel.swift */; };
-		0673652F246721960024433C /* InfoRocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673652E246721960024433C /* InfoRocketCell.swift */; };
-		06736531246721A20024433C /* InfoRocketCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06736530246721A20024433C /* InfoRocketCellViewModel.swift */; };
 		06C4ED2D24642F9900CDA326 /* NextLaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */; };
 		06C4ED322464648E00CDA326 /* CircleImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED312464648E00CDA326 /* CircleImageCell.swift */; };
 		06C4ED342464701B00CDA326 /* CircleImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */; };
@@ -89,11 +87,9 @@
 		065A733B24661C0900E7B959 /* Launch+icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+icons.swift"; sourceTree = "<group>"; };
 		067365222466FFC80024433C /* InfoMissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMissionCell.swift; sourceTree = "<group>"; };
 		067365242466FFD80024433C /* InfoMissionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMissionCellViewModel.swift; sourceTree = "<group>"; };
-		06736527246711C10024433C /* InfoLspCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLspCell.swift; sourceTree = "<group>"; };
-		06736529246711CC0024433C /* InfoLspCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLspCellViewModel.swift; sourceTree = "<group>"; };
+		06736527246711C10024433C /* InfoLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabelCell.swift; sourceTree = "<group>"; };
+		06736529246711CC0024433C /* InfoLabelCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabelCellViewModel.swift; sourceTree = "<group>"; };
 		0673652B246714680024433C /* InfoMainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMainCellViewModel.swift; sourceTree = "<group>"; };
-		0673652E246721960024433C /* InfoRocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRocketCell.swift; sourceTree = "<group>"; };
-		06736530246721A20024433C /* InfoRocketCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRocketCellViewModel.swift; sourceTree = "<group>"; };
 		06C4ED2C24642F9900CDA326 /* NextLaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchesViewController.swift; sourceTree = "<group>"; };
 		06C4ED312464648E00CDA326 /* CircleImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCell.swift; sourceTree = "<group>"; };
 		06C4ED332464701B00CDA326 /* CircleImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCellViewModel.swift; sourceTree = "<group>"; };
@@ -193,22 +189,13 @@
 			path = InfoMissionCell;
 			sourceTree = "<group>";
 		};
-		06736526246711A60024433C /* InfoLspCell */ = {
+		06736526246711A60024433C /* InfoLabelCell */ = {
 			isa = PBXGroup;
 			children = (
-				06736527246711C10024433C /* InfoLspCell.swift */,
-				06736529246711CC0024433C /* InfoLspCellViewModel.swift */,
+				06736527246711C10024433C /* InfoLabelCell.swift */,
+				06736529246711CC0024433C /* InfoLabelCellViewModel.swift */,
 			);
-			path = InfoLspCell;
-			sourceTree = "<group>";
-		};
-		0673652D246721890024433C /* InfoRocketCell */ = {
-			isa = PBXGroup;
-			children = (
-				0673652E246721960024433C /* InfoRocketCell.swift */,
-				06736530246721A20024433C /* InfoRocketCellViewModel.swift */,
-			);
-			path = InfoRocketCell;
+			path = InfoLabelCell;
 			sourceTree = "<group>";
 		};
 		06C4ED2B24642F7F00CDA326 /* NextLaunchViewController */ = {
@@ -446,8 +433,7 @@
 		4C5930AE245EBA4200DDFEDD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0673652D246721890024433C /* InfoRocketCell */,
-				06736526246711A60024433C /* InfoLspCell */,
+				06736526246711A60024433C /* InfoLabelCell */,
 				067365212466FFAD0024433C /* InfoMissionCell */,
 				06C4ED302464647100CDA326 /* CircleImageCell */,
 				4C5930AF245EBA4B00DDFEDD /* Base */,
@@ -871,14 +857,13 @@
 				4C6C1F97231BE00B00C7120F /* Mission.swift in Sources */,
 				4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */,
 				4C776CF8230EB96C00025B08 /* LaunchesViewController.swift in Sources */,
-				06736531246721A20024433C /* InfoRocketCellViewModel.swift in Sources */,
 				06C4ED342464701B00CDA326 /* CircleImageCellViewModel.swift in Sources */,
 				067365252466FFD80024433C /* InfoMissionCellViewModel.swift in Sources */,
 				4C5930A9245EADAD00DDFEDD /* NextLaunchCellViewModel.swift in Sources */,
 				4CDC57AB245F598F00BE487E /* UIColor+Colors.swift in Sources */,
 				4C5930B3245EBEC300DDFEDD /* TableSection+Extensions.swift in Sources */,
 				06C4ED322464648E00CDA326 /* CircleImageCell.swift in Sources */,
-				0673652A246711CC0024433C /* InfoLspCellViewModel.swift in Sources */,
+				0673652A246711CC0024433C /* InfoLabelCellViewModel.swift in Sources */,
 				06C4ED2D24642F9900CDA326 /* NextLaunchesViewController.swift in Sources */,
 				4C5930BA245ECAB100DDFEDD /* EmptyRow.swift in Sources */,
 				06D7AAA7246305B70040C9C5 /* InfoLaunchViewModel.swift in Sources */,
@@ -887,7 +872,7 @@
 				4C67D9E02461741D0091F20E /* BaseTableViewModel.swift in Sources */,
 				4C776D28230EC9F800025B08 /* Launch.swift in Sources */,
 				4C5930AB245EB22E00DDFEDD /* UIImage+Images.swift in Sources */,
-				06736528246711C10024433C /* InfoLspCell.swift in Sources */,
+				06736528246711C10024433C /* InfoLabelCell.swift in Sources */,
 				065568C92462F33100B12716 /* Agency.swift in Sources */,
 				4CD37068231280F100187903 /* TodayLaunchesService.swift in Sources */,
 				4C4C66E92460864700E8068D /* UIFont+Fonts.swift in Sources */,
@@ -899,7 +884,6 @@
 				4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
 				4C59309A245EA7E000DDFEDD /* BaseInitializableCell.swift in Sources */,
-				0673652F246721960024433C /* InfoRocketCell.swift in Sources */,
 				4C776CF6230EB96C00025B08 /* AppDelegate.swift in Sources */,
 				4C0C196023171675005D4C5F /* LaunchesTabmanViewController.swift in Sources */,
 				065A733C24661C0900E7B959 /* Launch+icons.swift in Sources */,
