@@ -9,18 +9,29 @@
 import TableKit
 import UIKit
 
-class InfoLaunchViewController: BaseTableViewController {
-    private lazy var tableDirector = TableDirector(tableView: tableView)
-    private var launchViewModel: LaunchesViewModelProtocol?
+class InfoLaunchViewController: BaseTableViewController<InfoLaunchViewModel> {
+    private lazy var tableDirector = TableDirector(tableView: contentView)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-    }
-}
 
-extension InfoLaunchViewController: ConfigurableUI {
-    func configure(with viewModel: LaunchesViewModelProtocol) {
-        launchViewModel = viewModel
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save,
+                                                              target: self,
+                                                              action: nil)]
+        configureAppearence()
+    }
+    
+    func configureAppearence() {
+        let sections = [
+            viewModel.createCountrySection(),
+            viewModel.createMainInfoSection(),
+            viewModel.createTimerSection(),
+            viewModel.createMissionSection(),
+            viewModel.createLspSection(),
+            viewModel.createRocketSection()
+        ]
+        
+        tableDirector.appendSections(sections)
     }
 }
