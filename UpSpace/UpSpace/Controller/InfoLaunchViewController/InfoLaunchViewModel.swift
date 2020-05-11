@@ -38,28 +38,28 @@ final class InfoLaunchViewModel: BaseTableViewModel {
     }
     
     func createMissionSection() -> TableSection {
-        let header = TableRow<InfoLaunchHeaderCell>(item: "Mission")
         guard let mission = launch.missions?.last else {
             return .empty
         }
+        let header = TableRow<InfoLaunchHeaderCell>(item: "Mission")
         let missionRow = TableRow<InfoMissionCell>(item: InfoMissionCellViewModel(mission: mission))
         return .create(with: [header, missionRow])
     }
     
     func createLspSection() -> TableSection {
-        let header = TableRow<InfoLaunchHeaderCell>(item: "LSP")
         guard let lsp = launch.lsp else {
             return .empty
         }
+        let header = TableRow<InfoLaunchHeaderCell>(item: "LSP")
         let lspRow = TableRow<InfoLspCell>(item: InfoLspCellViewModel(lsp: lsp))
         return .create(with: [header, lspRow])
     }
     
     func createRocketSection() -> TableSection {
-        let header = TableRow<InfoLaunchHeaderCell>(item: "Rocket")
         guard let rocket = launch.rocket else {
             return .empty
         }
+        let header = TableRow<InfoLaunchHeaderCell>(item: "Rocket")
         let rocketRow = TableRow<InfoRocketCell>(item: InfoRocketCellViewModel(rocket: rocket))
         return .create(with: [header, rocketRow])
     }

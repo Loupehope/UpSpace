@@ -98,7 +98,7 @@ final class InfoMainCell: BaseInitializableCell {
 extension InfoMainCell: ConfigurableCell {
     func configure(with model: InfoMainCellViewModel) {
         titleLabel.text = model.launch.name
-        dateLabel.text = model.launch.start.toString()
+        dateLabel.text = DateFormatterAPI.formatForCell(date: model.launch.start)
     }
 }
 

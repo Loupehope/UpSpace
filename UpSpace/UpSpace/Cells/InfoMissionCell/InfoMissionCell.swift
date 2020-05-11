@@ -17,7 +17,7 @@ final class InfoMissionCell: BaseInitializableCell {
     override func addUI() {
         super.addUI()
         
-        containerView.addSubviews([nameLabel, descriptionLabel])
+        containerView.addSubviews(nameLabel, descriptionLabel)
         addSubview(containerView)
     }
     
@@ -30,14 +30,14 @@ final class InfoMissionCell: BaseInitializableCell {
         }
         
         nameLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(CGFloat.smallInset)
-            make.leading.equalToSuperview().offset(CGFloat.smallInset)
+            make.top.equalToSuperview().inset(CGFloat.smallInset)
+            make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
         
         descriptionLabel.snp.remakeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(CGFloat.defaultInset)
-            make.leading.trailing.equalToSuperview().offset(CGFloat.smallInset)
-            make.bottom.equalToSuperview().inset(CGFloat.bigInset)
+            make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
+            make.bottom.equalToSuperview().inset(CGFloat.smallInset)
         }
     }
     
@@ -47,6 +47,7 @@ final class InfoMissionCell: BaseInitializableCell {
         containerView.layer.cornerRadius = CGFloat.defaultCornerRadius
         containerView.backgroundColor = .whiteSpace
         
+        nameLabel.numberOfLines = 0
         descriptionLabel.numberOfLines = 0
     }
 }

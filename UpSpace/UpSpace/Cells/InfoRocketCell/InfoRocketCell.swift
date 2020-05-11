@@ -19,7 +19,7 @@ final class InfoRocketCell: BaseInitializableCell {
     override func addUI() {
         super.addUI()
         
-        containerView.addSubviews([rocketImage, nameLabel, familyLabel, configurationLabel])
+        containerView.addSubviews(rocketImage, nameLabel, familyLabel, configurationLabel)
         addSubview(containerView)
     }
     
@@ -34,23 +34,25 @@ final class InfoRocketCell: BaseInitializableCell {
         rocketImage.snp.remakeConstraints { make in
             make.leading.equalToSuperview().inset(CGFloat.smallInset)
             make.top.bottom.equalToSuperview().inset(CGFloat.bigInset)
-            make.height.equalTo(100)
-            make.width.equalTo(100)
+            make.size.equalTo(100)
         }
         
         nameLabel.snp.remakeConstraints { make in
             make.bottom.equalTo(familyLabel).inset(CGFloat.bigInset)
             make.leading.equalTo(rocketImage.snp.trailing).offset(CGFloat.bigInset)
+            make.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
 
         familyLabel.snp.remakeConstraints { make in
             make.leading.equalTo(rocketImage.snp.trailing).offset(CGFloat.bigInset)
             make.centerY.equalTo(rocketImage)
+            make.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
 
         configurationLabel.snp.remakeConstraints { make in
             make.top.equalTo(familyLabel).inset(CGFloat.bigInset)
             make.leading.equalTo(rocketImage.snp.trailing).offset(CGFloat.bigInset)
+            make.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
     }
     
@@ -59,6 +61,10 @@ final class InfoRocketCell: BaseInitializableCell {
         
         containerView.layer.cornerRadius = CGFloat.defaultCornerRadius
         containerView.backgroundColor = .whiteSpace
+        
+        nameLabel.numberOfLines = 0
+        familyLabel.numberOfLines = 0
+        configurationLabel.numberOfLines = 0
     }
 }
 

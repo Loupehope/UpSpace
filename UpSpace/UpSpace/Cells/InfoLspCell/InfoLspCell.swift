@@ -28,8 +28,8 @@ final class InfoLspCell: BaseInitializableCell {
         }
         
         lspNameLabel.snp.remakeConstraints { make in
-            make.leading.equalToSuperview().inset(CGFloat.smallInset)
-            make.centerY.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
+            make.top.bottom.equalToSuperview().inset(CGFloat.smallInset)
         }
     }
     
@@ -38,6 +38,8 @@ final class InfoLspCell: BaseInitializableCell {
         
         containerView.layer.cornerRadius = CGFloat.defaultCornerRadius
         containerView.backgroundColor = .whiteSpace
+        
+        lspNameLabel.numberOfLines = 0
     }
 }
 
