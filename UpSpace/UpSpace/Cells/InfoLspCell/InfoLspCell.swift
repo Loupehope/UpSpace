@@ -45,6 +45,6 @@ final class InfoLspCell: BaseInitializableCell {
 
 extension InfoLspCell: ConfigurableCell {
     func configure(with model: InfoLspCellViewModel) {
-        lspNameLabel.text = model.lsp.name
+        lspNameLabel.text = model.lspName
     }
 }

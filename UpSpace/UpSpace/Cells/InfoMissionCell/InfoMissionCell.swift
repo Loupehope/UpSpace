@@ -54,7 +54,7 @@ final class InfoMissionCell: BaseInitializableCell {
 
 extension InfoMissionCell: ConfigurableCell {
     func configure(with model: InfoMissionCellViewModel) {
-        nameLabel.text = model.mission.name
-        descriptionLabel.text = model.mission.description
+        nameLabel.text = model.missionName
+        descriptionLabel.text = model.missionDescription
     }
 }

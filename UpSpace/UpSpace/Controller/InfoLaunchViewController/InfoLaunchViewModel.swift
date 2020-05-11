@@ -42,7 +42,9 @@ final class InfoLaunchViewModel: BaseTableViewModel {
             return .empty
         }
         let header = TableRow<InfoLaunchHeaderCell>(item: "Mission")
-        let missionRow = TableRow<InfoMissionCell>(item: InfoMissionCellViewModel(mission: mission))
+        let missionRow = TableRow<InfoMissionCell>(item: InfoMissionCellViewModel(
+            missionName: mission.name.orEmpty,
+            missionDesc: mission.description.orEmpty))
         return .create(with: [header, missionRow])
     }
     
@@ -51,7 +53,7 @@ final class InfoLaunchViewModel: BaseTableViewModel {
             return .empty
         }
         let header = TableRow<InfoLaunchHeaderCell>(item: "LSP")
-        let lspRow = TableRow<InfoLspCell>(item: InfoLspCellViewModel(lsp: lsp))
+        let lspRow = TableRow<InfoLspCell>(item: InfoLspCellViewModel(lspName: lsp.name.orEmpty))
         return .create(with: [header, lspRow])
     }
     
@@ -60,7 +62,10 @@ final class InfoLaunchViewModel: BaseTableViewModel {
             return .empty
         }
         let header = TableRow<InfoLaunchHeaderCell>(item: "Rocket")
-        let rocketRow = TableRow<InfoRocketCell>(item: InfoRocketCellViewModel(rocket: rocket))
+        let rocketRow = TableRow<InfoRocketCell>(item: InfoRocketCellViewModel(
+            rocketName: rocket.name.orEmpty,
+            rocketFamily: rocket.familyname.orEmpty,
+            rocketConfig: rocket.configuration.orEmpty))
         return .create(with: [header, rocketRow])
     }
 }

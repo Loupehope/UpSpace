@@ -7,9 +7,9 @@
 //
 
 final class InfoLspCellViewModel: ViewModel {
-    let lsp: Lsp
+    let lspName: String
     
-    init(lsp: Lsp) {
-        self.lsp = lsp
+    init(lspName: String) {
+        self.lspName = lspName
     }
 }

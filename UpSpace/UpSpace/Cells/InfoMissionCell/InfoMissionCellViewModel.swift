@@ -7,9 +7,11 @@
 //
 
 final class InfoMissionCellViewModel: ViewModel {
-    let mission: Mission
+    let missionName: String
+    let missionDescription: String
     
-    init(mission: Mission) {
-        self.mission = mission
+    init(missionName: String, missionDesc: String) {
+        self.missionName = missionName
+        self.missionDescription = missionDesc
     }
 }

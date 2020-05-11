@@ -70,8 +70,8 @@ final class InfoRocketCell: BaseInitializableCell {
 
 extension InfoRocketCell: ConfigurableCell {
     func configure(with model: InfoRocketCellViewModel) {
-        nameLabel.text = model.rocket.name
-        familyLabel.text = model.rocket.familyname
-        configurationLabel.text = model.rocket.configuration
+        nameLabel.text = model.rocketName
+        familyLabel.text = model.rocketFamily
+        configurationLabel.text = model.rocketConfiguration
     }
 }

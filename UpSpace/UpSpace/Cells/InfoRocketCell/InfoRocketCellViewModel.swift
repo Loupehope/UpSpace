@@ -7,9 +7,13 @@
 //
 
 final class InfoRocketCellViewModel: ViewModel {
-    let rocket: Rocket
+    let rocketName: String
+    let rocketFamily: String
+    let rocketConfiguration: String
     
-    init(rocket: Rocket) {
-        self.rocket = rocket
+    init(rocketName: String, rocketFamily: String, rocketConfig: String) {
+        self.rocketName = rocketName
+        self.rocketFamily = rocketFamily
+        self.rocketConfiguration = rocketConfig
     }
 }
