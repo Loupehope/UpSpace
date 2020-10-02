@@ -23,7 +23,6 @@ target 'UpSpace' do
    pod 'RxAlamofire'
    pod 'RxKeyboard'
    pod 'RxSwiftExt'
-   pod 'RxOptional'
 end
 
 post_install do |pi|

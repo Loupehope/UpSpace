@@ -48,6 +48,8 @@ class LaunchesTabmanViewController: TabmanViewController {
     private func configureApperance() {
         edgesForExtendedLayout = []
         view.backgroundColor = .darkGraySpace
+        
+        title = "Launches"
     }
 }
 
@@ -61,7 +63,8 @@ extension LaunchesTabmanViewController: PageboyViewControllerDataSource, TMBarDa
         controllers.count
     }
     
-    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+    func viewController(for pageboyViewController: PageboyViewController,
+                        at index: PageboyViewController.PageIndex) -> UIViewController? {
         controllers[index]
     }
     

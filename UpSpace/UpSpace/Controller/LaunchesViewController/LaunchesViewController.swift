@@ -6,15 +6,14 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import RxCocoa
-import RxOptional
 import RxSwift
 import SnapKit
 import TableKit
 import UIKit
 
 final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
-    private let initialSpinner = UIActivityIndicatorView(appearance: .init(size: .large))
+    private let errorPlaceholderView = UpSpacePlaceholderView()
+    private let emptyPlaceholderView = UpSpacePlaceholderView()
     
     private lazy var tableDirector = TableDirector(tableView: contentView)
     
@@ -29,20 +28,45 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
         
         addRefreshControl()
         addBottomRefreshControl()
-        addInitialSpinner()
+        addErrorPlaceholder()
+        addEmptyPlaceholder()
         
         bindViewModel()
         
-        initialSpinner.startAnimating()
         viewModel.handleRefresh()
     }
     
-    private func addInitialSpinner() {
-        contentView.addSubview(initialSpinner)
+    private func addErrorPlaceholder() {
+        contentView.addSubview(errorPlaceholderView)
     
-        initialSpinner.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        errorPlaceholderView.snp.makeConstraints {
+            $0.edges.equalTo(contentView.safeAreaLayoutGuide)
         }
+        
+        errorPlaceholderView.configure(with: .init(title: .loadingErrorTitle,
+                                                   buttonTitle: .retry,
+                                                   onButtonTapAction: { [weak self] in
+                                                    self?.errorPlaceholderView.update(for: .loading)
+                                                    self?.viewModel.handleRefresh()
+                                                   }))
+        errorPlaceholderView.isHidden = true
+    }
+    
+    private func addEmptyPlaceholder() {
+        contentView.addSubview(emptyPlaceholderView)
+    
+        emptyPlaceholderView.snp.makeConstraints {
+            $0.edges.equalTo(contentView.safeAreaLayoutGuide)
+        }
+        
+        emptyPlaceholderView.configure(with: .init(title: .emptyLaunchesTitle,
+                                                   buttonTitle: .refresh,
+                                                   onButtonTapAction: { [weak self] in
+                                                    self?.emptyPlaceholderView.update(for: .loading)
+                                                    self?.viewModel.handleRefresh()
+                                                   }))
+        emptyPlaceholderView.isHidden = false
+        emptyPlaceholderView.update(for: .loading)
     }
 }
 
@@ -54,11 +78,22 @@ private extension LaunchesViewController {
         tableDirector.appendSection(.create(with: rows), with: .fade)
         
         viewModel.didScrollToTop()
-        viewModel.stopRefresh()
+        
+        contentView.refreshControl?.endRefreshing()
+        
+        if tableDirector.isEmpty {
+            emptyPlaceholderView.isHidden = false
+            errorPlaceholderView.isHidden = true
+            emptyPlaceholderView.update(for: .normal)
+        } else {
+            emptyPlaceholderView.isHidden = true
+            errorPlaceholderView.isHidden = true
+        }
     }
     
     func didSelectRow(for item: Launch?) {
-        // MOCK - Feature
+        let viewController = InfoLaunchViewController(viewModel: .init())
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -84,20 +119,31 @@ private extension LaunchesViewController {
 }
 
 private extension LaunchesViewController {
-    var launchesBinder: Binder<LaunchListProtocol?> {
-        Binder(self) { base, list in
-            base.updateLaunches(with: list?.launches ?? [])
-            base.contentView.refreshControl?.endRefreshing()
-            base.initialSpinner.stopAnimating()
-        }
-    }
-    
     func bindViewModel() {
         viewModel.onLaunchesLoadObservable
             .observeOn(MainScheduler.asyncInstance)
             .skip(1)
-            .bind(to: launchesBinder)
+            .subscribe(onNext: { [weak self] in
+                self?.updateLaunches(with: $0?.launches ?? [])
+            }, onError: { [weak self] _ in
+                self?.errorPlaceholderView.isHidden = false
+                self?.showError()
+            })
             .disposed(by: disposeBag)
+    }
+    
+    func showError() {
+        guard !tableDirector.isEmpty else {
+            emptyPlaceholderView.isHidden = true
+            return
+        }
+        
+        let alertController = UIAlertController(title: .loadingErrorTitle,
+                                                message: nil,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: .ok, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

@@ -57,6 +57,8 @@
 		4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2E230F061500025B08 /* DateFormatterAPI.swift */; };
 		4C7F82ED2527B76E0092482D /* UIRefreshControl+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F82EC2527B76E0092482D /* UIRefreshControl+Color.swift */; };
 		4C7F82F32527B8070092482D /* UIActivityIndicatorView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F82F22527B8070092482D /* UIActivityIndicatorView+Extentions.swift */; };
+		4C7F836A2527C5330092482D /* UpSpacePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F83692527C5330092482D /* UpSpacePlaceholderView.swift */; };
+		4C7F836D2527C5670092482D /* String+Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F836C2527C5670092482D /* String+Titles.swift */; };
 		4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */; };
 		4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */; };
 		4CABD00F233370EF005D2D1D /* InfoTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */; };
@@ -124,6 +126,8 @@
 		4C776D2E230F061500025B08 /* DateFormatterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterAPI.swift; sourceTree = "<group>"; };
 		4C7F82EC2527B76E0092482D /* UIRefreshControl+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Color.swift"; sourceTree = "<group>"; };
 		4C7F82F22527B8070092482D /* UIActivityIndicatorView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extentions.swift"; sourceTree = "<group>"; };
+		4C7F83692527C5330092482D /* UpSpacePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpSpacePlaceholderView.swift; sourceTree = "<group>"; };
+		4C7F836C2527C5670092482D /* String+Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Titles.swift"; sourceTree = "<group>"; };
 		4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchAPI.swift; sourceTree = "<group>"; };
 		4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellViewModel.swift; sourceTree = "<group>"; };
 		4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTimeCell.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				4C4C66E2246082A800E8068D /* String+Constants.swift */,
+				4C7F836C2527C5670092482D /* String+Titles.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			children = (
 				4C5930A1245EACA200DDFEDD /* Base */,
 				4C6B02B42465A4A10090C652 /* CosmosActivityView */,
+				4C7F83692527C5330092482D /* UpSpacePlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -758,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0F743E2462B8A7001D59E8 /* ObserverType+asVoid.swift in Sources */,
+				4C7F836D2527C5670092482D /* String+Titles.swift in Sources */,
 				4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */,
 				4C0F74432462C305001D59E8 /* Device+Extensions.swift in Sources */,
 				4CDC57B7245F644E00BE487E /* TabBarController.swift in Sources */,
@@ -795,6 +802,7 @@
 				4C776D25230EC8CA00025B08 /* LaunchList.swift in Sources */,
 				4C6C1F97231BE00B00C7120F /* Mission.swift in Sources */,
 				4C0BB76723154754005B16C4 /* PreviousLaunchesViewModel.swift in Sources */,
+				4C7F836A2527C5330092482D /* UpSpacePlaceholderView.swift in Sources */,
 				4C776CF8230EB96C00025B08 /* LaunchesViewController.swift in Sources */,
 				4C5930A9245EADAD00DDFEDD /* NextLaunchCellViewModel.swift in Sources */,
 				4CDC57AB245F598F00BE487E /* UIColor+Colors.swift in Sources */,
