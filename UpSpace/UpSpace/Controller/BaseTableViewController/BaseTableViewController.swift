@@ -6,7 +6,6 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
-import DeviceKit
 import RxCocoa
 import RxSwift
 import UIKit
@@ -22,22 +21,6 @@ class BaseTableViewController<ViewModelT: BaseTableViewModel>: BaseViewControlle
 }
 
 extension BaseTableViewController {
-    func bind(refreshControl: CosmosRefreshControl, with tableView: UITableView) {
-        viewModel.isRefreshingDriver
-            .drive(refreshControl.rx.isRefreshing)
-            .disposed(by: disposeBag)
-        
-        viewModel.bind(refreshRequestObservable: refreshControl.isRefreshObservable)
-            .disposed(by: disposeBag)
-        
-        tableView.rx
-            .contentOffset
-            .asObservable()
-            .filter { $0.y < .ptrOffset && !tableView.isDecelerating && !refreshControl.isRefreshing }
-            .bind(to: refreshBinder)
-            .disposed(by: disposeBag)
-    }
-    
     func bindScrollToBottom(activityView: CosmosActivityView,
                             for tableView: UITableView,
                             with edgeOffset: CGFloat = -.defaultHeight) {
@@ -72,21 +55,9 @@ extension BaseTableViewController {
 }
 
 private extension BaseTableViewController {
-    var refreshBinder: Binder<CGPoint> {
-        Binder(self) { base, _ in
-            base.viewModel.startRefresh()
-        }
-    }
-    
     var bottomBinder: Binder<Bool> {
         Binder(self) { base, _ in
             base.viewModel.didScrollToBottom()
         }
-    }
-}
-
-private extension CGFloat {
-    static var ptrOffset: CGFloat {
-        Device.isSmallScreen ? -110 : -140
     }
 }

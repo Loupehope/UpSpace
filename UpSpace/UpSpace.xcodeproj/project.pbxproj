@@ -16,7 +16,6 @@
 		4C0F74432462C305001D59E8 /* Device+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F74422462C305001D59E8 /* Device+Extensions.swift */; };
 		4C0F74492462FC8C001D59E8 /* CosmosActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F74482462FC8C001D59E8 /* CosmosActivityView.swift */; };
 		4C38B6072461D44600CF7485 /* UITableView+Bottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6062461D44600CF7485 /* UITableView+Bottom.swift */; };
-		4C38B60A2461D50100CF7485 /* CosmosRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */; };
 		4C3DB01524602220003D413C /* UITableView+CosmosTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DB01424602220003D413C /* UITableView+CosmosTableView.swift */; };
 		4C3DB01724602394003D413C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DB01624602394003D413C /* BaseTableViewController.swift */; };
 		4C4C66E3246082A800E8068D /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C66E2246082A800E8068D /* String+Constants.swift */; };
@@ -56,6 +55,8 @@
 		4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D29230ECA2800025B08 /* LaunchesService.swift */; };
 		4C776D2C230ECDB600025B08 /* URL+GenerateFromComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */; };
 		4C776D2F230F061500025B08 /* DateFormatterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C776D2E230F061500025B08 /* DateFormatterAPI.swift */; };
+		4C7F82ED2527B76E0092482D /* UIRefreshControl+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F82EC2527B76E0092482D /* UIRefreshControl+Color.swift */; };
+		4C7F82F32527B8070092482D /* UIActivityIndicatorView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F82F22527B8070092482D /* UIActivityIndicatorView+Extentions.swift */; };
 		4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */; };
 		4CABD00D23336BB7005D2D1D /* TimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */; };
 		4CABD00F233370EF005D2D1D /* InfoTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */; };
@@ -80,7 +81,6 @@
 		4C0F74422462C305001D59E8 /* Device+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Extensions.swift"; sourceTree = "<group>"; };
 		4C0F74482462FC8C001D59E8 /* CosmosActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosActivityView.swift; sourceTree = "<group>"; };
 		4C38B6062461D44600CF7485 /* UITableView+Bottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bottom.swift"; sourceTree = "<group>"; };
-		4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosRefreshControl.swift; sourceTree = "<group>"; };
 		4C3DB01424602220003D413C /* UITableView+CosmosTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CosmosTableView.swift"; sourceTree = "<group>"; };
 		4C3DB01624602394003D413C /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		4C4C66E2246082A800E8068D /* String+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
@@ -122,6 +122,8 @@
 		4C776D29230ECA2800025B08 /* LaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesService.swift; sourceTree = "<group>"; };
 		4C776D2B230ECDB600025B08 /* URL+GenerateFromComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+GenerateFromComponents.swift"; sourceTree = "<group>"; };
 		4C776D2E230F061500025B08 /* DateFormatterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterAPI.swift; sourceTree = "<group>"; };
+		4C7F82EC2527B76E0092482D /* UIRefreshControl+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Color.swift"; sourceTree = "<group>"; };
+		4C7F82F22527B8070092482D /* UIActivityIndicatorView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extentions.swift"; sourceTree = "<group>"; };
 		4C7FAE432312611300BD136C /* TodayLaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLaunchAPI.swift; sourceTree = "<group>"; };
 		4CABD00C23336BB7005D2D1D /* TimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellViewModel.swift; sourceTree = "<group>"; };
 		4CABD00E233370EF005D2D1D /* InfoTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTimeCell.swift; sourceTree = "<group>"; };
@@ -192,14 +194,6 @@
 			path = DeviceKit;
 			sourceTree = "<group>";
 		};
-		4C38B60B2461D50D00CF7485 /* CosmosRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				4C38B6092461D50100CF7485 /* CosmosRefreshControl.swift */,
-			);
-			path = CosmosRefreshControl;
-			sourceTree = "<group>";
-		};
 		4C4C66DA2460810300E8068D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +202,8 @@
 				4C4C66DE2460812A00E8068D /* UIViewController */,
 				4C4C66DF2460813200E8068D /* UITableView */,
 				4C4C66EA2460864A00E8068D /* UIFont */,
+				4C7F82EF2527B77F0092482D /* UIRefreshControl */,
+				4C7F82F52527B8210092482D /* UIActivityIndicatorView */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -301,7 +297,6 @@
 			children = (
 				4C5930A1245EACA200DDFEDD /* Base */,
 				4C6B02B42465A4A10090C652 /* CosmosActivityView */,
-				4C38B60B2461D50D00CF7485 /* CosmosRefreshControl */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -495,6 +490,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4C7F82EF2527B77F0092482D /* UIRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				4C7F82EC2527B76E0092482D /* UIRefreshControl+Color.swift */,
+			);
+			path = UIRefreshControl;
+			sourceTree = "<group>";
+		};
+		4C7F82F52527B8210092482D /* UIActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				4C7F82F22527B8070092482D /* UIActivityIndicatorView+Extentions.swift */,
+			);
+			path = UIActivityIndicatorView;
+			sourceTree = "<group>";
+		};
 		4CABD00923336AB9005D2D1D /* InfoMainCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -643,7 +654,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Vlad Suhomlinov";
 				TargetAttributes = {
 					4C776CF1230EB96C00025B08 = {
@@ -755,7 +766,6 @@
 				4C776D23230EC60600025B08 /* NextLaunchAPI.swift in Sources */,
 				4C67D9E224617AD30091F20E /* BaseViewController.swift in Sources */,
 				4C5930A5245EAD7500DDFEDD /* ViewModel.swift in Sources */,
-				4C38B60A2461D50100CF7485 /* CosmosRefreshControl.swift in Sources */,
 				4C59309C245EA8AA00DDFEDD /* UIView+AddSubviews.swift in Sources */,
 				4CDC57B1245F5EF600BE487E /* CosmosNavigationController.swift in Sources */,
 				4C3DB01524602220003D413C /* UITableView+CosmosTableView.swift in Sources */,
@@ -779,6 +789,7 @@
 				4CD3706A2312815E00187903 /* LaunchListProtocol.swift in Sources */,
 				4C5930A3245EACAC00DDFEDD /* NextLaunchCell.swift in Sources */,
 				4C7FAE442312611300BD136C /* TodayLaunchAPI.swift in Sources */,
+				4C7F82ED2527B76E0092482D /* UIRefreshControl+Color.swift in Sources */,
 				4C6A393B231FC999007B043D /* LaunchesViewModel.swift in Sources */,
 				4CDC57B5245F600900BE487E /* UIViewController+Navigation.swift in Sources */,
 				4C776D25230EC8CA00025B08 /* LaunchList.swift in Sources */,
@@ -798,6 +809,7 @@
 				4C4C66E92460864700E8068D /* UIFont+Fonts.swift in Sources */,
 				4C6C1F99231BE04500C7120F /* Lsp.swift in Sources */,
 				4C3DB01724602394003D413C /* BaseTableViewController.swift in Sources */,
+				4C7F82F32527B8070092482D /* UIActivityIndicatorView+Extentions.swift in Sources */,
 				4C0F74492462FC8C001D59E8 /* CosmosActivityView.swift in Sources */,
 				4C776D2A230ECA2800025B08 /* LaunchesService.swift in Sources */,
 				4C776D20230EC4A400025B08 /* LaunchLibraryAPI.swift in Sources */,
@@ -847,6 +859,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -908,6 +921,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
