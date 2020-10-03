@@ -6,18 +6,16 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import UIKit
+import LeadKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    let window = UIWindow()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        window?.backgroundColor = .darkGraySpace
-        window?.rootViewController = TabBarController()
-        window?.makeKeyAndVisible()
+
+        window.changeRootController(controller: TabBarController())
 
         return true
     }
