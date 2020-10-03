@@ -10,7 +10,7 @@ import Foundation
 
 struct LaunchList: LaunchListProtocol, Decodable, Equatable {
     var launches: [Launch]
-    
+
     static func == (lhs: LaunchList, rhs: LaunchList) -> Bool {
         lhs.launches == rhs.launches
     }

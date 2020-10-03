@@ -15,11 +15,11 @@ final class DateFormatterAPI: DateFormatter {
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter
     }
-    
+
     func getDate(from string: String) -> Date? {
         DateFormatterAPI.iSO8601DateWithMillisec.date(from: string)
     }
-    
+
     func convertToRequest(date: Date) -> String {
         dateFormat = "yyyy-MM-dd"
         return string(from: date)
@@ -34,7 +34,7 @@ extension DateFormatterAPI {
         formatter.locale = .current
         return formatter.string(from: date)
     }
-    
+
     static func makeiSOString(for date: Date) -> String {
         DateFormatterAPI.iSO8601DateWithMillisec.string(from: date)
     }

@@ -12,22 +12,22 @@ import TableKit
 final class InfoLaunchHeaderCell: BaseInitializableCell {
     private let containerView = UIView()
     private let titleLabel = UILabel()
-    
+
     override func addViews() {
         super.addViews()
-        
+
         containerView.addSubview(titleLabel)
-        addSubview(containerView)
+        contentView.addSubview(containerView)
     }
-    
+
     override func configureLayout() {
         super.configureLayout()
-        
+
         titleLabel.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
             make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
         }
-        
+
         containerView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(CGFloat.littleInset)
             make.leading.equalToSuperview().offset(CGFloat.defaultInset)
@@ -36,11 +36,11 @@ final class InfoLaunchHeaderCell: BaseInitializableCell {
 
     override func configureAppearance() {
         super.configureAppearance()
-        
+
         titleLabel.font = .describingFont
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
-        
+
         containerView.layer.cornerRadius = .defaultCornerRadius
         containerView.backgroundColor = .redSpace
     }

@@ -12,11 +12,11 @@ import RxSwift
 
 class BaseTableViewModel: ViewModel {
     private let isBottomRelay = PublishRelay<Bool>()
-    
+
     func handleRefresh() {
         // override
     }
-    
+
     func handleLoadMore() {
         // override
     }
@@ -28,15 +28,15 @@ extension BaseTableViewModel {
     var isBottomObservable: Observable<Bool> {
         isBottomRelay.asObservable()
     }
-    
+
     func didScrollToBottom() {
         isBottomRelay.accept(true)
     }
-    
+
     func didScrollToTop() {
         isBottomRelay.accept(false)
     }
-    
+
     func bind(loadMoreRequestObservable: Observable<Bool>) -> Disposable {
         loadMoreRequestObservable.withLatestFrom(isBottomRelay)
             .filter { $0 }

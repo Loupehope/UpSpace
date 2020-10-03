@@ -13,10 +13,10 @@ import TableKit
 
 class BaseTableViewController<ViewModelT: BaseTableViewModel>: BaseTableContentController<ViewModelT>, UIScrollViewDelegate {
     let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         initialLoadView()
     }
 
@@ -42,21 +42,21 @@ extension BaseTableViewController {
             })
             .bind(to: activityView.rx.isAnimating)
             .disposed(by: disposeBag)
-        
+
         viewModel.bind(loadMoreRequestObservable: activityView.isAnimatingObservable)
             .disposed(by: disposeBag)
-        
+
         tableView.rx
             .willDisplayCell
             .map { [weak tableView] in
                 guard let tableView = tableView else {
                     return false
                 }
-                
+
                 let lastSection = tableView.numberOfSections - 1
                 let lastCell = tableView.numberOfRows(inSection: lastSection) - 1
                 let intexPath = IndexPath(row: lastCell, section: lastSection)
-                
+
                 return $0.indexPath == intexPath && !activityView.isAnimating
             }
             .filter { $0 }

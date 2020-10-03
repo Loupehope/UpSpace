@@ -12,20 +12,20 @@ import UIKit
 
 final class CosmosActivityView: UIActivityIndicatorView {
     private let isAnimatingRelay = PublishRelay<Bool>()
-    
+
     var isAnimatingObservable: Observable<Bool> {
         isAnimatingRelay.asObservable()
     }
-    
+
     override func startAnimating() {
         super.startAnimating()
-        
+
         isAnimatingRelay.accept(true)
     }
-    
+
     override func stopAnimating() {
         super.stopAnimating()
-        
+
         isAnimatingRelay.accept(false)
     }
 }

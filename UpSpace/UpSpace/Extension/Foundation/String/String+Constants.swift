@@ -10,8 +10,8 @@ import Foundation
 
 extension String {
     static let empty = ""
-    
+
     static let space = " "
-    
+
     static let dot = "."
 }

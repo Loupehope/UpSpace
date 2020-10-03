@@ -10,6 +10,6 @@ import Foundation
 
 protocol NetworkService {
     associatedtype Result
-    
+
     func load(successCompletion: ((Result?) -> Void)?, errorCompletion: ((Error) -> Void)?)
 }

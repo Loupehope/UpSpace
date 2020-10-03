@@ -16,39 +16,39 @@ class LaunchesTabmanViewController: TabmanViewController {
         let controller = LaunchesViewController(viewModel: viewModel)
         return controller
     }()
-    
+
     private lazy var previousLaunchesViewController: LaunchesViewController = {
         let viewModel = PreviousLaunchesViewModel(api: PreviousLaunchAPI())
         let controller = LaunchesViewController(viewModel: viewModel)
         return controller
     }()
-    
+
     private var controllers: [LaunchesViewController] = []
-    
+
     override func viewDidLoad() {
         automaticallyAdjustsChildInsets = false
         super.viewDidLoad()
-        
+
         nextLaunchesViewController.navController = navigationController
         previousLaunchesViewController.navController = navigationController
-        
+
         configureApperance()
         configureControllers()
     }
-    
+
     private func configureControllers() {
         controllers.append(nextLaunchesViewController)
         controllers.append(previousLaunchesViewController)
-        
+
         dataSource = self
-        
+
         addBar(Bar.default, dataSource: self, at: .top)
     }
-    
+
     private func configureApperance() {
         edgesForExtendedLayout = []
         view.backgroundColor = .darkGraySpace
-        
+
         title = "Launches"
     }
 }
@@ -58,16 +58,16 @@ extension LaunchesTabmanViewController: PageboyViewControllerDataSource, TMBarDa
         let title = index > .zero ? "Previous" : "Upcoming"
         return TMBarItem(title: title)
     }
-    
+
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         controllers.count
     }
-    
+
     func viewController(for pageboyViewController: PageboyViewController,
                         at index: PageboyViewController.PageIndex) -> UIViewController? {
         controllers[index]
     }
-    
+
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         nil
     }
@@ -80,17 +80,17 @@ private extension LaunchesTabmanViewController {
             bar.layout.transitionStyle = .snap
             bar.layout.contentMode = .fit
             bar.backgroundColor = .lightGraySpace
-            
+
             bar.buttons.customize { button in
                 button.tintColor = .darkGraySpace
                 button.selectedTintColor = .redSpace
                 button.font = .default
             }
-            
+
             bar.indicator.cornerStyle = .rounded
             bar.indicator.weight = .light
             bar.indicator.tintColor = .red
-            
+
             return bar
         }
     }

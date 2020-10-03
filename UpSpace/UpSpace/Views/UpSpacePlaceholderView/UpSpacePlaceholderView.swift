@@ -33,7 +33,7 @@ final class UpSpacePlaceholderView: BaseInitializableView {
         titleLabel.font = .default
 
         activityView.isHidden = true
-        
+
         actionButton.layer.cornerRadius = .shortInset
         actionButton.backgroundColor = .darkGraySpace
         actionButton.setTitleColor(.white, for: .normal)
@@ -95,7 +95,7 @@ extension UpSpacePlaceholderView {
 
     func configure(with viewModel: ViewModel) {
         titleLabel.text = viewModel.title
-        
+
         actionButton.setTitle(viewModel.buttonTitle, for: .normal)
         actionButton.rx.tap.bind { viewModel.onButtonTapAction?() }.disposed(by: disposeBag)
     }

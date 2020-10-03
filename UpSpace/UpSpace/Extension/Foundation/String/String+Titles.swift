@@ -8,16 +8,17 @@
 
 import Foundation
 
+//swiftlint:disable superfluous_disable_command
 //swiftlint:disable identifier_name
 
 extension String {
     static let ok = "Ok"
-    
+
     static let retry = "Retry"
-    
+
     static let refresh = "Refresh"
-    
+
     static let loadingErrorTitle = "Something goes wrong!"
-    
+
     static let emptyLaunchesTitle = "No launches for today"
 }

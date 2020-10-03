@@ -14,8 +14,10 @@ final class TodayLaunchAPI: LaunchLibraryAPI {
         "/1.4/launch/"
     }
     override var params: [String: String] {
-        ["startdate": formatter.convertToRequest(date: Date()),
-         "enddate": formatter.convertToRequest(date: Date()),
-         "limit": "1"]
+        [
+            "startdate": formatter.convertToRequest(date: Date()),
+            "enddate": formatter.convertToRequest(date: Date()),
+            "limit": "1"
+        ]
     }
 }

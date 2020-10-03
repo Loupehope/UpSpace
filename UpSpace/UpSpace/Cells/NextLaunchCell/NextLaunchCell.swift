@@ -15,59 +15,59 @@ final class NextLaunchCell: BaseInitializableCell {
     private let titleLabel = UILabel()
     private let dateLabel = UILabel()
     private let textInfoStackView = UIStackView()
-    
+
     static var estimatedHeight: CGFloat? {
         60
     }
-    
+
     override func addViews() {
         super.addViews()
-        
+
         textInfoStackView.addArrangedSubviews(titleLabel, dateLabel)
         containerView.addSubviews(countryIconImageView, textInfoStackView)
-        addSubview(containerView)
+        contentView.addSubview(containerView)
     }
-    
+
     override func configureLayout() {
         super.configureLayout()
-        
+
         containerView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(CGFloat.tinyInset)
             make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
-        
+
         countryIconImageView.snp.remakeConstraints { make in
             make.leading.equalToSuperview().inset(CGFloat.defaultInset)
             make.centerY.equalToSuperview()
             make.size.equalTo(CGSize.countryIconImageViewSize)
         }
-        
+
         textInfoStackView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(CGFloat.smallInset)
             make.leading.equalTo(countryIconImageView.snp.trailing).offset(CGFloat.defaultInset)
             make.trailing.equalToSuperview().inset(CGFloat.smallInset)
         }
     }
-    
+
     override func configureAppearance() {
         super.configureAppearance()
-        
+
         textInfoStackView.axis = .vertical
         textInfoStackView.spacing = .tinyInset
-        
+
         dateLabel.font = .describingFont
         dateLabel.textColor = .darkGray
-        
+
         titleLabel.numberOfLines = .zero
         dateLabel.numberOfLines = .zero
-        
+
         containerView.layer.cornerRadius = .defaultCornerRadius
         containerView.backgroundColor = .white
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         countryIconImageView.image = nil
     }
 }

@@ -14,32 +14,32 @@ import TIUIElements
 final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     private let errorPlaceholderView = UpSpacePlaceholderView()
     private let emptyPlaceholderView = UpSpacePlaceholderView()
-    
+
     var navController: UINavigationController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.contentInset = .tableViewContentInset
-        
+
         tableDirector.safeClear()
-        
+
         addBottomRefreshControl()
         addErrorPlaceholder()
         addEmptyPlaceholder()
-        
+
         bindViewModel()
-        
+
         viewModel.handleRefresh()
     }
-    
+
     private func addErrorPlaceholder() {
         tableView.addSubview(errorPlaceholderView)
-    
+
         errorPlaceholderView.snp.makeConstraints {
             $0.edges.equalTo(tableView.safeAreaLayoutGuide)
         }
-        
+
         errorPlaceholderView.configure(with: .init(title: .loadingErrorTitle,
                                                    buttonTitle: .retry,
                                                    onButtonTapAction: { [weak self] in
@@ -48,14 +48,14 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
                                                    }))
         errorPlaceholderView.isHidden = true
     }
-    
+
     private func addEmptyPlaceholder() {
         tableView.addSubview(emptyPlaceholderView)
-    
+
         emptyPlaceholderView.snp.makeConstraints {
             $0.edges.equalTo(tableView.safeAreaLayoutGuide)
         }
-        
+
         emptyPlaceholderView.configure(with: .init(title: .emptyLaunchesTitle,
                                                    buttonTitle: .refresh,
                                                    onButtonTapAction: { [weak self] in
@@ -75,11 +75,11 @@ private extension LaunchesViewController {
         tableDirector.insert(section: .init(onlyRows: rows),
                              at: tableDirector.sections.count,
                              with: .fade)
-        
+
         viewModel.didScrollToTop()
-        
+
         tableView.refreshControl?.endRefreshing()
-        
+
         if tableDirector.isEmpty {
             emptyPlaceholderView.isHidden = false
             errorPlaceholderView.isHidden = true
@@ -88,12 +88,12 @@ private extension LaunchesViewController {
             if tableView.refreshControl == nil {
                 addRefreshControl()
             }
-            
+
             emptyPlaceholderView.isHidden = true
             errorPlaceholderView.isHidden = true
         }
     }
-    
+
     func didSelectRow(for item: Launch?) {
         let viewController = InfoLaunchViewController(viewModel: .init())
         navigationController?.pushViewController(viewController, animated: true)
@@ -104,14 +104,14 @@ private extension LaunchesViewController {
     func addRefreshControl() {
         let refreshControl = RefreshControl(color: .whiteSpace)
         tableView.refreshControl = refreshControl
-        
+
         refreshControl.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
     }
-    
+
     @objc func refreshAction() {
         viewModel.handleRefresh()
     }
-    
+
     func addBottomRefreshControl() {
         let activityView: CosmosActivityView = .default
         tableView.tableFooterView = activityView
@@ -125,7 +125,7 @@ private extension LaunchesViewController {
             self?.tableView.refreshControl?.endRefreshing()
             self?.showError()
         }
-        
+
         viewModel.onLaunchesLoadObservable
             .observeOn(MainScheduler.asyncInstance)
             .skip(1)
@@ -134,7 +134,7 @@ private extension LaunchesViewController {
             }
             .disposed(by: disposeBag)
     }
-    
+
     func showError() {
         guard !tableDirector.isEmpty else {
             emptyPlaceholderView.isHidden = true
@@ -142,7 +142,7 @@ private extension LaunchesViewController {
             errorPlaceholderView.update(for: .normal)
             return
         }
-        
+
         let alertController = UIAlertController(title: .loadingErrorTitle,
                                                 message: nil,
                                                 preferredStyle: .alert)

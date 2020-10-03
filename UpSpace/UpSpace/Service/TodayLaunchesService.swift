@@ -17,24 +17,25 @@ final class TodayLaunchesService: NetworkService {
                         path: launchAPI.path,
                         params: launchAPI.params)
     }
-    
+
     init(launchAPI: LaunchLibraryAPI) {
         self.launchAPI = launchAPI
     }
-    
+
     func load(successCompletion: ((LaunchListProtocol?) -> Void)?, errorCompletion: ((Error) -> Void)?) {
         guard let launchURL = launchURL else { fatalError("Incorrect URL") }
-        
+
         AF.request(launchURL).responseData {
             switch $0.result {
             case let .success(data):
                 guard let result = try? JSONDecoder().decode(LaunchList.self, from: data) else {
                     fatalError("Couldn't decode JSON response")
                 }
-                
+
                 DispatchQueue.main.async {
                     successCompletion?(result)
                 }
+
             case let .failure(error):
                 DispatchQueue.main.async {
                     errorCompletion?(error)

@@ -10,7 +10,7 @@ import Foundation
 
 final class NextLaunchCellViewModel: ViewModel {
     let launch: Launch
-    
+
     init(launch: Launch) {
         self.launch = launch
     }

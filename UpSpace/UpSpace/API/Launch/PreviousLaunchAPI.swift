@@ -20,38 +20,45 @@ final class PreviousLaunchAPI: LaunchLibraryAPI {
     override var params: [String: String] {
         ["startdate": previousDate, "enddate": nextDate, "limit": "300"]
     }
-    
+
     init(startDate: Date = Date()) {
         super.init()
         reload(startDate: startDate)
     }
-    
+
     override func reload(startDate: Date) {
         previousDate = dateFormatter.convertToRequest(date: Date() - 7.months)
         nextDate = dateFormatter.convertToRequest(date: startDate)
         loadAll.toggle()
     }
-    
+
     override func set(dateString: String) {
-        guard let date = dateFormatter.getDate(from: dateString) else { return }
+        guard let date = dateFormatter.getDate(from: dateString) else {
+            return
+        }
+
         defer {
             nextDate = dateFormatter.convertToRequest(date: date - 1.days )
         }
+
         loadAll = check(date: date)
+
         guard !loadAll else {
             previousDate = dateFormatter.convertToRequest(date: date - 10.years)
-            return }
+            return
+        }
+
         previousDate = dateFormatter.convertToRequest(date: date - 7.months)
     }
 }
 
-// MARK: private
+// MARK: - private
 
 private extension PreviousLaunchAPI {
     private var borderYear: Int {
         1_998
     }
-    
+
     // Check is date smaller or equel "2023-01-01" or note
     func check(date: Date) -> Bool {
         let calendar = Calendar.current.component(.year, from: date)

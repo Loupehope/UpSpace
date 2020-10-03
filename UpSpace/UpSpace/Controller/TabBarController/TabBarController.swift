@@ -14,12 +14,12 @@ final class TabBarController: UITabBarController {
         let controller = InfoLaunchViewController(viewModel: viewModel)
         return controller.withNavigationController()
     }()
-    
+
     private lazy var launchesViewController = LaunchesTabmanViewController().withNavigationController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureViewControllers()
         configureAppearence()
     }
@@ -31,11 +31,11 @@ private extension TabBarController {
     func configureViewControllers() {
         let items = TabBarItems.items()
         let itemsViewControllers = [nextLaunchViewController, launchesViewController]
-        
+
         zip(itemsViewControllers, items).forEach { $0.0.tabBarItem = $0.1 }
         viewControllers = [nextLaunchViewController, launchesViewController]
     }
-    
+
     func configureAppearence() {
         tabBar.unselectedItemTintColor = .darkGraySpace
         tabBar.barTintColor = .whiteSpace
@@ -49,7 +49,7 @@ private extension TabBarController {
         static func items() -> [UITabBarItem] {
             let titles = ["Next", "Launches"]
             let images: [UIImage] = [.nextItemTabBar, .launchesItemTabBar]
-            
+
             return zip(titles, images).enumerated()
                 .map { (tag: Int, item: (title: String, image: UIImage)) in
                     UITabBarItem(title: item.title, image: item.image, tag: tag)

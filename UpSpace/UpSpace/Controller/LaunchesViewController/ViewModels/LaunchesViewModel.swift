@@ -15,36 +15,36 @@ class LaunchesViewModel: BaseTableViewModel {
     private let disposeBag = DisposeBag()
     private let onLaunchesLoadRelay = BehaviorRelay<LaunchListProtocol?>(value: nil)
     private let service: LaunchesService
-    
+
     private var oldList: LaunchListProtocol = LaunchList(launches: [])
-    
+
     var previousLaunch: Launch?
-    
+
     var onLoadingError: ((Error) -> Void)?
-    
+
     var onLaunchesLoadObservable: Observable<LaunchListProtocol?> {
         onLaunchesLoadRelay.asObservable()
     }
-    
+
     init(api: LaunchLibraryAPI) {
         service = LaunchesService(launchAPI: api)
     }
-    
+
     override func handleRefresh() {
         update()
     }
-    
+
     override func handleLoadMore() {
         loadMore()
     }
-    
+
     func createRows(for launches: [Launch], with clickHandler: ((Launch) -> Void)?) -> [Row] {
         launches.map {
             TableRow<NextLaunchCell>(item: .init(launch: $0))
                 .on(.click) { clickHandler?($0.item.launch) }
         }
     }
-    
+
     func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
         fatalError("This function must be overriden in subclass")
     }
@@ -57,25 +57,25 @@ private extension LaunchesViewModel {
         service.reload()
         loadMore()
     }
-    
+
     func loadMore() {
         service.load(successCompletion: { [weak self] list in
             guard let self = self, let list = list else {
                 return
             }
-            
+
             guard self.oldList.launches != list.launches else {
                 self.onLaunchesLoadRelay.accept(nil)
                 return
             }
-            
+
             self.oldList = self.sort(launches: list)
-            
+
             if let launch = self.oldList.launches.last {
                 self.previousLaunch = launch
                 self.service.updateLaunch(dateString: launch.isostart)
             }
-            
+
             self.onLaunchesLoadRelay.accept(self.oldList)
         }, errorCompletion: onLoadingError)
     }

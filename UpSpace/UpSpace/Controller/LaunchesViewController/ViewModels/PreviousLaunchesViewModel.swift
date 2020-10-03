@@ -12,7 +12,10 @@ import SwiftDate
 final class PreviousLaunchesViewModel: LaunchesViewModel {
     override func sort(launches: LaunchListProtocol) -> LaunchListProtocol {
         let launch = previousLaunch != nil ? previousLaunch : Launch.makeEmptyLaunch(with: Date())
-        let nextLaunches = launches.launches.filter { $0.start.timeIntervalSince1970 <= launch?.start.timeIntervalSince1970 ?? 0 }
+        let nextLaunches = launches.launches.filter {
+            $0.start.timeIntervalSince1970 <= launch?.start.timeIntervalSince1970 ?? 0
+        }
+
         let sorted = nextLaunches.sorted { first, second in
             first.start > second.start
         }
