@@ -14,15 +14,15 @@ final class InfoLaunchHeaderCell: BaseInitializableCell {
     private let containerView = UIView()
     private let titleLabel = UILabel()
     
-    override func addUI() {
-        super.addUI()
+    override func addViews() {
+        super.addViews()
         
         containerView.addSubview(titleLabel)
         addSubview(containerView)
     }
     
-    override func setupUI() {
-        super.setupUI()
+    override func configureLayout() {
+        super.configureLayout()
         
         titleLabel.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
@@ -35,8 +35,8 @@ final class InfoLaunchHeaderCell: BaseInitializableCell {
         }
     }
 
-    override func configureUI() {
-        super.configureUI()
+    override func configureAppearance() {
+        super.configureAppearance()
         
         titleLabel.font = .describingFont
         titleLabel.textColor = .white

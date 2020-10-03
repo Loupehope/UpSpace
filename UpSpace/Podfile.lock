@@ -1,6 +1,16 @@
 PODS:
   - Alamofire (5.2.2)
   - DeviceKit (4.1.0)
+  - LeadKit (0.10.6):
+    - LeadKit/Core (= 0.10.6)
+  - LeadKit/Core (0.10.6):
+    - RxAlamofire (~> 5.6.0)
+    - RxCocoa (~> 5.1.0)
+    - RxSwift (~> 5.1.0)
+    - SnapKit (~> 5.0.0)
+    - SwiftDate (~> 6)
+    - TableKit (~> 2.8)
+    - UIScrollView-InfiniteScroll (~> 1.1.0)
   - Pageboy (3.6.1)
   - RxAlamofire (5.6.2):
     - RxAlamofire/Core (= 5.6.2)
@@ -30,10 +40,12 @@ PODS:
   - TableKit (2.11.0)
   - Tabman (2.9.1):
     - Pageboy (~> 3.6.0)
+  - UIScrollView-InfiniteScroll (1.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - DeviceKit
+  - LeadKit
   - RxAlamofire
   - RxKeyboard
   - RxSwift
@@ -45,6 +57,8 @@ DEPENDENCIES:
   - Tabman
 
 SPEC REPOS:
+  https://github.com/TouchInstinct/Podspecs.git:
+    - LeadKit
   trunk:
     - Alamofire
     - DeviceKit
@@ -60,10 +74,12 @@ SPEC REPOS:
     - SwiftLint
     - TableKit
     - Tabman
+    - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   DeviceKit: aaa4743a15ef1e2021fe654dffa32a3ed15672aa
+  LeadKit: 9e8bde10288f8a9d3b6ea4b166a97af9af0f6802
   Pageboy: 29a2d474ad99404b4d77f325e0ab6d705930a4fb
   RxAlamofire: aa949d345b1689eae02b7c7a217518878144f6df
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -76,7 +92,8 @@ SPEC CHECKSUMS:
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   TableKit: 8a1a267d841a2da638ea09bdb0db33aedb459fa8
   Tabman: 085d89c65be9e883629bdaf5b1453a6397e57846
+  UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: c7b1d82712329c7c5f25ffdff55a454110f87f2d
+PODFILE CHECKSUM: f2b47eece6d271a854949fa84f859974971207fe
 
 COCOAPODS: 1.9.3

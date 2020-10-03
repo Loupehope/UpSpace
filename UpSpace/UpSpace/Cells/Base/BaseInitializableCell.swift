@@ -6,26 +6,26 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
-import UIKit
+import LeadKit
 
-class BaseInitializableCell: UITableViewCell, InitializableUI {
+class BaseInitializableCell: UITableViewCell, InitializableView {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        initializeUI()
+        initializeView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        initializeUI()
+        initializeView()
     }
     
-    func addUI() {
+    func addViews() {
         // override
     }
     
-    func setupUI() {
+    func configureLayout() {
         // override
     }
     
@@ -33,7 +33,7 @@ class BaseInitializableCell: UITableViewCell, InitializableUI {
         // override
     }
     
-    func configureUI() {
+    func configureAppearance() {
         selectionStyle = .none
         backgroundColor = .clear
     }

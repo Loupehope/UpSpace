@@ -6,9 +6,8 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
-import SnapKit
+import LeadKit
 import TableKit
-import UIKit
 
 final class NextLaunchCell: BaseInitializableCell {
     private let containerView = UIView()
@@ -17,16 +16,20 @@ final class NextLaunchCell: BaseInitializableCell {
     private let dateLabel = UILabel()
     private let textInfoStackView = UIStackView()
     
-    override func addUI() {
-        super.addUI()
+    static var estimatedHeight: CGFloat? {
+        60
+    }
+    
+    override func addViews() {
+        super.addViews()
         
         textInfoStackView.addArrangedSubviews(titleLabel, dateLabel)
         containerView.addSubviews(countryIconImageView, textInfoStackView)
         addSubview(containerView)
     }
     
-    override func setupUI() {
-        super.setupUI()
+    override func configureLayout() {
+        super.configureLayout()
         
         containerView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(CGFloat.tinyInset)
@@ -46,8 +49,8 @@ final class NextLaunchCell: BaseInitializableCell {
         }
     }
     
-    override func configureUI() {
-        super.configureUI()
+    override func configureAppearance() {
+        super.configureAppearance()
         
         textInfoStackView.axis = .vertical
         textInfoStackView.spacing = .tinyInset

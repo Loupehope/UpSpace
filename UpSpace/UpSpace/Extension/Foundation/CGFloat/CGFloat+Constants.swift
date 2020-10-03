@@ -9,6 +9,8 @@
 import UIKit
 
 extension CGFloat {
+    static let largeInset: CGFloat = 32
+    
     static let bigInset: CGFloat = 24
     
     static let defaultInset: CGFloat = 16

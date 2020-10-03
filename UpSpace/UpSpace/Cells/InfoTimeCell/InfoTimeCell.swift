@@ -45,8 +45,8 @@ final class InfoTimeCell: BaseInitializableCell {
     private let hourVerticalSeparator = UIView()
     private let minVerticalSeparator = UIView()
     
-    override func addUI() {
-        super.addUI()
+    override func addViews() {
+        super.addViews()
         
         yearStackView.addArrangedSubviews(yearLabel, yearTitleLabel)
         monthStackView.addArrangedSubviews(monthLabel, monthTitleLabel)
@@ -70,8 +70,8 @@ final class InfoTimeCell: BaseInitializableCell {
         addSubviews(containerView)
     }
     
-    override func setupUI() {
-        super.setupUI()
+    override func configureLayout() {
+        super.configureLayout()
         
         dateStackView.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(CGFloat.smallInset)
@@ -121,8 +121,8 @@ final class InfoTimeCell: BaseInitializableCell {
         }
     }
     
-    override func configureUI() {
-        super.configureUI()
+    override func configureAppearance() {
+        super.configureAppearance()
         
         [
             yearStackView,

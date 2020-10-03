@@ -6,17 +6,28 @@
 //  Copyright © 2020 Vlad Suhomlinov. All rights reserved.
 //
 
+import LeadKit
 import RxCocoa
 import RxSwift
-import UIKit
+import TableKit
 
-class BaseTableViewController<ViewModelT: BaseTableViewModel>: BaseViewController<ViewModelT, UITableView> {
+class BaseTableViewController<ViewModelT: BaseTableViewModel>: BaseTableContentController<ViewModelT>, UIScrollViewDelegate {
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.configureCosmosTableView()
+        initialLoadView()
+    }
+
+    override func createTableDirector() -> TableDirector {
+        TableDirector(tableView: tableView, scrollDelegate: self)
+    }
+
+    override func configureAppearance() {
+        super.configureAppearance()
+
+        tableView.configureCosmosTableView()
     }
 }
 
@@ -26,8 +37,8 @@ extension BaseTableViewController {
                             with edgeOffset: CGFloat = -.defaultHeight) {
         viewModel.isBottomObservable
             .observeOn(MainScheduler.asyncInstance)
-            .do(onNext: { [weak contentView] in
-                contentView?.tableFooterView = $0 ? activityView : UIView(frame: .zero)
+            .do(onNext: { [weak tableView] in
+                tableView?.tableFooterView = $0 ? activityView : UIView(frame: .zero)
             })
             .bind(to: activityView.rx.isAnimating)
             .disposed(by: disposeBag)
@@ -37,13 +48,13 @@ extension BaseTableViewController {
         
         tableView.rx
             .willDisplayCell
-            .map { [weak contentView] in
-                guard let contentView = contentView else {
+            .map { [weak tableView] in
+                guard let tableView = tableView else {
                     return false
                 }
                 
-                let lastSection = contentView.numberOfSections - 1
-                let lastCell = contentView.numberOfRows(inSection: lastSection) - 1
+                let lastSection = tableView.numberOfSections - 1
+                let lastCell = tableView.numberOfRows(inSection: lastSection) - 1
                 let intexPath = IndexPath(row: lastCell, section: lastSection)
                 
                 return $0.indexPath == intexPath && !activityView.isAnimating

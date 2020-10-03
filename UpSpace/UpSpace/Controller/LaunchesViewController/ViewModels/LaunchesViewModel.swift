@@ -20,6 +20,8 @@ class LaunchesViewModel: BaseTableViewModel {
     
     var previousLaunch: Launch?
     
+    var onLoadingError: ((Error) -> Void)?
+    
     var onLaunchesLoadObservable: Observable<LaunchListProtocol?> {
         onLaunchesLoadRelay.asObservable()
     }
@@ -57,7 +59,7 @@ private extension LaunchesViewModel {
     }
     
     func loadMore() {
-        service.load { [weak self] list in
+        service.load(successCompletion: { [weak self] list in
             guard let self = self, let list = list else {
                 return
             }
@@ -75,6 +77,6 @@ private extension LaunchesViewModel {
             }
             
             self.onLaunchesLoadRelay.accept(self.oldList)
-        }
+        }, errorCompletion: onLoadingError)
     }
 }

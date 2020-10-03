@@ -8,7 +8,7 @@
 
 import RxCocoa
 import RxSwift
-import UIKit
+import TIUIKitCore
 
 final class UpSpacePlaceholderView: BaseInitializableView {
     private let disposeBag = DisposeBag()
@@ -18,38 +18,38 @@ final class UpSpacePlaceholderView: BaseInitializableView {
                                                                          color: .whiteSpace))
     private let invisibleView = UIView()
 
-    override func addUI() {
-        super.addUI()
+    override func addViews() {
+        super.addViews()
 
         addSubviews(titleLabel, actionButton, activityView, invisibleView)
     }
 
-    override func configureUI() {
-        super.configureUI()
+    override func configureAppearance() {
+        super.configureAppearance()
 
-        titleLabel.numberOfLines = 0
+        titleLabel.numberOfLines = .zero
         titleLabel.textAlignment = .center
         titleLabel.textColor = .whiteSpace
-        titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
+        titleLabel.font = .default
 
         activityView.isHidden = true
         
-        actionButton.layer.cornerRadius = 12
+        actionButton.layer.cornerRadius = .shortInset
         actionButton.backgroundColor = .darkGraySpace
         actionButton.setTitleColor(.white, for: .normal)
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func configureLayout() {
+        super.configureLayout()
 
         invisibleView.snp.makeConstraints {
             $0.center.leading.trailing.equalToSuperview()
-            $0.height.equalTo(0)
+            $0.height.equalTo(CGFloat.zero)
         }
 
         titleLabel.snp.makeConstraints {
             $0.bottom.equalTo(invisibleView.snp.top).inset(-10)
-            $0.leading.trailing.equalToSuperview().inset(32)
+            $0.leading.trailing.equalToSuperview().inset(CGFloat.largeInset)
         }
 
         actionButton.snp.makeConstraints {

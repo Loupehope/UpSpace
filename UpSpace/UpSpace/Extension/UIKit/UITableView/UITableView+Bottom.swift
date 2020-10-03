@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITableView {
-    func  isBottom(offset: CGFloat) -> Bool {
+    func isBottom(offset: CGFloat) -> Bool {
         contentOffset.y + frame.size.height + offset > contentSize.height
     }
     

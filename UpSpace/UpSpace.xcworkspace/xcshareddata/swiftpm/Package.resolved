@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LeadKit",
+        "repositoryURL": "https://github.com/TouchInstinct/LeadKit",
+        "state": {
+          "branch": null,
+          "revision": "9991408b32065aec5a726a17f806390795b40b40",
+          "version": "0.10.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

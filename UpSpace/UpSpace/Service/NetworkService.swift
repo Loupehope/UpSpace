@@ -11,5 +11,5 @@ import Foundation
 protocol NetworkService {
     associatedtype Result
     
-    func load(_ completionHandler: @escaping (Result?) -> Void)
+    func load(successCompletion: ((Result?) -> Void)?, errorCompletion: ((Error) -> Void)?)
 }

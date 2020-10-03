@@ -10,5 +10,4 @@ import TableKit
 import UIKit
 
 class InfoLaunchViewController: BaseTableViewController<BaseTableViewModel> {
-    private lazy var tableDirector = TableDirector(tableView: contentView)
 }

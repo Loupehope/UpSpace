@@ -30,7 +30,7 @@ final class LaunchesService: NetworkService {
         launchAPI.set(dateString: dateString)
     }
     
-    func load(_ completionHandler: @escaping (LaunchListProtocol?) -> Void) {
+    func load(successCompletion: ((LaunchListProtocol?) -> Void)?, errorCompletion: ((Error) -> Void)?) {
         guard let launchURL = launchURL else { fatalError("Incorrect URL") }
         
         AF.request(launchURL).responseData {
@@ -39,11 +39,12 @@ final class LaunchesService: NetworkService {
                 guard let result = try? JSONDecoder().decode(LaunchList.self, from: data) else {
                     fatalError("Couldn't decode JSON response")
                 }
+                
                 DispatchQueue.main.async {
-                    completionHandler(result)
+                    successCompletion?(result)
                 }
             case let .failure(error):
-                print(error.localizedDescription)
+                errorCompletion?(error)
             }
         }
     }

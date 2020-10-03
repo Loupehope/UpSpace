@@ -6,27 +6,24 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
+import LeadKit
 import RxSwift
-import SnapKit
 import TableKit
-import UIKit
+import TIUIElements
 
 final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     private let errorPlaceholderView = UpSpacePlaceholderView()
     private let emptyPlaceholderView = UpSpacePlaceholderView()
-    
-    private lazy var tableDirector = TableDirector(tableView: contentView)
     
     var navController: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.contentInset = .tableViewContentInset
+        tableView.contentInset = .tableViewContentInset
         
-        tableDirector.clearTableView()
+        tableDirector.safeClear()
         
-        addRefreshControl()
         addBottomRefreshControl()
         addErrorPlaceholder()
         addEmptyPlaceholder()
@@ -37,10 +34,10 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     }
     
     private func addErrorPlaceholder() {
-        contentView.addSubview(errorPlaceholderView)
+        tableView.addSubview(errorPlaceholderView)
     
         errorPlaceholderView.snp.makeConstraints {
-            $0.edges.equalTo(contentView.safeAreaLayoutGuide)
+            $0.edges.equalTo(tableView.safeAreaLayoutGuide)
         }
         
         errorPlaceholderView.configure(with: .init(title: .loadingErrorTitle,
@@ -53,10 +50,10 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
     }
     
     private func addEmptyPlaceholder() {
-        contentView.addSubview(emptyPlaceholderView)
+        tableView.addSubview(emptyPlaceholderView)
     
         emptyPlaceholderView.snp.makeConstraints {
-            $0.edges.equalTo(contentView.safeAreaLayoutGuide)
+            $0.edges.equalTo(tableView.safeAreaLayoutGuide)
         }
         
         emptyPlaceholderView.configure(with: .init(title: .emptyLaunchesTitle,
@@ -75,17 +72,23 @@ final class LaunchesViewController: BaseTableViewController<LaunchesViewModel> {
 private extension LaunchesViewController {
     func updateLaunches(with list: [Launch]) {
         let rows = viewModel.createRows(for: list, with: didSelectRow(for:))
-        tableDirector.appendSection(.create(with: rows), with: .fade)
+        tableDirector.insert(section: .init(onlyRows: rows),
+                             at: tableDirector.sections.count,
+                             with: .fade)
         
         viewModel.didScrollToTop()
         
-        contentView.refreshControl?.endRefreshing()
+        tableView.refreshControl?.endRefreshing()
         
         if tableDirector.isEmpty {
             emptyPlaceholderView.isHidden = false
             errorPlaceholderView.isHidden = true
             emptyPlaceholderView.update(for: .normal)
         } else {
+            if tableView.refreshControl == nil {
+                addRefreshControl()
+            }
+            
             emptyPlaceholderView.isHidden = true
             errorPlaceholderView.isHidden = true
         }
@@ -99,42 +102,44 @@ private extension LaunchesViewController {
 
 private extension LaunchesViewController {
     func addRefreshControl() {
-        let refreshControl = UIRefreshControl(color: .whiteSpace)
-        contentView.refreshControl = refreshControl
+        let refreshControl = RefreshControl(color: .whiteSpace)
+        tableView.refreshControl = refreshControl
         
         refreshControl.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
     }
     
     @objc func refreshAction() {
-        CFRunLoopPerformBlock(CFRunLoopGetMain(), CFRunLoopMode.defaultMode.rawValue) { [weak self] in
-            self?.viewModel.handleRefresh()
-        }
+        viewModel.handleRefresh()
     }
     
     func addBottomRefreshControl() {
         let activityView: CosmosActivityView = .default
-        contentView.tableFooterView = activityView
-        bindScrollToBottom(activityView: activityView, for: contentView)
+        tableView.tableFooterView = activityView
+        bindScrollToBottom(activityView: activityView, for: tableView)
     }
 }
 
 private extension LaunchesViewController {
     func bindViewModel() {
+        viewModel.onLoadingError = { [weak self] _ in
+            self?.tableView.refreshControl?.endRefreshing()
+            self?.showError()
+        }
+        
         viewModel.onLaunchesLoadObservable
             .observeOn(MainScheduler.asyncInstance)
             .skip(1)
-            .subscribe(onNext: { [weak self] in
+            .bind { [weak self] in
                 self?.updateLaunches(with: $0?.launches ?? [])
-            }, onError: { [weak self] _ in
-                self?.errorPlaceholderView.isHidden = false
-                self?.showError()
-            })
+            }
             .disposed(by: disposeBag)
     }
     
     func showError() {
         guard !tableDirector.isEmpty else {
             emptyPlaceholderView.isHidden = true
+            errorPlaceholderView.isHidden = false
+            errorPlaceholderView.update(for: .normal)
             return
         }
         

@@ -8,6 +8,7 @@
 
 import SnapKit
 import TableKit
+import TIUIKitCore
 import UIKit
 
 final class InfoMainCell: BaseInitializableCell {
@@ -21,17 +22,18 @@ final class InfoMainCell: BaseInitializableCell {
     private let statusImageView = UIImageView()
     private let statusStackView = UIStackView()
     
-    override func addUI() {
-        super.addUI()
+    override func addViews() {
+        super.addViews()
         
         dateStackView.addArrangedSubviews(dateImageView, dateLabel)
         statusStackView.addArrangedSubviews(statusImageView, statusLabel)
         containerView.addSubviews(titleLabel, separatorView, dateStackView, statusStackView)
-        addSubview(containerView)
+
+        contentView.addSubview(containerView)
     }
     
-    override func setupUI() {
-        super.setupUI()
+    override func configureLayout() {
+        super.configureLayout()
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(CGFloat.bigInset)
@@ -74,8 +76,8 @@ final class InfoMainCell: BaseInitializableCell {
         }
     }
     
-    override func configureUI() {
-        super.configureUI()
+    override func configureAppearance() {
+        super.configureAppearance()
         
         [titleLabel, dateLabel, statusLabel].forEach { $0.numberOfLines = .zero }
         
