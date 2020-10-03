@@ -26,14 +26,6 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - RxSwiftExt (5.2.0):
-    - RxSwiftExt/Core (= 5.2.0)
-    - RxSwiftExt/RxCocoa (= 5.2.0)
-  - RxSwiftExt/Core (5.2.0):
-    - RxSwift (~> 5.0)
-  - RxSwiftExt/RxCocoa (5.2.0):
-    - RxCocoa (~> 5.0)
-    - RxSwiftExt/Core
   - SnapKit (5.0.1)
   - SwiftDate (6.2.0)
   - SwiftLint (0.40.3)
@@ -43,17 +35,12 @@ PODS:
   - UIScrollView-InfiniteScroll (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire
   - DeviceKit
   - LeadKit
-  - RxAlamofire
   - RxKeyboard
-  - RxSwift
-  - RxSwiftExt
   - SnapKit
   - SwiftDate
   - SwiftLint
-  - TableKit
   - Tabman
 
 SPEC REPOS:
@@ -68,7 +55,6 @@ SPEC REPOS:
     - RxKeyboard
     - RxRelay
     - RxSwift
-    - RxSwiftExt
     - SnapKit
     - SwiftDate
     - SwiftLint
@@ -86,7 +72,6 @@ SPEC CHECKSUMS:
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
@@ -94,6 +79,6 @@ SPEC CHECKSUMS:
   Tabman: 085d89c65be9e883629bdaf5b1453a6397e57846
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: f2b47eece6d271a854949fa84f859974971207fe
+PODFILE CHECKSUM: d1354328afd5ce1d0d6a1bd43ffaf684ec6e94b1
 
 COCOAPODS: 1.9.3

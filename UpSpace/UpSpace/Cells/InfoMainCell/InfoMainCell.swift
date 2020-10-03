@@ -6,10 +6,8 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import SnapKit
+import LeadKit
 import TableKit
-import TIUIKitCore
-import UIKit
 
 final class InfoMainCell: BaseInitializableCell {
     private let containerView = UIView()

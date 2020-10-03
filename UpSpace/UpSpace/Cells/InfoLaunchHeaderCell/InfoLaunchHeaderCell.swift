@@ -6,9 +6,8 @@
 //  Copyright © 2019 Vlad Suhomlinov. All rights reserved.
 //
 
-import SnapKit
+import LeadKit
 import TableKit
-import UIKit
 
 final class InfoLaunchHeaderCell: BaseInitializableCell {
     private let containerView = UIView()

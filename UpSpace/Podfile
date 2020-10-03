@@ -10,23 +10,17 @@ target 'UpSpace' do
    pod 'SwiftLint'
    pod 'LeadKit'
 
-   # Network
-   pod 'Alamofire'
-
    # Utilities
    pod 'SwiftDate'
    pod 'DeviceKit'
 
    # UI
    pod 'Tabman'
-   pod 'SnapKit' 
-   pod 'TableKit' 
+   pod 'SnapKit'
 
    # Rx
-   pod 'RxSwift'
-   pod 'RxAlamofire'
    pod 'RxKeyboard'
-   pod 'RxSwiftExt'
+
 end
 
 post_install do |pi|
