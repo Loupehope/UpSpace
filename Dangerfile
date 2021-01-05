@@ -8,7 +8,7 @@ unless git.modified_files.include?("CHANGELOG.md")
 end
 
 # Make sure that version has been bumped in podspecs
-all_podspec_files = git.files.grep(/.podspec$/)
+all_podspec_files = Dir.entries(".").grep(/.podspec$/)
 modified_podspec_files = git.modified_files.grep(/.podspec$/)
 missed_podspecs = all_podspec_files - modified_podspec_files
 
