@@ -10,3 +10,4 @@ if [ ! -d $HOOKS_FOLDER ]; then
 fi
 
 find .git/hooks -type l -exec rm {} \; && find .githooks -type f -exec ln -sf ../../{} .git/hooks/ \;
+chmod +x .githooks
