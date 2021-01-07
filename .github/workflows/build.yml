@@ -23,5 +23,5 @@ jobs:
       env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        eval "$(ssh-agent -s)"
+        ./setup.sh
         bundle exec danger
