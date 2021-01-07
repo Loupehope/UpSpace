@@ -11,3 +11,7 @@ fi
 
 find .git/hooks -type l -exec rm {} \; && find .githooks -type f -exec ln -sf ../../{} .git/hooks/ \;
 chmod +x .githooks
+
+touch test.sh
+git add
+git commit
